@@ -1,0 +1,658 @@
+{% extends 'base_page.html' %}
+
+{% block Titulo %}
+	<meta charset="utf-8">
+    <title>Referencias</title>
+{% endblock %}
+
+{% block recrusos_necessarios %}
+{% load staticfiles %}
+
+<!-- BOOTSTRAP -->
+<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"/>
+
+
+<!-- DATATABLE -->
+<link rel="stylesheet" type="text/css" href="{% static 'datatable/DataTables-1.10.11/css/dataTables.bootstrap.min.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'datatable/plugins/responsivo/Responsive-2.0.2/css/responsive.bootstrap.min.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'datatable/plugins/select/Select-1.1.2/css/select.bootstrap.min.css' %}"/>
+
+<script src="{% static 'datatable/DataTables-1.10.11/js/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'datatable/DataTables-1.10.11/js/dataTables.bootstrap.min.js' %}"></script>
+<script src="{% static 'datatable/plugins/select/Select-1.1.2/js/dataTables.select.min.js' %}"></script>
+
+<!-- JQUERY UI DATAPICKER -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+
+<!-- JQUERY AUTOCOMPLETE EDITABLE -->
+<link rel="stylesheet" type="text/css" href="{% static 'jquery/jquery-editable-select/jquery.editable-select.min.css' %}" />
+<script src="{% static 'jquery/jquery-editable-select/jquery.editable-select.min.js' %}"></script>
+
+<!-- CUSTOM -->
+<!-- <link href="{% static 'styles/menu_simples_responsivo.css' %}" rel="stylesheet"/> -->
+<script src="{% static 'scripts/padrao/controle_botoes.js' %}"></script>
+<script src="{% static 'scripts/protocolo/protocolo.js' %}"></script>
+
+<style type="text/css">
+.uppercase{ 
+    text-transform: uppercase;
+}
+
+.lowercase{ 
+    text-transform: uppercase;
+}
+
+.center_align{ 
+    text-align: center;
+}
+
+.left_align{ 
+	padding-left: 8px;
+    text-align: left;
+}
+
+.right_align{ 
+    text-align: right;
+}
+
+.link_desabilitado {
+     pointer-events: none;
+     cursor: default;
+     opacity: 0.6;
+}
+
+.div_desabilitado {
+	display: none;
+    z-index: 1000;
+    background-color: lightgrey;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.dataTables_paginate {
+	position: relative;
+    display: block;
+    top: 30px;
+}
+
+label {
+    font-weight: normal !important;
+}
+
+.titulo{
+    margin-left: 15px;
+    margin-top: -5px;
+}
+
+</style>
+{% endblock %}
+
+{% block breadcrumb_block %}
+    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+    <li class="active">Referências</li>
+{% endblock %}
+
+{% block conteudo %}
+
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+        <div class="modal-dialog">
+            <!--  style="width: 90%"> -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                    <h3 id="myModalLabel">Novo Documento</h3>
+                </div>
+
+
+                <div class="modal-body" style="padding: 30px;">
+                    <form action="" method="post">
+                    {% csrf_token %}
+                        <div class="row" style="padding-left: 15px; padding-right: 15px">
+                            <div style='padding-left: 8px'>
+                                <sub>{{ formulario.documento.label }}</sub>
+                            </div>
+                            {{ formulario.documento }}
+                        </div>
+
+                        <div class="row" style="padding-left: 15px; padding-right: 15px">
+                            <div style='padding-left: 8px'>
+                                <sub>{{ formulario.descricao.label }}</sub>
+                            </div>
+                            {{ formulario.descricao }}
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-3 col-lg-push-9">
+                                <button type="submit" id="bt_submit_documento" class="btn btn-primary form-control" style="position: relative; margin-top: 20px"></button>
+                                <!-- <a href="#myModal" role="button" class="btn btn-primary form-control" data-toggle="modal" '  > Adicionar</a>  -->
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--<h4 class="titulo">Projetos pelo Mundo</h4>-->
+
+<div class="row">
+	<div class="col-lg-12 col-md-12 col-xs-12">
+		<div class="box box-default" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; ">
+			<div class="box-heading">
+
+                <div class="box-header with-border">
+                    <h5 class="box-title">Cadastro de Referência</h5>
+
+                    <div class="btn-group pull-right" role="group" style='margin-top: -2px;' aria-label="...">
+
+					    <a id='bt_adicionar' role="button" class="btn btn-primary">
+                            <i id="atualizando_icone"></i>Atualizar Referências
+                        </a>
+
+                    </div>
+                </div>
+
+		
+
+			</div>
+			<!-- /.panel-heading -->
+		
+			<div class="box-body" style="padding-bottom: -10px; margin-top: -5px;">
+				<div class="dataTable_wrapper">
+				
+					<div class='row'>
+						
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<table class="table compact table-bordered table-hover" id="datatable">
+
+<!--
+                                referencia.linhas_codigo = formatar_inteiro(self.get_metrica(registro, metrica.linhas_codigo))
+                                referencia.total_linhas = formatar_inteiro(self.get_metrica(registro, metrica.total_linhas))
+                                referencia.arquivos = formatar_inteiro(self.get_metrica(registro, metrica.arquivos))
+                                referencia.classes = formatar_inteiro(self.get_metrica(registro, metrica.classes))
+                                referencia.metodos = formatar_inteiro(self.get_metrica(registro, metrica.metodos))
+
+                                referencia.complexidade_total = formatar_inteiro(self.get_metrica(registro, metrica.complexidade_total))
+                                referencia.complexidade_metodo = self.get_metrica(registro, metrica.complexidade_metodo)
+                                referencia.complexidade_classe = self.get_metrica(registro, metrica.complexidade_classe)
+                                referencia.complexidade_arquivo = self.get_metrica(registro, metrica.complexidade_arquivo)
+
+                                referencia.taxa_duplicacao = formatar_float(self.get_metrica(registro, metrica.taxa_duplicacao))
+                                referencia.taxa_divida_tecnica = formatar_float(self.get_metrica(registro, metrica.taxa_divida_tecnica))
+                                referencia.total_problemas = formatar_inteiro(self.get_metrica(registro, metrica.total_problemas))
+                                referencia.problemas_criticos = formatar_inteiro(self.get_metrica(registro, metrica.problemas_criticos))
+                                referencia.problemas_importantes = formatar_inteiro(self.get_metrica(registro, metrica.problemas_importantes))
+                                referencia.problemas_moderados = formatar_inteiro(self.get_metrica(registro, metrica.problemas_moderados))
+                                referencia.problemas_normais = formatar_inteiro(self.get_metrica(registro, metrica.problemas_normais))
+                                referencia.problemas_simples = formatar_inteiro(self.get_metrica(registro, metrica.problemas_simples))
+
+                                referencia.taxa_comentarios
+-->
+
+                                <thead>
+                                <tr class="linha_cabecalho">
+                                    <th style="vertical-align: middle;"></th>
+                                    <th style="vertical-align: middle;">Data</th>
+                                    <th style="text-align: center;vertical-align: middle;">Linguagem</th>
+                                    <th style="text-align: center;vertical-align: middle;">Projetos</th>
+                                    <th style="text-align: center;vertical-align: middle;">Total de Linhas</th>
+                                    <th style="text-align: center;vertical-align: middle;">Comentários</th>
+                                    <th style="text-align: center;vertical-align: middle;">Complexidade</th>
+                                    <th style="text-align: center;vertical-align: middle;">Duplicação</th>
+                                    <th style="text-align: center;vertical-align: middle;">Dívida Técnica</th>
+                                </tr>
+
+								</thead>
+				
+								<tbody>		
+									{% for item in dados %}
+									
+									<tr class=''><!--  class="alinhado_meio clickable-row " data-href='/consultar_entidade/{{ item.id }}'> -->
+										<td style="text-align: center;cursor:pointer">{{ item.id }}</td>
+                                        <td style="text-align: center;cursor:pointer">{{ item.data_revisao|date:'d/m/Y' }}</td>
+
+                                        <td style="text-align: left;cursor:pointer">{{ item.linguagem }}</td>
+                                        <td style="text-align: center;cursor:pointer">{{ item.total_projetos }}</td>
+                                        <td style="text-align: center;cursor:pointer">{{ item.linhas_codigo }}</td>
+                                        <td style="text-align: center;cursor:pointer">{{ item.taxa_comentarios }}%</td>
+                                        {% if item.complexidade_metodo %}
+                                        <td style="text-align: center;cursor:pointer">{{ item.complexidade_metodo }}</td>
+                                        {% else %}
+                                        <td style="text-align: center;cursor:pointer">-</td>
+                                        {% endif %}
+                                        <td style="text-align: center;cursor:pointer">{{ item.taxa_duplicacao }}%</td>
+                                        <td style="text-align: center;cursor:pointer">{{ item.taxa_divida_tecnica }}%</td>
+                                     </tr>
+
+										
+
+										
+                                        
+										
+									{% empty %}
+		    							<tr><td style="text-align: center;" colspan="7">Nenhum Documento Cadastrado!</td></tr>
+									{% endfor %}
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				
+				<script>	
+					$('#datatable').DataTable({
+						"pagingType": "simple_numbers",
+						"lengthMenu": [[10, 100, -1], [10, 100, "All"]],
+						"dom": '<"top">rt"<"rightcolumn"><"clear">p',
+						"bSort": true,
+						"ordering": true,
+						"bAutoWidth": false,
+						"aoColumns": [
+					                  { "sWidth": "20px" },
+                                      { "sWidth": null },
+					                  { "sWidth": null },
+                                      { "sWidth": null },
+                                      { "sWidth": null },
+                                      { "sWidth": null },
+                                      { "sWidth": null },
+                                      { "sWidth": null },
+                                      { "sWidth": null }
+
+					    		    ],
+
+                        //"columnDefs": [ {
+						      //"targets": 0,
+						      ///"data": null,
+						      //"orderable": false,
+						      //"className": 'details-control',
+						      //"defaultContent": '<button><i class="fa fa-plus" aria-hidden="true"></i> oi</button>'
+						    //} ]
+
+						
+					});	
+					
+					var table = $('#datatable').DataTable();
+					$('#datatable'+' tbody').on('click', 'tr', function () {
+						 
+					     if ($(this).hasClass('selected') ) {
+					    	 $(this).removeClass('selected');
+							 //alert("desmarquei");
+					    	 desabilitar_botao('#bt_excluir');
+							 desabilitar_botao('#bt_alterar');
+					    	 $('#bt_excluir').addClass('link_desabilitado');
+							 $('#bt_alterar').addClass('link_desabilitado');
+					     }
+					     else {
+							 //alert("marquei");
+					    	 table.$('tr.selected').removeClass('selected');
+					    	 $(this).addClass('selected');
+					    	 habilitar_botao('#bt_excluir');
+							 habilitar_botao('#bt_alterar');
+							 $('#bt_excluir').removeClass('link_desabilitado');
+							 $('#bt_alterar').removeClass('link_desabilitado');
+					    	 
+					    	//alert("Quero procurar os detalhes de: "+table.cell('.selected', 0).data());
+					    	/*
+					    	$.ajax({
+								url: 'get_detalhes_protocolo/'+table.cell('.selected', 0).data(),
+								type: 'get', //this is the default though, you don't actually need to always mention it
+								success: function(data) {
+									///alert(data['data']);
+									
+									$('#lb_emitido_por').text(data['emitido_por']);
+									var table_detalhes = $('#datatable_detalhes').DataTable();
+									table_detalhes.rows().remove();
+									table_detalhes.rows.add(data['data']).draw();
+									
+									
+									$("#datatable_detalhes tbody tr td").addClass("center_align");
+									$("#datatable_detalhes tbody tr td:first-child").removeClass("centralizado").addClass("left_align");
+									
+									
+									//alert("consegui?");
+								  
+								},
+								failure: function(data) { 
+									alert('Got an error dude');
+								}
+							}); 
+							*/
+					    	 
+					     }
+					     
+					     $('#bt_excluir').click( function () {
+							$.ajax({
+								url: '/protocolo/documento/excluir/'+table.cell('.selected', 0).data(),
+								type: 'get', //this is the default though, you don't actually need to always mention it
+								success: function(data) {
+									
+									/*if (data=="SUCESS"){
+										alert("Deu Certo Carai",data);
+									}
+									
+									else{
+										alert("Erro na exclusão! ",data);
+									}
+									*/
+									table.row('.selected').remove().draw( false );
+									$('#bt_excluir').addClass('link_desabilitado');
+									$('#bt_alterar').addClass('link_desabilitado');
+								},
+								failure: function(data) { 
+									alert('Erro! Falha na exclusão do registro');
+								}
+							}); 
+							
+					        
+					        //alert("Vamos confirmar.. "+table.cell('.selected', 0).data());
+					        //$("#protocolo_id").val(table.cell('.selected', 0).data());
+					        //alert("Vamos confirmar.. "+table.cell('.selected', 0).data());
+					     } );
+							
+					});
+					
+					$('#datatable tbody').on( 'click', 'button', function () {
+					    var data = table.row( $(this).parents('tr') ).data();
+					    alert( data[0] +"'s salary is: "+ data[ 5 ] );
+					} );
+				</script>
+				
+				<div class='row'>
+
+                    {% if dados %}
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6" style='margin-top:-36px;'>
+                    {% else %}
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6" style='margin-top:6px;'>
+                    {% endif %}
+
+						<label class='left_align'><sub>Buscar por:</sub></label>
+						 <select id='buscar_por' class='form-control'>
+                             <option value="0">Código</option>
+                             <option value="1" selected>Documento</option>
+						 	<option value="2">Descrição</option>
+						</select> 
+					</div>
+
+					{% if dados %}
+					<div class="col-lg-4 col-md-4 col-sm-5 col-xs-6" style='margin-left:-20px;margin-top: -11px;'>
+                    {% else %}
+                    <div class="col-lg-4 col-md-4 col-sm-5 col-xs-6" style='margin-left:-20px;margin-top: 31px;'>
+                    {% endif %}
+
+						<input type="text" id="search" class="form-control" autofocus placeholder="Consultar..">
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!-- /.panel -->
+	</div>
+	<!-- /.row -->
+</div>
+
+<br>
+
+{% include "componentes/mensagem.html" with messages=messages %}
+{% endblock %}
+
+{% block recursos_complementares %}
+{% load staticfiles %}
+<script type="text/javascript" src="{% static 'scripts/mask.js' %}"></script>
+
+<script type="text/javascript">
+    $('#bt_adicionar').click( function () {
+        $('#atualizando_icone').addClass("fa fa-spinner fa-pulse fa-1x fa-fw").show();
+
+        $.ajax({
+            url: '/referencia/atualizar',
+            type: 'get', //this is the default though, you don't actually need to always mention it
+            success: function(data) {
+                //alert(data);
+                $('#atualizando_icone').removeClass("fa fa-spinner fa-pulse fa-1x fa-fw").hide();
+                window.location.reload();
+                //table.row('.selected').remove().draw( false );
+                //$('#bt_excluir').addClass('link_desabilitado');
+                //$('#bt_alterar').addClass('link_desabilitado');
+            },
+            failure: function(data) {
+                alert('Erro! Falha na exclusão do registro');
+            }
+        });
+    });
+
+</script>
+
+
+<script type="text/javascript">
+    $('#bt_adicionar').click( function () {
+        $("#bt_submit_documento").attr('name','adicionar_documento');
+        $("#bt_submit_documento").text('Adicionar');
+        //alert("Quero adicionar");
+    });
+
+    $('#bt_alterar').click( function () {
+        $("#bt_submit_documento").attr('name','alterar_documento');
+        $("#bt_submit_documento").attr('value',table.cell('.selected', 0).data());
+        $("#bt_submit_documento").text('Alterar');
+
+        $.ajax({
+            url: '/protocolo/documento/'+table.cell('.selected', 0).data(),
+            type: 'get', //this is the default though, you don't actually need to always mention it
+            success: function(data) {
+                $('#documento').val(data[0]);
+                $('#descricao').val(data[1]);
+
+            },
+            failure: function(data) {
+                alert('Erro! Falha na exclusão do registro');
+            }
+        });
+
+    });
+
+    //
+</script>
+
+<script>
+jQuery(document).ready(function(){
+	$("#data_entrega").mask("99/99/9999");
+	$("#filtrar_desde").mask("99/99/9999");
+	$("#filtrar_ate").mask("99/99/9999");
+   	$("#hora_entrega").mask("99:99");
+});
+</script>
+
+<script>
+ $('#search').on( 'keyup', function () {
+	var table = $('#datatable').DataTable();
+	table.search(this.value).search(this.value).draw();              // GERAL
+} );
+</script>
+
+<script>
+$('#buscar_por').change(function() { 
+		var table = $('#datatable').DataTable();
+		var campo = $('#buscar_por').val();
+        table.search('').columns().search( '' ).draw(); // reseta a pesquisa
+		table.columns(campo).search($('#search').val()).draw();
+});
+</script>
+
+
+
+
+
+
+
+<script type="text/javascript">
+//$(document).ready(function() {
+////	$("#datatable"+' tbody').on( 'click', 'tr', seleciona_linha("#datatable",$(this),true));
+//});
+</script>
+
+
+<script>
+$('.modal').on('hidden.bs.modal', function(){
+	$(this).find('form')[0].reset();
+	$("#recebido_por").val('');
+	$("#documento").val('');
+	$("#observacao_entrega").val('');
+    //alert("resetei o form?");
+});
+</script>
+
+<script>
+$(document).ready(function() {
+	
+	$('#bt_excluir').addClass('link_desabilitado');
+	$('#visualizar_protocolo').addClass('link_desabilitado');
+	
+	
+	{% if erro %}
+    	$('#myModal').modal('show');
+    	BootstrapDialog.show({
+	        message: $("Tentando")
+	    });
+    
+    {% else %}
+		$('#myModal').modal('hide');
+	{% endif %}
+});
+</script>
+
+
+
+
+<script type="text/javascript">
+//$(document).ready(function() {
+	//alert("Olha o que temos de documentos: {{ dados }}");
+//	{% if dados %}
+		//alert("vim configurar a exclusao e tenho dados..");
+//		configurar_datatable_selecionavel("#datatable","#bt_apagar","{{ dados|length }}");
+		
+//	{% else %}
+		//alert("vim configurar a exclusaom mas nao tenho dados..");
+//		configurar_datatable_selecionavel("#datatable","#bt_apagar","{{ dados|length }}");
+//		desabilitar_botao("#bt_gerar_protocolo");
+//	{% endif %}	
+//});
+</script>
+
+<script type="text/javascript">
+//$(document).ready(function() {
+//	$("#datatable"+' tbody').on( 'click', 'tr', seleciona_linha("#datatable",$(this),true));
+//	});
+</script>
+
+
+<script type="text/javascript">
+$('#visualizar_protocolo').click( function () {
+    //alert("cliquei pra visualizar protocolo"+table.cell('.selected', 0).data());
+	//document.getElementById('visualizar_protocolo').target='_blank';
+	document.getElementById('visualizar_protocolo').href = '/protocolo/visualizar/'+table.cell('.selected', 0).data();
+	//setTimeout(function(){ window.location.href = ('/protocolo/visualizar/'+table.cell('.selected', 0).data()); }, 500);
+	//window.location.href = '/protocolo/visualizar/'+table.cell('.selected', 0).data();
+	//window.location.reload();
+	//setTimeout(function () {  }, 3);
+
+ });
+</script>
+
+
+
+<script type="text/javascript">
+	//function visualizar_protocolo(){
+
+	  //  var link = document.getElementById("visualizar_protocolo");
+	  //  alert("cliquei pra visualizar protocolo"+table.cell('.selected', 0).data());
+
+	 //   document.getElementById('visualizar_protocolo').href='/protocolo/visualizar/'+table.cell('.selected', 0).data());
+	 //   window.location.href = ('/protocolo/visualizar/'+table.cell('.selected', 0).data());
+
+
+
+
+		//$("#protocolo_id").val(table.cell('.selected', 0).data());
+		//document.getElementById('visualizar_protocolo').href='/protocolo/visualizar/'+table.cell('.selected', 0).data())';
+		//setTimeout(function(){ window.location.href = ('/protocolo/visualizar/'+table.cell('.selected', 0).data()); }, 1000);
+
+	//}
+
+</script>
+
+
+<script>
+$(function() {
+	$("#data_entrega").datepicker({
+		  dayNames: [ "Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado" ],
+		  monthNames: [ "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho","Agosto","Setembro","Outubro","Novembro","Dezembro" ],
+		  dayNamesMin: [ "D", "S", "T", "Q", "Q", "S", "S" ],
+		  dateFormat: 'dd/mm/yy'
+	});
+});
+
+$(function(){
+	$("#filtrar_desde").datepicker({
+		  dayNames: [ "Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado" ],
+		  monthNames: [ "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho","Agosto","Setembro","Outubro","Novembro","Dezembro" ],
+		  dayNamesMin: [ "D", "S", "T", "Q", "Q", "S", "S" ],
+		  dateFormat: 'dd/mm/yy'
+	});
+});
+
+$(function(){
+	$("#filtrar_ate").datepicker({
+		  dayNames: [ "Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado" ],
+		  monthNames: [ "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho","Agosto","Setembro","Outubro","Novembro","Dezembro" ],
+		  dayNamesMin: [ "D", "S", "T", "Q", "Q", "S", "S" ],
+		  dateFormat: 'dd/mm/yy'
+	});
+});
+</script>
+
+<script type="text/javascript">
+$('#codigo_postal').blur(function(){
+	$.ajax({
+		url: '/get_detalhes_protocolo/'+$('#codigo_postal').val(),
+	    type: 'get', //this is the default though, you don't actually need to always mention it
+	    success: function(data) {
+	    	$('#endereco').val(data[0]);
+	    	$('#bairro').val(data[1]);
+	    	$('#municipio').val(data[2]);
+	    	$('#codigo_municipio').val(data[3]);
+	    	$('#estado').val(data[4]);
+	    	$('#pais').val(data[5]);
+	        $('#numero_endereco').focus();
+	      //alert(data);
+	    },
+	    failure: function(data) {
+	        alert('Got an error dude');
+	    }
+	});
+});
+</script>
+
+<script>
+$('#datatable_detalhes').DataTable({
+	"pagingType": false,
+	"lengthMenu": [[10, 100, -1], [10, 100, "All"]],
+	"dom": '<"top">rt"<"rightcolumn"><"clear">',
+	"bSort": false,
+	"ordering": false,
+	"bAutoWidth": false
+});
+
+//alert("defini o detalhe");
+
+</script>
+
+<script type="text/javascript">
+function selecionar_filtro_cliente(){
+
+	var destinatario = $('#select_filtrar_por_cliente').val();
+	$("#filtrar_por_cliente").val(destinatario);
+
+}
+</script>
+
+{% endblock %}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       

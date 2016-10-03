@@ -1,0 +1,869 @@
+"C:\Program Files (x86)\JetBrains\PyCharm 2016.1.4\bin\runnerw.exe" C:\Python27\python.exe C:/Users/diego/OneDrive/Projetos/devstar/manage.py runserver 8000
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:23: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 14, 2016 - 13:56:48
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Veja quantas referencias temos: [<Referencia: Referencia object>, <Referencia: Referencia object>, <Referencia: Referencia object>, <Referencia: Referencia object>, <Referencia: Referencia object>, <Referencia: Referencia object>, <Referencia: Referencia object>]
+C:\Python27\lib\site-packages\django\shortcuts.py:45: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  using=using)
+
+[14/Sep/2016 13:57:46] "GET / HTTP/1.1" 200 48776
+[14/Sep/2016 13:57:59] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 121260
+[14/Sep/2016 13:58:00] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 36868
+[14/Sep/2016 13:58:00] "GET /arquivos_estaticos/jquery/jquery-ui-1.11.4/jquery-ui.js HTTP/1.1" 200 470591
+[14/Sep/2016 13:58:00] "GET /arquivos_estaticos/adminlte/css/skins/skin-blue.min.css HTTP/1.1" 200 3037
+[14/Sep/2016 13:58:00] "GET /arquivos_estaticos/adminlte/css/AdminLTE.min.css HTTP/1.1" 200 89933
+[14/Sep/2016 13:58:00] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 200 23739
+[14/Sep/2016 13:58:00] "GET /arquivos_estaticos/datatable/DataTables-1.10.11/css/dataTables.bootstrap.min.css HTTP/1.1" 200 4247
+[14/Sep/2016 13:58:00] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 200 85589
+[14/Sep/2016 13:58:01] "GET /arquivos_estaticos/datatable/plugins/responsivo/Responsive-2.0.2/css/responsive.bootstrap.min.css HTTP/1.1" 200 3886
+[14/Sep/2016 13:58:01] "GET /arquivos_estaticos/datatable/plugins/select/Select-1.1.2/css/select.bootstrap.min.css HTTP/1.1" 200 3890
+[14/Sep/2016 13:58:01] "GET /arquivos_estaticos/datatable/DataTables-1.10.11/js/dataTables.bootstrap.min.js HTTP/1.1" 200 1960
+[14/Sep/2016 13:58:01] "GET /arquivos_estaticos/datatable/DataTables-1.10.11/js/jquery.dataTables.min.js HTTP/1.1" 200 82480
+[14/Sep/2016 13:58:01] "GET /arquivos_estaticos/datatable/plugins/select/Select-1.1.2/js/dataTables.select.min.js HTTP/1.1" 200 10731
+[14/Sep/2016 13:58:02] "GET /arquivos_estaticos/jquery/jquery-editable-select/jquery.editable-select.min.css HTTP/1.1" 200 1160
+[14/Sep/2016 13:58:02] "GET /arquivos_estaticos/jquery/jquery-editable-select/jquery.editable-select.min.js HTTP/1.1" 200 3386
+[14/Sep/2016 13:58:02] "GET /arquivos_estaticos/scripts/padrao/controle_botoes.js HTTP/1.1" 200 159
+[14/Sep/2016 13:58:02] "GET /arquivos_estaticos/scripts/protocolo/protocolo.js HTTP/1.1" 200 2620
+[14/Sep/2016 13:58:03] "GET /arquivos_estaticos/adminlte/js/app.min.js HTTP/1.1" 200 9773
+[14/Sep/2016 13:58:03] "GET /arquivos_estaticos/scripts/mask.js HTTP/1.1" 200 3568
+[14/Sep/2016 13:58:03] "GET /arquivos_estaticos/imagens/logo.png HTTP/1.1" 200 30834
+[14/Sep/2016 13:58:03] "GET /arquivos_estaticos/imagens/avatar5.png HTTP/1.1" 200 8007
+[14/Sep/2016 13:58:07] "GET /arquivos_estaticos/icones/fonts/fontawesome-webfont.woff2?v=4.3.0 HTTP/1.1" 200 56780
+[14/Sep/2016 13:58:08] "GET /arquivos_estaticos/bootstrap/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 200 18028
+Not Found: /favicon.ico
+[14/Sep/2016 13:58:09] "GET /favicon.ico HTTP/1.1" 404 2533
+Not Found: /favicon.ico
+[14/Sep/2016 13:58:09] "GET /favicon.ico HTTP/1.1" 404 2533
+[14/Sep/2016 13:59:16] "GET /referencia HTTP/1.1" 301 0
+Veja quantas referencias temos: [<Referencia: Referencia object>, <Referencia: Referencia object>, <Referencia: Referencia object>, <Referencia: Referencia object>, <Referencia: Referencia object>, <Referencia: Referencia object>, <Referencia: Referencia object>]
+[14/Sep/2016 13:59:17] "GET /referencia/ HTTP/1.1" 200 48776
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 14, 2016 - 15:11:12
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+C:\Python27\lib\site-packages\django\shortcuts.py:45: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  using=using)
+
+[14/Sep/2016 15:11:13] "GET / HTTP/1.1" 200 2421
+Not Found: /js/jquery.js
+[14/Sep/2016 15:11:13] "GET /js/jquery.js HTTP/1.1" 404 2536
+Not Found: /js/jquery.query-2.1.7.js
+[14/Sep/2016 15:11:13] "GET /js/jquery.query-2.1.7.js HTTP/1.1" 404 2572
+Not Found: /js/rainbows.js
+[14/Sep/2016 15:11:13] "GET /js/rainbows.js HTTP/1.1" 404 2542
+Not Found: /css/style.css
+[14/Sep/2016 15:11:13] "GET /css/style.css HTTP/1.1" 404 2539
+Not Found: /images/mailicon.png
+[14/Sep/2016 15:11:14] "GET /images/mailicon.png HTTP/1.1" 404 2557
+Not Found: /images/passicon.png
+[14/Sep/2016 15:11:14] "GET /images/passicon.png HTTP/1.1" 404 2557
+Not Found: /images/submit_hover.png
+[14/Sep/2016 15:11:14] "GET /images/submit_hover.png HTTP/1.1" 404 2569
+Not Found: /images/submit.png
+[14/Sep/2016 15:11:14] "GET /images/submit.png HTTP/1.1" 404 2551
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 14, 2016 - 15:15:01
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+C:\Python27\lib\site-packages\django\shortcuts.py:45: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  using=using)
+
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\diego\OneDrive\Projetos\devstar\nucleo\views.py", line 9, in login
+    return render_to_response("usuario/xHTML/../arquivos_templates/usuario/login.html", context_instance=RequestContext(request))
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 45, in render_to_response
+    using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 137, in render_to_string
+    raise TemplateDoesNotExist(template_name, chain=chain)
+TemplateDoesNotExist: usuario/xHTML/../arquivos_templates/usuario/login.html
+[14/Sep/2016 15:17:42] "GET / HTTP/1.1" 500 73350
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 14, 2016 - 15:18:06
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+C:\Python27\lib\site-packages\django\shortcuts.py:45: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  using=using)
+
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\diego\OneDrive\Projetos\devstar\nucleo\views.py", line 9, in login
+    return render_to_response("usuario/login.html", context_instance=RequestContext(request))
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 45, in render_to_response
+    using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 114, in render_to_string
+    template_name, context, context_instance, dirs, dictionary)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 231, in render_to_string
+    t = self.get_template(template_name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 190, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 157, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "C:\Python27\lib\site-packages\django\template\loaders\base.py", line 46, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 189, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 231, in compile_nodelist
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 510, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 572, in invalid_block_tag
+    "or load this tag?" % (token.lineno, command)
+TemplateSyntaxError: Invalid block tag on line 18: 'static'. Did you forget to register or load this tag?
+[14/Sep/2016 15:18:16] "GET / HTTP/1.1" 500 120212
+[14/Sep/2016 15:18:37] "GET / HTTP/1.1" 200 2970
+[14/Sep/2016 15:18:38] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:18:38] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 15:18:38] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:18:42] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 200 5658
+[14/Sep/2016 15:18:42] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 200 54106
+[14/Sep/2016 15:18:43] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 200 4736
+[14/Sep/2016 15:18:43] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 200 7844
+[14/Sep/2016 15:18:43] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 200 2980
+[14/Sep/2016 15:18:43] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 200 2967
+[14/Sep/2016 15:18:44] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 200 177982
+[14/Sep/2016 15:18:44] "GET /arquivos_estaticos/loginform/images/submit_hover.png HTTP/1.1" 200 5280
+[14/Sep/2016 15:18:44] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 200 3158
+[14/Sep/2016 15:18:44] "GET /arquivos_estaticos/loginform/images/submit.png HTTP/1.1" 200 5498
+[14/Sep/2016 15:18:44] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 200 2917
+[14/Sep/2016 15:18:45] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 200 3036
+[14/Sep/2016 15:18:45] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 200 2848
+[14/Sep/2016 15:18:45] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 200 3028
+[14/Sep/2016 15:18:46] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 200 3167
+[14/Sep/2016 15:37:10] "GET / HTTP/1.1" 200 3096
+[14/Sep/2016 15:37:10] "GET /arquivos_estaticos/loginform/css/style.css%22%20media%3D%22screen HTTP/1.1" 404 1779
+[14/Sep/2016 15:37:10] "GET /arquivos_estaticos/loginform/css/style.css%22%20media%3D%22screen HTTP/1.1" 404 1779
+[14/Sep/2016 15:38:29] "GET / HTTP/1.1" 200 3088
+[14/Sep/2016 15:42:36] "GET / HTTP/1.1" 200 3090
+[14/Sep/2016 15:42:36] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:42:36] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:42:36] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 15:42:36] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 15:42:37] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 15:42:37] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 15:42:37] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[14/Sep/2016 15:42:37] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 15:42:37] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 15:42:37] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 15:42:37] "GET /arquivos_estaticos/loginform/images/submit_hover.png HTTP/1.1" 304 0
+[14/Sep/2016 15:42:37] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 15:42:38] "GET /arquivos_estaticos/loginform/images/submit.png HTTP/1.1" 304 0
+[14/Sep/2016 15:42:38] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 15:42:38] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 15:42:38] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 15:42:38] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 15:42:38] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 15:42:59] "GET / HTTP/1.1" 200 3093
+[14/Sep/2016 15:43:00] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:43:00] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:43:00] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 15:43:00] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 15:43:00] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 15:43:00] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 15:43:01] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[14/Sep/2016 15:43:01] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 15:43:01] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 15:43:01] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 15:43:01] "GET /arquivos_estaticos/loginform/images/submit_hover.png HTTP/1.1" 304 0
+[14/Sep/2016 15:43:01] "GET /arquivos_estaticos/loginform/images/submit.png HTTP/1.1" 304 0
+[14/Sep/2016 15:43:01] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 15:43:01] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 15:43:01] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 15:43:02] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 15:43:02] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 15:43:02] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 15:46:32] "GET / HTTP/1.1" 200 3119
+[14/Sep/2016 15:47:34] "GET / HTTP/1.1" 200 3182
+[14/Sep/2016 15:47:34] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:47:34] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:47:34] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 15:47:35] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 15:47:35] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 15:47:35] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 15:47:35] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[14/Sep/2016 15:47:36] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 15:47:36] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 15:47:36] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 15:47:36] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 15:47:36] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 15:47:36] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 15:47:37] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 15:47:37] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 15:47:37] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 15:49:04] "GET / HTTP/1.1" 200 3398
+[14/Sep/2016 15:49:04] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:49:05] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:49:05] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 15:49:05] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 15:49:05] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 15:49:05] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 15:49:05] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[14/Sep/2016 15:49:05] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:49:06] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 15:49:06] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 15:49:06] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 15:49:06] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 15:49:06] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 15:49:06] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 15:49:06] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 15:49:06] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 15:49:06] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 15:49:37] "GET / HTTP/1.1" 200 3386
+[14/Sep/2016 15:49:37] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:49:37] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 15:49:37] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:49:37] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 15:49:38] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 15:49:38] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 15:49:38] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[14/Sep/2016 15:49:38] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:49:39] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 15:49:39] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 15:49:39] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 15:49:40] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 15:49:40] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 15:49:40] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 15:49:40] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 15:49:40] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 15:49:40] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 15:52:41] "GET / HTTP/1.1" 200 3418
+[14/Sep/2016 15:52:41] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:52:41] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 15:52:41] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:52:42] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 15:52:42] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 15:52:42] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 15:52:42] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[14/Sep/2016 15:52:42] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:52:42] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 15:52:42] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 15:52:42] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 15:52:43] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 15:52:43] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 15:52:43] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 15:52:43] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 15:52:43] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 15:52:43] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 15:54:20] "GET / HTTP/1.1" 200 3427
+[14/Sep/2016 15:54:21] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:54:21] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:54:21] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 15:54:21] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 15:54:21] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 15:54:21] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 15:54:21] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[14/Sep/2016 15:54:21] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:54:22] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 15:54:22] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 15:54:22] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 15:54:22] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 15:54:22] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 15:54:22] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 15:54:22] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 15:54:22] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 15:54:22] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 15:56:33] "GET / HTTP/1.1" 200 3427
+[14/Sep/2016 15:56:34] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:56:34] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 15:56:34] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 15:56:35] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:56:35] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 15:56:35] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 15:56:35] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 200 4736
+[14/Sep/2016 15:56:35] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:56:36] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 15:56:36] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 15:56:36] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 15:56:36] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 15:56:37] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 15:56:37] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 15:56:37] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 15:56:37] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 15:56:37] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 15:57:18] "GET / HTTP/1.1" 200 3427
+[14/Sep/2016 15:57:21] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:57:22] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:57:22] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 15:57:22] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 15:57:22] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 15:57:23] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 15:57:23] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 200 4736
+[14/Sep/2016 15:57:23] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:57:23] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 15:57:24] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 15:57:24] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 15:57:24] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 15:57:25] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 15:57:25] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 15:57:25] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 15:57:26] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 15:57:26] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 15:59:40] "GET / HTTP/1.1" 200 3427
+[14/Sep/2016 15:59:40] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 15:59:41] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 15:59:41] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:59:41] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 15:59:41] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:59:42] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 15:59:42] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 200 4738
+[14/Sep/2016 15:59:42] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:59:43] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 15:59:43] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 15:59:43] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 15:59:44] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 15:59:44] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 15:59:44] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 15:59:44] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 15:59:44] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 15:59:45] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 15:59:56] "GET / HTTP/1.1" 200 3427
+[14/Sep/2016 15:59:57] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 15:59:57] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 15:59:57] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 15:59:58] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:59:58] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 15:59:58] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:59:58] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 200 4737
+[14/Sep/2016 15:59:59] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 15:59:59] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 16:00:00] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:00:00] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:00:00] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 16:00:00] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:00:00] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 16:00:00] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:00:00] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 16:00:00] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 16:00:52] "GET / HTTP/1.1" 200 3427
+[14/Sep/2016 16:00:52] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:00:53] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 16:00:53] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:00:53] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 16:00:53] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 16:00:53] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 16:00:53] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 200 4738
+[14/Sep/2016 16:00:54] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:00:54] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 16:00:54] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:00:54] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 16:00:54] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:00:54] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:00:54] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 16:00:54] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:00:54] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 16:00:55] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 16:01:06] "GET / HTTP/1.1" 200 3427
+[14/Sep/2016 16:01:06] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:01:06] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 16:01:07] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 16:01:07] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:01:07] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 16:01:07] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 16:01:07] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 200 4737
+[14/Sep/2016 16:01:07] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:01:07] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 16:01:08] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:01:08] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:01:08] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 16:01:08] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:01:08] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 16:01:08] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:01:08] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 16:01:08] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 16:01:13] "GET / HTTP/1.1" 200 3427
+[14/Sep/2016 16:01:13] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:01:13] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 16:01:13] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 16:01:13] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:01:14] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 16:01:14] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 16:01:14] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 200 4737
+[14/Sep/2016 16:01:14] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:01:14] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 16:01:14] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:01:15] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:01:16] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 16:01:16] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:01:17] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 16:01:17] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:01:18] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 16:01:18] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 16:01:22] "GET / HTTP/1.1" 200 3427
+[14/Sep/2016 16:01:22] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:01:22] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 16:01:22] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:01:22] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 16:01:22] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 16:01:22] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 16:01:22] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 200 4737
+[14/Sep/2016 16:01:22] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:01:23] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 16:01:23] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:01:23] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:01:23] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 16:01:23] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:01:24] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 16:01:24] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:01:24] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 16:01:24] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 16:13:39] "GET / HTTP/1.1" 200 3548
+[14/Sep/2016 16:13:39] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:13:39] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 16:13:39] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:13:40] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 16:13:40] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 16:13:40] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 16:13:40] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[14/Sep/2016 16:13:40] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:13:40] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 16:13:40] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:13:40] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:13:40] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 16:13:40] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:13:41] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 16:13:41] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:13:41] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 16:13:41] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 16:14:23] "GET / HTTP/1.1" 200 3573
+[14/Sep/2016 16:14:23] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:14:23] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:14:23] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 16:14:23] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 16:14:24] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 16:14:24] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 16:14:24] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[14/Sep/2016 16:14:24] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:14:25] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 16:14:25] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:14:25] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:14:25] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 16:14:25] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:14:25] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 16:14:25] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:14:25] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 16:14:25] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 16:16:08] "GET / HTTP/1.1" 200 3556
+[14/Sep/2016 16:16:08] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:16:08] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:16:08] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 16:16:08] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 16:16:08] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 16:16:08] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 16:16:09] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 200 4862
+[14/Sep/2016 16:16:09] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:16:09] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 16:16:09] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:16:09] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:16:10] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 16:16:10] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:16:10] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 16:16:10] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:16:10] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 16:16:10] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 16:16:46] "GET / HTTP/1.1" 200 3556
+[14/Sep/2016 16:16:46] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:16:47] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:16:47] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 16:16:47] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 16:16:47] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 16:16:47] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 16:16:47] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 200 4919
+[14/Sep/2016 16:16:47] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:16:48] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 16:16:48] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:16:48] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 16:16:48] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:16:48] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:16:48] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 16:16:49] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:16:49] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 16:16:49] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 16:19:18] "GET / HTTP/1.1" 200 3556
+[14/Sep/2016 16:19:18] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 16:19:18] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 16:19:19] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 16:19:19] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:19:19] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 16:19:20] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:19:20] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 200 4945
+[14/Sep/2016 16:19:20] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:19:21] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 16:19:21] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 16:19:21] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:19:22] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 16:19:22] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:19:22] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:19:22] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:19:22] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 16:19:23] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 16:19:59] "GET / HTTP/1.1" 200 3568
+[14/Sep/2016 16:19:59] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 16:19:59] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 16:19:59] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 16:20:00] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:20:00] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 16:20:01] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:20:01] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[14/Sep/2016 16:20:02] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:20:02] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 16:20:03] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 16:20:03] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:20:03] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 16:20:03] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:20:03] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:20:04] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:20:04] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 16:20:04] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 16:20:22] "GET / HTTP/1.1" 200 3567
+[14/Sep/2016 16:20:22] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 16:20:23] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 16:20:23] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 16:20:23] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:20:23] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 16:20:24] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:20:24] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[14/Sep/2016 16:20:24] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:20:25] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 16:20:26] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:20:26] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:20:26] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 16:20:27] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 16:20:27] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:20:27] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:20:27] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 16:20:27] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 16:20:36] "GET / HTTP/1.1" 200 3567
+[14/Sep/2016 16:20:37] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 16:20:37] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 16:20:37] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 16:20:37] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:20:38] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 16:20:38] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:20:38] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[14/Sep/2016 16:20:39] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:20:40] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 16:20:40] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 16:20:41] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:20:41] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 16:20:41] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:20:42] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:20:42] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:20:42] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 16:20:43] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 16:21:24] "GET / HTTP/1.1" 200 3565
+[14/Sep/2016 16:21:25] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 16:21:25] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 16:21:25] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 16:21:25] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:21:26] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 16:21:26] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:21:26] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[14/Sep/2016 16:21:27] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:21:27] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 16:21:28] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 16:21:28] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:21:28] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 16:21:29] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:21:29] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:21:29] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:21:29] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 16:21:30] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 16:22:29] "GET / HTTP/1.1" 200 3565
+[14/Sep/2016 16:22:30] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:22:30] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:22:30] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 16:22:30] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 16:22:30] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 16:22:30] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 16:22:30] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 200 4947
+[14/Sep/2016 16:22:30] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:22:31] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 16:22:31] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:22:31] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:22:31] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 16:22:31] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 16:22:31] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:22:31] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:22:31] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 16:22:31] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 16:23:09] "GET / HTTP/1.1" 200 3565
+[14/Sep/2016 16:23:09] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:23:09] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:23:09] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 16:23:09] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 16:23:09] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 16:23:09] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 16:23:09] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 200 4951
+[14/Sep/2016 16:23:09] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:23:09] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 16:23:09] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:23:10] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 16:23:10] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:23:10] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:23:10] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 16:23:10] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:23:10] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 16:23:11] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 16:23:58] "GET / HTTP/1.1" 200 3565
+[14/Sep/2016 16:23:59] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:23:59] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:24:00] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 16:24:00] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 16:24:01] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 16:24:01] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 16:24:01] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 200 5000
+[14/Sep/2016 16:24:02] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:24:02] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 16:24:02] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:24:02] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:24:02] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 16:24:02] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:24:03] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 16:24:03] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:24:03] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 16:24:03] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 16:24:34] "GET / HTTP/1.1" 200 3565
+[14/Sep/2016 16:24:35] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:24:35] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 16:24:35] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:24:35] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 16:24:35] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 16:24:35] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 16:24:35] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 200 5005
+[14/Sep/2016 16:24:35] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:24:36] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 16:24:36] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:24:36] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:24:36] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 16:24:36] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:24:36] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 16:24:36] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:24:36] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 16:24:36] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 16:24:45] "GET / HTTP/1.1" 200 3565
+[14/Sep/2016 16:24:45] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:24:45] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:24:45] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 16:24:46] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 16:24:46] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 16:24:46] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 16:24:46] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 200 4999
+[14/Sep/2016 16:24:46] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:24:46] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 16:24:47] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:24:47] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:24:47] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 16:24:47] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:24:47] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 16:24:47] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:24:47] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 16:24:47] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 16:25:45] "GET / HTTP/1.1" 200 3565
+[14/Sep/2016 16:25:46] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:25:46] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 16:25:46] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:25:46] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 16:25:46] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 16:25:46] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 16:25:46] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 200 5005
+[14/Sep/2016 16:25:46] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:25:46] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 16:25:46] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:25:46] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:25:47] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 16:25:47] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:25:47] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 16:25:47] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:25:47] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 16:25:47] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 16:26:23] "GET / HTTP/1.1" 200 3565
+[14/Sep/2016 16:26:24] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:26:24] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 16:26:24] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 16:26:24] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 16:26:24] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 16:26:24] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:26:25] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 200 5007
+[14/Sep/2016 16:26:25] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:26:25] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 16:26:26] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 16:26:26] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:26:26] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 16:26:26] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:26:26] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:26:26] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:26:26] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 16:26:26] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 16:27:05] "GET / HTTP/1.1" 200 3565
+[14/Sep/2016 16:27:05] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 16:27:05] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 16:27:05] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 16:27:05] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:27:06] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 16:27:06] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:27:06] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 200 5029
+[14/Sep/2016 16:27:07] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:27:08] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 16:27:09] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:27:09] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:27:09] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 16:27:10] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 16:27:10] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:27:11] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:27:11] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 16:27:11] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 16:27:22] "GET / HTTP/1.1" 200 3565
+[14/Sep/2016 16:27:22] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 16:27:22] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 16:27:23] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 16:27:23] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:27:23] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 16:27:23] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:27:24] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 200 5027
+[14/Sep/2016 16:27:25] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:27:25] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 16:27:25] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 16:27:26] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:27:26] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 16:27:26] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:27:26] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:27:26] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:27:27] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 16:27:27] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 16:29:19] "GET / HTTP/1.1" 200 3565
+[14/Sep/2016 16:29:19] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:29:19] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:29:19] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 16:29:19] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 16:29:19] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 16:29:20] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 16:29:20] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 200 5031
+[14/Sep/2016 16:29:20] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:29:20] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 16:29:21] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:29:21] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 16:29:21] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:29:22] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:29:22] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 16:29:22] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:29:22] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 16:29:22] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 16:29:49] "GET / HTTP/1.1" 200 3565
+[14/Sep/2016 16:29:49] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:29:49] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 16:29:49] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:29:49] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 16:29:50] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 16:29:50] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 16:29:50] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 200 5035
+[14/Sep/2016 16:29:50] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:29:50] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 16:29:50] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:29:50] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:29:51] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 16:29:51] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:29:51] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 16:29:51] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:29:51] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 16:29:51] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[14/Sep/2016 16:30:06] "GET / HTTP/1.1" 200 3565
+[14/Sep/2016 16:30:06] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:30:06] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Sep/2016 16:30:06] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:30:06] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[14/Sep/2016 16:30:07] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[14/Sep/2016 16:30:07] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[14/Sep/2016 16:30:07] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 200 5055
+[14/Sep/2016 16:30:08] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Sep/2016 16:30:08] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[14/Sep/2016 16:30:08] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:30:09] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[14/Sep/2016 16:30:09] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[14/Sep/2016 16:30:09] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:30:09] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[14/Sep/2016 16:30:09] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[14/Sep/2016 16:30:09] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[14/Sep/2016 16:30:09] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+
+Process finished with exit code 0

@@ -1,0 +1,1933 @@
+"C:\Program Files (x86)\JetBrains\PyCharm 2016.1.4\bin\runnerw.exe" C:\Python27\python.exe C:/Users/diego/OneDrive/Projetos/devstar/manage.py runserver 8000
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 03:36:17
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[18/Sep/2016 03:36:23] "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[18/Sep/2016 03:36:24] "GET /admin/ HTTP/1.1" 200 2879
+[18/Sep/2016 03:36:24] "GET /arquivos_estaticos/admin/css/base.css HTTP/1.1" 304 0
+[18/Sep/2016 03:36:24] "GET /arquivos_estaticos/admin/css/fonts.css HTTP/1.1" 304 0
+[18/Sep/2016 03:36:25] "GET /arquivos_estaticos/admin/css/dashboard.css HTTP/1.1" 200 434
+[18/Sep/2016 03:36:25] "GET /arquivos_estaticos/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[18/Sep/2016 03:36:25] "GET /arquivos_estaticos/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[18/Sep/2016 03:36:25] "GET /arquivos_estaticos/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 82564
+[18/Sep/2016 03:42:54] "GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[18/Sep/2016 03:42:54] "GET /admin/ HTTP/1.1" 200 2879
+[18/Sep/2016 03:42:55] "GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[18/Sep/2016 03:42:56] "GET /admin/ HTTP/1.1" 200 2879
+C:\Python27\lib\site-packages\django\shortcuts.py:45: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  using=using)
+
+[18/Sep/2016 03:43:00] "GET / HTTP/1.1" 200 3774
+[18/Sep/2016 03:43:00] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 03:46:45
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 376, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 248, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 255, in callback
+    self._callback = get_callable(self._callback_str)
+  File "C:\Python27\lib\site-packages\django\utils\lru_cache.py", line 100, in wrapper
+    result = user_function(*args, **kwds)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 115, in get_callable
+    mod = import_module(mod_name)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\Users\diego\OneDrive\Projetos\devstar\nucleo\views.py", line 9, in <module>
+    from nucleo.formulario import formulario_login
+  File "C:\Users\diego\OneDrive\Projetos\devstar\nucleo\formulario.py", line 10
+SyntaxError: Non-ASCII character '\xc3' in file C:\Users\diego\OneDrive\Projetos\devstar\nucleo\formulario.py on line 10, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+[18/Sep/2016 04:09:50] "GET / HTTP/1.1" 500 87059
+C:\Python27\lib\site-packages\django\shortcuts.py:45: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  using=using)
+
+[18/Sep/2016 04:10:42] "GET / HTTP/1.1" 200 3793
+[18/Sep/2016 04:10:42] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 04:11:56] "GET / HTTP/1.1" 200 3755
+[18/Sep/2016 04:12:04] "GET / HTTP/1.1" 200 3755
+[18/Sep/2016 04:12:04] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:12:04] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:12:04] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:12:04] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 04:12:04] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 04:12:04] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 04:12:04] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 04:12:04] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:12:04] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:12:04] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 04:12:04] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:04] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:04] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:04] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:04] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:04] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:04] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:04] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:09] "GET / HTTP/1.1" 200 3767
+[18/Sep/2016 04:12:09] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:12:09] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:12:09] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:12:09] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 04:12:09] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 04:12:10] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 04:12:10] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 04:12:10] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:12:10] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:12:10] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 04:12:10] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:10] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:10] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:10] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:10] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:10] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:10] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:10] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:17] "GET / HTTP/1.1" 200 3765
+[18/Sep/2016 04:12:17] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:12:17] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:12:17] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:12:17] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 04:12:17] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 04:12:17] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 04:12:17] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 04:12:17] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:12:17] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:12:18] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 04:12:18] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:18] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:18] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:18] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:18] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:18] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:18] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:18] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:55] "GET / HTTP/1.1" 200 3759
+[18/Sep/2016 04:12:55] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:12:55] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:12:56] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:12:56] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 04:12:56] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 04:12:56] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 04:12:56] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 04:12:56] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:12:56] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:12:56] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 04:12:56] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:56] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:56] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:57] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:57] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:57] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:57] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 04:12:57] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[18/Sep/2016 04:13:34] "GET / HTTP/1.1" 200 3757
+[18/Sep/2016 04:13:34] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:13:34] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:13:34] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:13:34] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 04:13:34] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 04:13:34] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 04:13:34] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 04:13:34] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:13:34] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:13:35] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 04:13:35] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:13:35] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:13:35] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 04:13:35] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:13:35] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 04:13:35] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:13:35] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 04:13:35] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[18/Sep/2016 04:15:45] "GET / HTTP/1.1" 200 3968
+[18/Sep/2016 04:15:45] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:15:45] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:15:45] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:15:45] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 04:15:45] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 04:15:45] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 04:15:45] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 04:15:45] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:15:45] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:15:45] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 04:15:45] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:15:45] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:15:45] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 04:15:45] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:15:45] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 04:15:45] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:15:45] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 04:15:45] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[18/Sep/2016 04:17:58] "GET / HTTP/1.1" 200 4045
+[18/Sep/2016 04:18:57] "GET / HTTP/1.1" 200 3757
+[18/Sep/2016 04:19:31] "GET / HTTP/1.1" 200 3743
+[18/Sep/2016 04:19:31] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:19:31] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:19:31] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:19:31] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 04:19:31] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 04:19:31] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 04:19:31] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 04:19:31] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:19:31] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:19:31] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 04:19:31] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:19:31] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:19:31] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 04:19:31] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:19:31] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 04:19:31] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:19:31] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 04:19:31] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[18/Sep/2016 04:19:35] "GET / HTTP/1.1" 200 3743
+[18/Sep/2016 04:19:56] "GET / HTTP/1.1" 200 3726
+[18/Sep/2016 04:19:56] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:19:56] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:19:56] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:19:56] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 04:19:56] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 04:19:56] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 04:19:56] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 04:19:56] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:19:56] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:19:56] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 04:19:56] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:19:56] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:19:56] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 04:19:56] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:19:56] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 04:19:56] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:19:56] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 04:19:56] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[18/Sep/2016 04:20:08] "GET / HTTP/1.1" 200 3726
+[18/Sep/2016 04:21:32] "GET / HTTP/1.1" 200 4028
+Forbidden (CSRF token missing or incorrect.): /
+[18/Sep/2016 04:21:37] "POST / HTTP/1.1" 403 2275
+Forbidden (CSRF token missing or incorrect.): /
+[18/Sep/2016 04:22:49] "POST / HTTP/1.1" 403 2275
+[18/Sep/2016 04:23:40] "GET / HTTP/1.1" 200 4136
+Tentando salvar.. <QueryDict: {u'csrfmiddlewaretoken': [u'ryh9o0CwNzCN432ALl6jdFjIkxInZ3PP'], u'link': [u'123', u'123']}>
+[18/Sep/2016 04:23:51] "POST / HTTP/1.1" 200 4136
+[18/Sep/2016 04:24:48] "GET / HTTP/1.1" 200 4143
+[18/Sep/2016 04:25:15] "GET / HTTP/1.1" 200 4136
+[18/Sep/2016 04:27:12] "GET / HTTP/1.1" 200 4162
+[18/Sep/2016 04:27:12] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:27:12] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:27:12] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:27:12] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 04:27:12] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 04:27:12] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 04:27:12] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 04:27:12] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:27:12] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:27:12] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 04:27:12] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:27:12] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:27:12] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 04:27:12] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:27:12] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 04:27:12] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:27:12] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 04:27:12] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[18/Sep/2016 04:28:00] "GET / HTTP/1.1" 200 4252
+[18/Sep/2016 04:28:50] "GET / HTTP/1.1" 200 4252
+[18/Sep/2016 04:29:27] "GET / HTTP/1.1" 200 4252
+[18/Sep/2016 04:29:37] "GET / HTTP/1.1" 200 4252
+[18/Sep/2016 04:29:40] "GET / HTTP/1.1" 200 4252
+[18/Sep/2016 04:29:40] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:29:40] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:29:40] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:29:40] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 04:29:40] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 04:29:40] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 04:29:40] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:29:40] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:29:41] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 200 5057
+[18/Sep/2016 04:29:42] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 04:29:42] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:29:42] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:29:42] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 04:29:42] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:29:42] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 04:29:42] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:29:42] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 04:29:42] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[18/Sep/2016 04:30:06] "GET / HTTP/1.1" 200 4252
+[18/Sep/2016 04:30:06] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 04:30:08] "GET / HTTP/1.1" 200 4252
+[18/Sep/2016 04:30:09] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:30:09] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:30:09] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:30:09] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 04:30:09] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 04:30:09] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 04:30:09] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 04:30:09] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:30:09] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:30:09] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:30:09] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:30:09] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 04:30:09] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:30:09] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 04:30:09] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 04:30:09] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:30:09] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 04:30:09] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[18/Sep/2016 04:30:36] "GET / HTTP/1.1" 200 4246
+[18/Sep/2016 04:30:36] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+Tentando salvar.. <QueryDict: {u'csrfmiddlewaretoken': [u'ryh9o0CwNzCN432ALl6jdFjIkxInZ3PP'], u'link': [u'diego', u'123']}>
+[18/Sep/2016 04:31:05] "POST / HTTP/1.1" 200 4246
+[18/Sep/2016 04:31:05] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 04:32:29
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Tentando salvar.. <QueryDict: {u'csrfmiddlewaretoken': [u'ryh9o0CwNzCN432ALl6jdFjIkxInZ3PP'], u'link': [u'diego', u'123']}>
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\diego\OneDrive\Projetos\devstar\nucleo\views.py", line 15, in login
+    dados = request.POST[link]
+NameError: global name 'link' is not defined
+[18/Sep/2016 04:32:35] "POST / HTTP/1.1" 500 62813
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 04:32:56
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Tentando salvar.. <QueryDict: {u'csrfmiddlewaretoken': [u'ryh9o0CwNzCN432ALl6jdFjIkxInZ3PP'], u'link': [u'diego', u'123']}>
+123
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\diego\OneDrive\Projetos\devstar\nucleo\views.py", line 24, in login
+    return render_to_response("usuario/login.html", {'formulario':formulario},context_instance=RequestContext(request))
+UnboundLocalError: local variable 'formulario' referenced before assignment
+[18/Sep/2016 04:33:00] "POST / HTTP/1.1" 500 62360
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 04:33:13
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Tentando salvar.. <QueryDict: {u'csrfmiddlewaretoken': [u'ryh9o0CwNzCN432ALl6jdFjIkxInZ3PP'], u'link': [u'diego', u'123']}>
+123
+C:\Python27\lib\site-packages\django\shortcuts.py:45: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  using=using)
+
+[18/Sep/2016 04:33:13] "POST / HTTP/1.1" 200 4246
+[18/Sep/2016 04:33:13] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:33:13] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:33:13] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 04:33:13] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:33:14] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 04:33:14] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 04:33:14] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 04:33:14] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:33:14] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:33:14] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 04:33:14] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:33:14] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:33:15] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 04:33:15] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:33:15] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 04:33:15] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:33:15] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 04:33:15] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 04:33:57
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Tentando salvar.. <QueryDict: {u'csrfmiddlewaretoken': [u'ryh9o0CwNzCN432ALl6jdFjIkxInZ3PP'], u'link': [u'diego', u'123']}>
+C:\Python27\lib\site-packages\django\shortcuts.py:45: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+1 - 2
+  using=using)
+
+[18/Sep/2016 04:33:57] "POST / HTTP/1.1" 200 4246
+[18/Sep/2016 04:33:58] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:33:58] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:33:58] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 04:33:58] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:33:58] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 04:33:58] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 04:33:58] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 04:33:58] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:33:58] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:33:58] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 04:33:58] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:33:58] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 04:33:58] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:33:58] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:33:58] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 04:33:58] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:33:58] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 04:33:58] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 04:34:28
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Tentando salvar.. <QueryDict: {u'csrfmiddlewaretoken': [u'ryh9o0CwNzCN432ALl6jdFjIkxInZ3PP'], u'link': [u'diego', u'123']}>
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\diego\OneDrive\Projetos\devstar\nucleo\views.py", line 15, in login
+    dados = request.POST[1]
+  File "C:\Python27\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: '1'
+[18/Sep/2016 04:34:30] "POST / HTTP/1.1" 500 66359
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 04:34:58
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Tentando salvar.. <QueryDict: {u'csrfmiddlewaretoken': [u'ryh9o0CwNzCN432ALl6jdFjIkxInZ3PP'], u'link': [u'diego', u'123']}>
+C:\Python27\lib\site-packages\django\shortcuts.py:45: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+[u'csrfmiddlewaretoken', u'link']
+  using=using)
+
+[18/Sep/2016 04:35:00] "POST / HTTP/1.1" 200 4246
+[18/Sep/2016 04:35:00] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:35:00] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:35:00] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:35:00] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 04:35:00] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 04:35:00] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 04:35:00] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 04:35:00] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:35:01] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:35:01] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 04:35:01] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:35:01] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:35:01] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 04:35:01] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:35:01] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 04:35:01] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:35:01] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 04:35:01] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 04:35:16
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Tentando salvar.. <QueryDict: {u'csrfmiddlewaretoken': [u'ryh9o0CwNzCN432ALl6jdFjIkxInZ3PP'], u'link': [u'diego', u'123']}>
+link
+C:\Python27\lib\site-packages\django\shortcuts.py:45: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  using=using)
+
+[18/Sep/2016 04:35:16] "POST / HTTP/1.1" 200 4246
+[18/Sep/2016 04:35:16] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:35:16] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:35:16] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 04:35:16] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:35:16] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 04:35:16] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 04:35:16] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 04:35:16] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:35:16] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:35:17] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 04:35:17] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:35:17] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 04:35:17] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:35:17] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:35:17] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 04:35:17] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:35:17] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 04:35:17] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 04:35:32
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+C:\Python27\lib\site-packages\django\shortcuts.py:45: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  using=using)
+
+[18/Sep/2016 04:36:39] "POST / HTTP/1.1" 200 4246
+[18/Sep/2016 04:36:39] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:36:39] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:36:39] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:36:39] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 04:36:39] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 04:36:39] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 04:36:39] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+Tentando salvar.. <QueryDict: {u'csrfmiddlewaretoken': [u'ryh9o0CwNzCN432ALl6jdFjIkxInZ3PP'], u'link': [u'diego', u'123']}>
+None
+[18/Sep/2016 04:36:40] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:36:40] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:36:40] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 04:36:40] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:36:40] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:36:40] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 04:36:40] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:36:40] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 04:36:40] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:36:40] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 04:36:40] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 04:36:58
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Tentando salvar.. <QueryDict: {u'csrfmiddlewaretoken': [u'ryh9o0CwNzCN432ALl6jdFjIkxInZ3PP'], u'link': [u'diego', u'123']}>
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\diego\OneDrive\Projetos\devstar\nucleo\views.py", line 15, in login
+    dados = request.POST[1]
+  File "C:\Python27\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: '1'
+[18/Sep/2016 04:36:59] "POST / HTTP/1.1" 500 66359
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 04:37:06
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Tentando salvar.. <QueryDict: {u'csrfmiddlewaretoken': [u'ryh9o0CwNzCN432ALl6jdFjIkxInZ3PP'], u'link': [u'diego', u'123']}>
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\diego\OneDrive\Projetos\devstar\nucleo\views.py", line 15, in login
+    dados = request.POST[0]
+  File "C:\Python27\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: '0'
+[18/Sep/2016 04:37:08] "POST / HTTP/1.1" 500 66359
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 04:37:14
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+C:\Python27\lib\site-packages\django\shortcuts.py:45: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  using=using)
+
+[18/Sep/2016 04:37:23] "GET / HTTP/1.1" 200 4246
+[18/Sep/2016 04:37:23] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 04:37:30] "GET / HTTP/1.1" 200 4246
+[18/Sep/2016 04:37:30] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:37:30] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:37:30] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 04:37:30] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:37:30] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 04:37:30] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 04:37:30] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 04:37:30] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:37:30] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:37:30] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 04:37:30] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:37:30] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 04:37:31] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:37:31] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:37:31] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 04:37:31] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:37:31] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 04:37:31] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[18/Sep/2016 04:37:36] "POST / HTTP/1.1" 200 4246
+Tentando salvar.. <QueryDict: {u'csrfmiddlewaretoken': [u'ryh9o0CwNzCN432ALl6jdFjIkxInZ3PP'], u'link': [u'123', u'123']}>
+<WSGIRequest: POST '/'>
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 04:37:55
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Tentando salvar.. <QueryDict: {u'csrfmiddlewaretoken': [u'ryh9o0CwNzCN432ALl6jdFjIkxInZ3PP'], u'link': [u'123', u'123']}>
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\diego\OneDrive\Projetos\devstar\nucleo\views.py", line 15, in login
+    dados = request['link']
+TypeError: 'WSGIRequest' object has no attribute '__getitem__'
+[18/Sep/2016 04:37:57] "POST / HTTP/1.1" 500 62953
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 04:38:13
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Tentando salvar.. <QueryDict: {u'csrfmiddlewaretoken': [u'ryh9o0CwNzCN432ALl6jdFjIkxInZ3PP'], u'link': [u'123', u'123']}>
+123
+C:\Python27\lib\site-packages\django\shortcuts.py:45: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  using=using)
+
+[18/Sep/2016 04:38:13] "POST / HTTP/1.1" 200 4246
+[18/Sep/2016 04:38:13] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:38:13] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:38:13] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:38:13] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 04:38:13] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 04:38:13] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 04:38:13] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 04:38:13] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:38:14] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:38:14] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 04:38:14] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:38:14] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:38:14] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 04:38:14] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:38:14] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 04:38:14] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:38:14] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 04:38:14] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 04:39:20
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Tentando salvar.. <QueryDict: {u'csrfmiddlewaretoken': [u'ryh9o0CwNzCN432ALl6jdFjIkxInZ3PP'], u'link': [u'123', u'123']}>
+123
+C:\Python27\lib\site-packages\django\shortcuts.py:45: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  using=using)
+
+[18/Sep/2016 04:41:13] "POST / HTTP/1.1" 200 4246
+[18/Sep/2016 04:41:14] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:41:14] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:41:14] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 04:41:14] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:41:14] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 04:41:14] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 04:41:14] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 04:41:14] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:41:14] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:41:14] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 04:41:14] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:41:14] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:41:14] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 04:41:14] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:41:14] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 04:41:14] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:41:14] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 04:41:14] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+Tentando salvar.. <QueryDict: {u'csrfmiddlewaretoken': [u'ryh9o0CwNzCN432ALl6jdFjIkxInZ3PP'], u'link': [u'123', u'123']}>
+123
+[18/Sep/2016 04:41:32] "POST / HTTP/1.1" 200 4271
+[18/Sep/2016 04:41:32] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:41:32] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:41:32] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:41:32] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 04:41:32] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 04:41:32] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 04:41:32] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 04:41:32] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:41:32] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:41:33] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 04:41:33] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:41:33] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:41:33] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 04:41:33] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:41:33] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 04:41:33] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:41:33] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 04:41:33] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 04:42:53
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+C:\Python27\lib\site-packages\django\shortcuts.py:45: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  using=using)
+
+[18/Sep/2016 04:43:34] "GET / HTTP/1.1" 200 4367
+[18/Sep/2016 04:43:34] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 04:43:49
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+C:\Python27\lib\site-packages\django\shortcuts.py:45: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  using=using)
+
+[18/Sep/2016 04:43:50] "GET / HTTP/1.1" 200 4365
+[18/Sep/2016 04:44:52] "GET / HTTP/1.1" 200 4405
+[18/Sep/2016 04:45:29] "GET / HTTP/1.1" 200 4440
+[18/Sep/2016 04:45:29] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:45:29] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:45:29] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:45:29] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 04:45:29] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 04:45:29] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 04:45:29] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 04:45:29] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:45:29] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:45:30] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 04:45:30] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:45:30] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:45:30] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 04:45:30] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:45:30] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 04:45:30] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:45:30] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 04:45:30] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[18/Sep/2016 04:45:35] "GET / HTTP/1.1" 200 4440
+[18/Sep/2016 04:46:23] "GET / HTTP/1.1" 200 4440
+[18/Sep/2016 04:46:39] "GET / HTTP/1.1" 200 4442
+[18/Sep/2016 04:46:39] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:46:39] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:46:39] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:46:39] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 04:46:39] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 04:46:39] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 04:46:40] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 04:46:40] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:46:40] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:46:40] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 04:46:40] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:46:40] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 04:46:40] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:46:40] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:46:40] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 04:46:40] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:46:40] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 04:46:40] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[18/Sep/2016 04:46:45] "GET / HTTP/1.1" 200 4442
+[18/Sep/2016 04:49:16] "GET / HTTP/1.1" 200 4522
+[18/Sep/2016 04:49:16] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 04:49:51] "GET / HTTP/1.1" 200 4516
+[18/Sep/2016 04:50:02] "GET / HTTP/1.1" 200 4512
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 55975)
+----------------------------------------
+[18/Sep/2016 04:50:02] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+Traceback (most recent call last):
+  File "C:\Python27\lib\wsgiref\handlers.py", line 86, in run
+    self.finish_response()
+  File "C:\Python27\lib\wsgiref\handlers.py", line 129, in finish_response
+    self.finish_content()
+  File "C:\Python27\lib\wsgiref\handlers.py", line 248, in finish_content
+    self.send_headers()
+  File "C:\Python27\lib\wsgiref\handlers.py", line 270, in send_headers
+    self.send_preamble()
+  File "C:\Python27\lib\wsgiref\handlers.py", line 194, in send_preamble
+    'Date: %s\r\n' % format_date_time(time.time())
+  File "C:\Python27\lib\socket.py", line 328, in write
+    self.flush()
+  File "C:\Python27\lib\socket.py", line 307, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 10053] Uma conex�o estabelecida foi anulada pelo software no computador host
+[18/Sep/2016 04:50:02] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "C:\Python27\lib\SocketServer.py", line 596, in process_request_thread
+    self.finish_request(request, client_address)
+  File "C:\Python27\lib\SocketServer.py", line 331, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "C:\Python27\lib\site-packages\django\core\servers\basehttp.py", line 99, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "C:\Python27\lib\SocketServer.py", line 654, in __init__
+    self.finish()
+  File "C:\Python27\lib\SocketServer.py", line 713, in finish
+    self.wfile.close()
+  File "C:\Python27\lib\socket.py", line 283, in close
+    self.flush()
+  File "C:\Python27\lib\socket.py", line 307, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 10053] Uma conex�o estabelecida foi anulada pelo software no computador host
+[18/Sep/2016 04:50:02] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+Traceback (most recent call last):
+  File "C:\Python27\lib\wsgiref\handlers.py", line 86, in run
+    self.finish_response()
+  File "C:\Python27\lib\wsgiref\handlers.py", line 129, in finish_response
+    self.finish_content()
+  File "C:\Python27\lib\wsgiref\handlers.py", line 248, in finish_content
+    self.send_headers()
+  File "C:\Python27\lib\wsgiref\handlers.py", line 270, in send_headers
+    self.send_preamble()
+  File "C:\Python27\lib\wsgiref\handlers.py", line 194, in send_preamble
+    'Date: %s\r\n' % format_date_time(time.time())
+  File "C:\Python27\lib\socket.py", line 328, in write
+    self.flush()
+[18/Sep/2016 04:50:02] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+  File "C:\Python27\lib\socket.py", line 307, in flush
+Traceback (most recent call last):
+  File "C:\Python27\lib\wsgiref\handlers.py", line 86, in run
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 10053] Uma conex�o estabelecida foi anulada pelo software no computador host
+    self.finish_response()
+[18/Sep/2016 04:50:02] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 500 59
+  File "C:\Python27\lib\wsgiref\handlers.py", line 129, in finish_response
+    self.finish_content()
+  File "C:\Python27\lib\wsgiref\handlers.py", line 248, in finish_content
+    self.send_headers()
+Traceback (most recent call last):
+  File "C:\Python27\lib\wsgiref\handlers.py", line 270, in send_headers
+  File "C:\Python27\lib\SocketServer.py", line 596, in process_request_thread
+    self.send_preamble()
+  File "C:\Python27\lib\wsgiref\handlers.py", line 194, in send_preamble
+    self.finish_request(request, client_address)
+  File "C:\Python27\lib\SocketServer.py", line 331, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    'Date: %s\r\n' % format_date_time(time.time())
+  File "C:\Python27\lib\site-packages\django\core\servers\basehttp.py", line 99, in __init__
+  File "C:\Python27\lib\socket.py", line 328, in write
+    self.flush()
+  File "C:\Python27\lib\socket.py", line 307, in flush
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "C:\Python27\lib\SocketServer.py", line 654, in __init__
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 10053] Uma conex�o estabelecida foi anulada pelo software no computador host
+    self.finish()
+  File "C:\Python27\lib\SocketServer.py", line 713, in finish
+[18/Sep/2016 04:50:02] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 500 59
+    self.wfile.close()
+  File "C:\Python27\lib\socket.py", line 283, in close
+    self.flush()
+  File "C:\Python27\lib\socket.py", line 307, in flush
+Traceback (most recent call last):
+  File "C:\Python27\lib\SocketServer.py", line 596, in process_request_thread
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 10053] Uma conex�o estabelecida foi anulada pelo software no computador host
+    self.finish_request(request, client_address)
+  File "C:\Python27\lib\SocketServer.py", line 331, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "C:\Python27\lib\site-packages\django\core\servers\basehttp.py", line 99, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "C:\Python27\lib\SocketServer.py", line 654, in __init__
+    self.finish()
+  File "C:\Python27\lib\SocketServer.py", line 713, in finish
+    self.wfile.close()
+  File "C:\Python27\lib\socket.py", line 283, in close
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 55976)
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 55977)
+----------------------------------------
+    self.flush()
+  File "C:\Python27\lib\socket.py", line 307, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 10053] Uma conex�o estabelecida foi anulada pelo software no computador host
+----------------------------------------
+[18/Sep/2016 04:50:02] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+Traceback (most recent call last):
+  File "C:\Python27\lib\wsgiref\handlers.py", line 86, in run
+    self.finish_response()
+  File "C:\Python27\lib\wsgiref\handlers.py", line 129, in finish_response
+    self.finish_content()
+  File "C:\Python27\lib\wsgiref\handlers.py", line 248, in finish_content
+    self.send_headers()
+  File "C:\Python27\lib\wsgiref\handlers.py", line 270, in send_headers
+    self.send_preamble()
+  File "C:\Python27\lib\wsgiref\handlers.py", line 194, in send_preamble
+    'Date: %s\r\n' % format_date_time(time.time())
+  File "C:\Python27\lib\socket.py", line 328, in write
+    self.flush()
+  File "C:\Python27\lib\socket.py", line 307, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 10053] Uma conex�o estabelecida foi anulada pelo software no computador host
+[18/Sep/2016 04:50:02] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "C:\Python27\lib\SocketServer.py", line 596, in process_request_thread
+    self.finish_request(request, client_address)
+  File "C:\Python27\lib\SocketServer.py", line 331, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "C:\Python27\lib\site-packages\django\core\servers\basehttp.py", line 99, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "C:\Python27\lib\SocketServer.py", line 654, in __init__
+    self.finish()
+  File "C:\Python27\lib\SocketServer.py", line 713, in finish
+    self.wfile.close()
+  File "C:\Python27\lib\socket.py", line 283, in close
+    self.flush()
+  File "C:\Python27\lib\socket.py", line 307, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 10053] Uma conex�o estabelecida foi anulada pelo software no computador host
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 55978)
+----------------------------------------
+[18/Sep/2016 04:50:02] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+Traceback (most recent call last):
+  File "C:\Python27\lib\wsgiref\handlers.py", line 86, in run
+    self.finish_response()
+  File "C:\Python27\lib\wsgiref\handlers.py", line 129, in finish_response
+    self.finish_content()
+  File "C:\Python27\lib\wsgiref\handlers.py", line 248, in finish_content
+    self.send_headers()
+  File "C:\Python27\lib\wsgiref\handlers.py", line 270, in send_headers
+    self.send_preamble()
+  File "C:\Python27\lib\wsgiref\handlers.py", line 194, in send_preamble
+    'Date: %s\r\n' % format_date_time(time.time())
+  File "C:\Python27\lib\socket.py", line 328, in write
+    self.flush()
+  File "C:\Python27\lib\socket.py", line 307, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 10053] Uma conex�o estabelecida foi anulada pelo software no computador host
+[18/Sep/2016 04:50:02] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "C:\Python27\lib\SocketServer.py", line 596, in process_request_thread
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 55979)
+    self.finish_request(request, client_address)
+  File "C:\Python27\lib\SocketServer.py", line 331, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "C:\Python27\lib\site-packages\django\core\servers\basehttp.py", line 99, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "C:\Python27\lib\SocketServer.py", line 654, in __init__
+    self.finish()
+  File "C:\Python27\lib\SocketServer.py", line 713, in finish
+    self.wfile.close()
+  File "C:\Python27\lib\socket.py", line 283, in close
+    self.flush()
+  File "C:\Python27\lib\socket.py", line 307, in flush
+[18/Sep/2016 04:50:02] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 10053] Uma conex�o estabelecida foi anulada pelo software no computador host
+Traceback (most recent call last):
+  File "C:\Python27\lib\wsgiref\handlers.py", line 86, in run
+    self.finish_response()
+  File "C:\Python27\lib\wsgiref\handlers.py", line 129, in finish_response
+    self.finish_content()
+  File "C:\Python27\lib\wsgiref\handlers.py", line 248, in finish_content
+    self.send_headers()
+  File "C:\Python27\lib\wsgiref\handlers.py", line 270, in send_headers
+----------------------------------------
+    self.send_preamble()
+  File "C:\Python27\lib\wsgiref\handlers.py", line 194, in send_preamble
+    'Date: %s\r\n' % format_date_time(time.time())
+  File "C:\Python27\lib\socket.py", line 328, in write
+    self.flush()
+  File "C:\Python27\lib\socket.py", line 307, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 10053] Uma conex�o estabelecida foi anulada pelo software no computador host
+[18/Sep/2016 04:50:02] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "C:\Python27\lib\SocketServer.py", line 596, in process_request_thread
+    self.finish_request(request, client_address)
+  File "C:\Python27\lib\SocketServer.py", line 331, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "C:\Python27\lib\site-packages\django\core\servers\basehttp.py", line 99, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "C:\Python27\lib\SocketServer.py", line 654, in __init__
+    self.finish()
+  File "C:\Python27\lib\SocketServer.py", line 713, in finish
+    self.wfile.close()
+  File "C:\Python27\lib\socket.py", line 283, in close
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 55980)
+    self.flush()
+----------------------------------------
+  File "C:\Python27\lib\socket.py", line 307, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 10053] Uma conex�o estabelecida foi anulada pelo software no computador host
+[18/Sep/2016 04:50:02] "GET / HTTP/1.1" 200 4512
+[18/Sep/2016 04:50:02] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:50:02] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:50:02] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:50:02] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 04:50:02] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 04:50:02] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 04:50:02] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 04:50:02] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:50:02] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:50:03] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 04:50:03] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:50:03] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:50:03] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 04:50:03] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:50:03] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 04:50:03] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:50:03] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 04:50:03] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[18/Sep/2016 04:50:09] "GET / HTTP/1.1" 200 4512
+[18/Sep/2016 04:50:28] "GET / HTTP/1.1" 200 4495
+[18/Sep/2016 04:50:42] "GET / HTTP/1.1" 200 4497
+[18/Sep/2016 04:50:53] "GET / HTTP/1.1" 200 4501
+[18/Sep/2016 04:51:10] "GET / HTTP/1.1" 200 4512
+[18/Sep/2016 04:51:34] "GET / HTTP/1.1" 200 4518
+[18/Sep/2016 04:51:53] "GET / HTTP/1.1" 200 4518
+[18/Sep/2016 04:52:56] "GET / HTTP/1.1" 200 4520
+[18/Sep/2016 04:52:56] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:52:56] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:52:56] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:52:56] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 04:52:56] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 04:52:56] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 04:52:56] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 04:52:56] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 04:52:56] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 04:52:56] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 04:52:56] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:52:56] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 04:52:56] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 04:52:56] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:52:56] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 04:52:56] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 04:52:56] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 04:52:56] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+[18/Sep/2016 04:53:01] "GET / HTTP/1.1" 200 4520
+[18/Sep/2016 04:53:17] "GET / HTTP/1.1" 200 4512
+[18/Sep/2016 04:53:30] "GET / HTTP/1.1" 200 4518
+[18/Sep/2016 04:53:41] "GET / HTTP/1.1" 200 4518
+[18/Sep/2016 04:54:11] "GET / HTTP/1.1" 200 4501
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 04:54:31
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+C:\Python27\lib\site-packages\django\shortcuts.py:45: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  using=using)
+
+[18/Sep/2016 04:55:47] "GET / HTTP/1.1" 200 4731
+[18/Sep/2016 04:55:47] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 04:56:54] "GET / HTTP/1.1" 200 4727
+[18/Sep/2016 04:58:04] "GET / HTTP/1.1" 200 4723
+[18/Sep/2016 04:58:19] "GET / HTTP/1.1" 200 4727
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 04:58:52
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+C:\Python27\lib\site-packages\django\shortcuts.py:45: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  using=using)
+
+[18/Sep/2016 04:58:53] "GET / HTTP/1.1" 200 4731
+[18/Sep/2016 04:58:53] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 04:59:21] "POST / HTTP/1.1" 200 4779
+Tentando salvar.. <QueryDict: {u'csrfmiddlewaretoken': [u'ryh9o0CwNzCN432ALl6jdFjIkxInZ3PP'], u'link': [u'diegopasti@gmail.com', u'superadmin'], u'senha': [u'superadmin'], u'usuario': [u'diegopasti@gmail.com']}>
+superadmin
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 05:00:19
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+diegopasti@gmail.com superadmin
+C:\Python27\lib\site-packages\django\shortcuts.py:45: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  using=using)
+
+[18/Sep/2016 05:00:35] "POST / HTTP/1.1" 200 4779
+[18/Sep/2016 05:00:35] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 05:00:35] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 05:00:35] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 05:00:35] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 05:00:35] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 05:00:35] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 05:00:35] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 05:00:35] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 05:00:35] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 05:00:35] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 05:00:35] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 05:00:35] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 05:00:35] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 05:00:35] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 05:00:35] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 05:00:35] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 05:00:35] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 05:00:35] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+diegopasti@gmail.com superadmin
+[18/Sep/2016 05:00:47] "POST / HTTP/1.1" 200 4779
+[18/Sep/2016 05:00:47] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 05:00:47] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 05:00:47] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 05:00:47] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 05:00:47] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 05:00:47] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 05:00:47] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 05:00:47] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 05:00:47] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 05:00:47] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 05:00:47] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 05:00:47] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 05:00:47] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 05:00:47] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 05:00:47] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 05:00:47] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 05:00:47] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 05:00:47] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 05:01:03
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 376, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 248, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 255, in callback
+    self._callback = get_callable(self._callback_str)
+  File "C:\Python27\lib\site-packages\django\utils\lru_cache.py", line 100, in wrapper
+    result = user_function(*args, **kwds)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 115, in get_callable
+    mod = import_module(mod_name)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\Users\diego\OneDrive\Projetos\devstar\nucleo\views.py", line 26
+SyntaxError: Non-ASCII character '\xc3' in file C:\Users\diego\OneDrive\Projetos\devstar\nucleo\views.py on line 26, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+[18/Sep/2016 05:04:14] "GET / HTTP/1.1" 500 76700
+C:\Python27\lib\site-packages\django\shortcuts.py:45: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  using=using)
+
+[18/Sep/2016 05:04:35] "GET / HTTP/1.1" 200 4731
+[18/Sep/2016 05:04:35] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+Seu username e senha estavam incorretos.
+[18/Sep/2016 05:04:43] "POST / HTTP/1.1" 200 4779
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 05:05:12
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+C:\Python27\lib\site-packages\django\shortcuts.py:45: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  using=using)
+
+Seu username e senha estavam incorretos.
+[18/Sep/2016 05:05:14] "POST / HTTP/1.1" 200 4779
+[18/Sep/2016 05:05:14] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 05:05:14] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 05:05:14] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 05:05:14] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 05:05:14] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 05:05:14] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 05:05:14] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 05:05:14] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 05:05:14] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 05:05:15] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 05:05:15] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 05:05:15] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 05:05:15] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 05:05:15] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 05:05:15] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 05:05:15] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 05:05:15] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 05:05:15] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 05:06:02
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Olha a senha:  superadmin  -  diegopasti@gmail.com
+C:\Python27\lib\site-packages\django\shortcuts.py:45: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  using=using)
+
+Seu username e senha estavam incorretos.
+[18/Sep/2016 05:06:03] "POST / HTTP/1.1" 200 4779
+[18/Sep/2016 05:06:03] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 05:06:03] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 05:06:03] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 05:06:03] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 05:06:03] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 05:06:03] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 05:06:03] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 05:06:03] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 05:06:03] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 05:06:03] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 05:06:03] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 05:06:03] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 05:06:03] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 05:06:03] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 05:06:03] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 05:06:03] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 05:06:03] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 05:06:03] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 05:06:33
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Olha a senha:  superadmin  -  diegopasti@gmail.com
+Seu username e senha estavam incorretos.
+C:\Python27\lib\site-packages\django\shortcuts.py:45: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  using=using)
+
+[18/Sep/2016 05:06:36] "POST / HTTP/1.1" 200 4779
+[18/Sep/2016 05:06:36] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 05:06:36] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 05:06:36] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 05:06:36] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 05:06:36] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 05:06:36] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 05:06:36] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 05:06:36] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 05:06:37] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 05:06:37] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 05:06:37] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 05:06:37] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 05:06:37] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 05:06:37] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 05:06:37] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 05:06:37] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 05:06:37] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 05:06:37] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+Olha a senha:  superadmin  -  diegopasti
+Seu username e senha estavam incorretos.
+[18/Sep/2016 05:09:12] "POST / HTTP/1.1" 200 4769
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 05:09:38
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Olha a senha:  superadmin  -  diegopasti
+Você forneceu um username e senha corretos!
+C:\Python27\lib\site-packages\django\shortcuts.py:45: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  using=using)
+
+[18/Sep/2016 05:09:41] "POST / HTTP/1.1" 200 4769
+[18/Sep/2016 05:09:41] "GET /arquivos_estaticos/jquery/jquery-2.2.0.min.js HTTP/1.1" 304 0
+[18/Sep/2016 05:09:41] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 05:09:41] "GET /arquivos_estaticos/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[18/Sep/2016 05:09:41] "GET /arquivos_estaticos/loginform/js/jquery.js HTTP/1.1" 304 0
+[18/Sep/2016 05:09:41] "GET /arquivos_estaticos/loginform/js/jquery.query-2.1.7.js HTTP/1.1" 304 0
+[18/Sep/2016 05:09:41] "GET /arquivos_estaticos/loginform/js/rainbows.js HTTP/1.1" 304 0
+[18/Sep/2016 05:09:41] "GET /arquivos_estaticos/loginform/css/style.css HTTP/1.1" 304 0
+[18/Sep/2016 05:09:41] "GET /arquivos_estaticos/icones/css/font-awesome.min.css HTTP/1.1" 304 0
+[18/Sep/2016 05:09:41] "GET /arquivos_estaticos/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[18/Sep/2016 05:09:41] "GET /arquivos_estaticos/loginform/images/BG.jpg HTTP/1.1" 304 0
+[18/Sep/2016 05:09:41] "GET /arquivos_estaticos/loginform/images/mailicon.png HTTP/1.1" 304 0
+[18/Sep/2016 05:09:41] "GET /arquivos_estaticos/loginform/images/passicon.png HTTP/1.1" 304 0
+[18/Sep/2016 05:09:41] "GET /arquivos_estaticos/loginform/images/wrapper_top.png HTTP/1.1" 304 0
+[18/Sep/2016 05:09:42] "GET /arquivos_estaticos/loginform/images/wrapper_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 05:09:42] "GET /arquivos_estaticos/loginform/images/input_left.png HTTP/1.1" 304 0
+[18/Sep/2016 05:09:42] "GET /arquivos_estaticos/loginform/images/input_middle.png HTTP/1.1" 304 0
+[18/Sep/2016 05:09:42] "GET /arquivos_estaticos/loginform/images/input_right.png HTTP/1.1" 304 0
+[18/Sep/2016 05:09:42] "GET /arquivos_estaticos/loginform/images/wrapper_bottom.png HTTP/1.1" 304 0
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 05:10:11
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got django.contrib.auth.views.login). Pass the callable instead.
+  url(r'^accounts/login/$', 'django.contrib.auth.views.login'),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:23: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:27: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 05:13:20
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got django.contrib.auth.views.login). Pass the callable instead.
+  url(r'^login/$', 'django.contrib.auth.views.login'),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:23: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:27: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 05:13:25
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^login/$', 'nucleo.views.login'),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:27: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 05:13:46
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^login/$', 'nucleo.views.login'),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:23: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^$', "nucleo.views.login"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:27: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 05:13:53
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^login/$', 'nucleo.views.login'),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:27: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 05:14:10
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\diego\OneDrive\Projetos\devstar\referencia\views.py", line 31, in cadastro_referencias
+    numero_linguagens = len(Referencia.objects.values('linguagem').distinct())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 240, in __len__
+    self._fetch_all()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 112, in __iter__
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 802, in results_iter
+    results = self.execute_sql(MULTI)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "C:\Python27\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\sqlite3\base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+OperationalError: no such table: referencia_referencia
+[18/Sep/2016 05:15:08] "POST / HTTP/1.1" 500 104103
+Veja quantas referencias temos: C:\Python27\lib\site-packages\django\shortcuts.py:45: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  using=using)
+
+[]
+[18/Sep/2016 05:16:06] "GET / HTTP/1.1" 200 38883
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^login/$', 'nucleo.views.login'),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:24: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:27: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 05:16:44
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 134, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 376, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 248, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 255, in callback
+    self._callback = get_callable(self._callback_str)
+  File "C:\Python27\lib\site-packages\django\utils\lru_cache.py", line 100, in wrapper
+    result = user_function(*args, **kwds)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 115, in get_callable
+    mod = import_module(mod_name)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\Users\diego\OneDrive\Projetos\devstar\referencia\views.py", line 18, in <module>
+    @login_required
+NameError: name 'login_required' is not defined
+[18/Sep/2016 05:16:46] "GET / HTTP/1.1" 500 87764
+Veja quantas referencias temos: C:\Python27\lib\site-packages\django\shortcuts.py:45: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  using=using)
+
+[]
+[18/Sep/2016 05:18:33] "GET / HTTP/1.1" 200 38883
+Veja quantas referencias temos: []
+[18/Sep/2016 05:20:23] "GET / HTTP/1.1" 200 38880
+Veja quantas referencias temos: []
+[18/Sep/2016 05:21:26] "GET / HTTP/1.1" 200 38915
+Veja quantas referencias temos: []
+[18/Sep/2016 05:24:18] "GET / HTTP/1.1" 200 38907
+Veja quantas referencias temos: []
+[18/Sep/2016 05:25:05] "GET / HTTP/1.1" 200 38939
+Veja quantas referencias temos: []
+[18/Sep/2016 05:25:53] "GET / HTTP/1.1" 200 38939
+Veja quantas referencias temos: []
+[18/Sep/2016 05:26:22] "GET / HTTP/1.1" 200 38944
+Not Found: /logout
+[18/Sep/2016 05:26:27] "GET /logout HTTP/1.1" 404 2626
+Performing system checks...
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:21: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_projetos). Pass the callable instead.
+  url(r'^projeto/$', "referencia.views.cadastro_projetos"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:22: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.login). Pass the callable instead.
+  url(r'^login/$', 'nucleo.views.login'),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:23: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got nucleo.views.logout). Pass the callable instead.
+  url(r'^logout/$', 'nucleo.views.logout'),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:25: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:26: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.cadastro_referencias). Pass the callable instead.
+  url(r'^referencia/$', "referencia.views.cadastro_referencias"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:27: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.referencia_por_linguagem). Pass the callable instead.
+  url(r'^referencia/linguagem/(?P<name>[^/]+)$', "referencia.views.referencia_por_linguagem"),
+
+C:\Users\diego\OneDrive\Projetos\devstar\novo_devstar\urls.py:28: RemovedInDjango110Warning: Support for string view arguments to url() is deprecated and will be removed in Django 1.10 (got referencia.views.atualizar_referencia). Pass the callable instead.
+  url(r'^referencia/atualizar$', "referencia.views.atualizar_referencia"),
+
+System check identified no issues (0 silenced).
+September 18, 2016 - 05:26:50
+Django version 1.9.7, using settings 'novo_devstar.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[18/Sep/2016 05:28:28] "GET /logout HTTP/1.1" 301 0
+Internal Server Error: /logout/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 158, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view django.contrib.auth.logout didn't return an HttpResponse object. It returned None instead.
+[18/Sep/2016 05:28:28] "GET /logout/ HTTP/1.1" 500 53245
+[18/Sep/2016 05:28:40] "GET / HTTP/1.1" 302 0
+Not Found: /accounts/login/
+[18/Sep/2016 05:28:40] "GET /accounts/login/?next=/ HTTP/1.1" 404 2769
+
+Process finished with exit code 0

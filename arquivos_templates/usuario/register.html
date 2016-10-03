@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+	<!-- General meta information -->
+	<title>DevStar - Cadastro de Usuário</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="robots" content="index, follow" />
+	<meta charset="utf-8" />
+	<!-- // General meta information -->
+	
+	
+	<!-- Load Javascript -->
+
+    <!-- JQUERY 2.2.3 -->
+    {% load staticfiles %}
+    <script type="text/javascript" src="{% static 'jquery/jquery-2.2.0.min.js' %}"></script>
+
+    <!-- BOOTSTRAP -->
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"/>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"/>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+	<script type="text/javascript" src="{% static '/arquivos_estaticos/loginform/js/jquery.js' %}"></script>
+	<script type="text/javascript" src="{% static '/arquivos_estaticos/loginform/js/jquery.query-2.1.7.js' %}"></script>
+	<script type="text/javascript" src="{% static '/arquivos_estaticos/loginform/js/rainbows.js' %}"></script>
+	<!-- // Load Javascipt -->
+
+	<!-- Load stylesheets -->
+	<link type="text/css" rel="stylesheet" href="{% static '/arquivos_estaticos/loginform/css/style.css' %}" media="screen" />
+	<!-- // Load stylesheets -->
+
+    <!-- ICONES -->
+    <link href="{% static 'icones/css/font-awesome.min.css' %}" rel="stylesheet"/>
+	
+    <script>
+        $(document).ready(function(){
+
+            $("#submit1").hover(
+                function() {
+                    $(this).animate({"opacity": "0"}, "slow");
+                },
+
+                function() {
+                    $(this).animate({"opacity": "1"}, "slow");
+                }
+            );
+        });
+    </script>
+	
+</head>
+<body style="min-width: 380px;">
+
+	<div id="wrapper" style="margin-top: -50px;">
+
+        <div>
+            <div class="login-logo" style="margin-top: 60px;">
+                <a href="/"><b>DevStar</b></a>
+            </div>
+        </div>
+
+        <div id="wrappertop">
+
+        </div>
+
+		<div id="wrappermiddle" style="height: 300px;">
+
+			<h5 style="text-align: center;">Informe seus dados para se cadastrar <i class="fa fa-lock" aria-hidden="true"></i></h5>
+
+            <form id="form_register" method="POST">
+                {% csrf_token %}
+                <div id="username_input">
+
+                    <div id="username_inputleft" onclick="$('#url').focus()"></div>
+
+                    <div id="username_inputmiddle">
+                        {{ formulario.usuario }}
+                        <input type="text" name="link" id="url" placeholder="Email.." onkeydown="definir_usuario(this)" onblur="definir_usuario(this)" >
+                        <img id="url_user" src="{% static '/arquivos_estaticos/loginform/images/mailicon.png' %}" alt="">
+                    </div>
+
+                    <div id="username_inputright" onclick="$('#url').focus()"></div>
+
+                </div>
+
+                <div id="password_input">
+
+                    <div id="password_inputleft" onclick="$('#url').focus()"></div>
+
+                    <div id="password_inputmiddle">
+                        {{ formulario.senha }}
+                        <input type="password" name="link" id="url" placeholder="Senha.."  onkeydown="definir_senha(this)" onblur="definir_senha(this)" >
+                        <img id="url_password" src="{% static '/arquivos_estaticos/loginform/images/passicon.png' %}" alt="">
+
+                    </div>
+
+                    <div id="password_inputright" onclick="$('#url').focus()"></div>
+
+                </div>
+
+                <div id="repassword_input">
+
+                    <div id="repassword_inputleft" onclick="$('#url').focus()"></div>
+
+                    <div id="repassword_inputmiddle">
+                        {{ formulario.confirme_senha }}
+                        <input type="password" name="link" id="url" placeholder="Confirme a senha.."  onkeydown="definir_confirme_senha(this)" onblur="definir_senha(this)" >
+                        <img id="url_repassword" src="{% static '/arquivos_estaticos/loginform/images/passicon.png' %}" alt="">
+
+                    </div>
+
+                    <div id="repassword_inputright" onclick="$('#url').focus()"></div>
+
+                </div>
+
+                <div id="submit" style="margin-top: 155px;">
+                    <!--<input type="image" src="{% static '/arquivos_estaticos/loginform/images/submit_hover.png' %}" id="submit1" value="Sign In">
+                    <input type="image" src="{% static '/arquivos_estaticos/loginform/images/submit.png' %}" id="submit2" value="Sign In">-->
+                    <input id="submit" type="submit" value="Entrar" class="btn btn-primary pull-right"/>
+
+                </div>
+            </form>
+
+
+			<div id="links_left" style="margin-top: 115px;">
+			    <a href="#">Precisa de ajuda? Clique aqui..</a>
+			</div>
+
+            <!--
+			<div id="links_right">
+                <a href="#">FAQ</a>
+            </div>-->
+
+		</div>
+
+		<div id="wrapperbottom"></div>
+		<!--
+		<div id="powered">
+		<p>Powered by <a href="http://www.premiumfreebies.eu">Premiumfreebies Control Panel</a></p>
+		</div>
+		-->
+	</div>
+
+    {% include "componentes/mensagem.html" with messages=messages %}
+
+</body>
+<script>
+    //alert("ja veio com dados"+$("#usuario").val()+" -->"+$("#senha").val()+" -->"+$("#confirme_senha").val());
+
+    if($("#usuario").val() != ""){
+        document.getElementById("form_register").elements[2].value = $("#usuario").val();
+        //alert("ja veio com dados"+$("#usuario").val());
+    }
+
+    if($("#senha").val() != ""){
+        document.getElementById("form_register").elements[4].value = "";//$("#senha").val();
+
+    }
+
+    if($("#confirme_senha").val() != ""){
+        document.getElementById("form_register").elements[6].value = "";//
+        //document.getElementById("form_register").elements[6].value = $("#confirme_senha").val();
+    }
+</script>
+<script>
+    function definir_usuario(campo) {
+        $('#usuario').val(campo.value);
+    }
+
+    function definir_senha(campo) {
+        $('#senha').val(campo.value);
+    }
+
+    function definir_confirme_senha(campo) {
+        $('#confirme_senha').val(campo.value);
+    }
+
+</script>
+</html>
