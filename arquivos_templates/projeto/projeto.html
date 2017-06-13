@@ -2,16 +2,14 @@
 
 {% block Titulo %}
 	<meta charset="utf-8">
-    <title>Referencias</title>
+    <title>Meus Projetos</title>
 {% endblock %}
 
 {% block recrusos_necessarios %}
 {% load staticfiles %}
-{% load humanize %}
 
 <!-- BOOTSTRAP -->
 <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"/>
-
 
 <!-- DATATABLE -->
 <link rel="stylesheet" type="text/css" href="{% static 'datatable/DataTables-1.10.11/css/dataTables.bootstrap.min.css' %}"/>
@@ -29,10 +27,15 @@
 <link rel="stylesheet" type="text/css" href="{% static 'jquery/jquery-editable-select/jquery.editable-select.min.css' %}" />
 <script src="{% static 'jquery/jquery-editable-select/jquery.editable-select.min.js' %}"></script>
 
+<!-- jvectormap -->
+<link rel="stylesheet" href="{% static 'plugins/jvectormap/jquery-jvectormap-1.2.2.css' %}">
+
 <!-- CUSTOM -->
 <!-- <link href="{% static 'styles/menu_simples_responsivo.css' %}" rel="stylesheet"/> -->
+<link rel="stylesheet" href="{% static 'styles/projeto/projeto.css' %}">
 <script src="{% static 'scripts/padrao/controle_botoes.js' %}"></script>
 <script src="{% static 'scripts/protocolo/protocolo.js' %}"></script>
+
 
 <style type="text/css">
 .uppercase{ 
@@ -80,86 +83,325 @@ label {
     font-weight: normal !important;
 }
 
+.label_metric{
+    font-size: 12px;
+    padding: 0px !important;
+    margin-top: -3px;
+}
+
+
+.compact_row td {
+    padding-bottom: 2px !important;
+    font-size: 11px;
+    margin-bottom: 0px;
+}
+
+.clickable {
+    cursor:pointer;
+}
+
+th.compact {
+    font-size: 11px;
+}
+
 .titulo{
     margin-left: 15px;
     margin-top: -5px;
 }
 
+
+
+
 </style>
 {% endblock %}
 
 {% block breadcrumb_title %}
-{{ linguagem }}
+{{ projeto.nome_projeto|title }}
 {% endblock %}
 
 {% block breadcrumb_block %}
-    <li><a href="/referencia"><i class="fa fa-home"></i> Referências</a></li>
-    <li><a href="/referencia">Linguagem</a></li>
-    <li class="active">{{ linguagem|title }}</li>
+    <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
+    <li><a href="/projeto/{{ repositorio|lower }}">{{ repositorio|title }}</a></li>
+    <li class="active">{{ projeto.nome_projeto|title }}</li>
 {% endblock %}
 
 {% block conteudo %}
+{% load mathfilters %}
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+    <div class="modal-dialog">
+        <!--  style="width: 90%"> -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h3 id="myModalLabel">Novo Documento</h3>
+            </div>
 
-    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
-        <div class="modal-dialog">
-            <!--  style="width: 90%"> -->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                    <h3 id="myModalLabel">Novo Documento</h3>
-                </div>
 
-
-                <div class="modal-body" style="padding: 30px;">
-                    <form action="" method="post">
-                    {% csrf_token %}
-                        <div class="row" style="padding-left: 15px; padding-right: 15px">
-                            <div style='padding-left: 8px'>
-                                <sub>{{ formulario.documento.label }}</sub>
-                            </div>
-                            {{ formulario.documento }}
+            <div class="modal-body" style="padding: 30px;">
+                <form action="" method="post">
+                {% csrf_token %}
+                    <div class="row" style="padding-left: 15px; padding-right: 15px">
+                        <div style='padding-left: 8px'>
+                            <sub>{{ formulario.documento.label }}</sub>
                         </div>
+                        {{ formulario.documento }}
+                    </div>
 
-                        <div class="row" style="padding-left: 15px; padding-right: 15px">
-                            <div style='padding-left: 8px'>
-                                <sub>{{ formulario.descricao.label }}</sub>
-                            </div>
-                            {{ formulario.descricao }}
-
+                    <div class="row" style="padding-left: 15px; padding-right: 15px">
+                        <div style='padding-left: 8px'>
+                            <sub>{{ formulario.descricao.label }}</sub>
                         </div>
+                        {{ formulario.descricao }}
 
-                        <div class="row">
-                            <div class="col-lg-3 col-lg-push-9">
-                                <button type="submit" id="bt_submit_documento" class="btn btn-primary form-control" style="position: relative; margin-top: 20px"></button>
-                                <!-- <a href="#myModal" role="button" class="btn btn-primary form-control" data-toggle="modal" '  > Adicionar</a>  -->
-                            </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-3 col-lg-push-9">
+                            <button type="submit" id="bt_submit_documento" class="btn btn-primary form-control" style="position: relative; margin-top: 20px"></button>
+                            <!-- <a href="#myModal" role="button" class="btn btn-primary form-control" data-toggle="modal" '  > Adicionar</a>  -->
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
 <!--<h4 class="titulo">Projetos pelo Mundo</h4>-->
 
-<div class="row" style='margin-top: -20px;'>
+<div class="row">
+    <div class="col-md-12">
+      <div class="box" style="margin-top: -25px; margin-left: 0px; margin-right: 0px; ">
+        <div class="box-header with-border">
+              <h3 class="box-title">Visão Geral</h3>
+
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+            </button>
+            <div class="btn-group">
+              <button type="button" class="btn btn-box-tool" onclick="atualizar_metricas_projeto();">
+                <i id='atualizar_metricas_icone' class="fa fa-refresh" style="font-size:15px" aria-hidden="true"></i>
+                <!--<i class="fa fa-refresh fa-spin fa-3x fa-1x" ></i>-->
+
+              </button>
+
+            </div>
+            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+          </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <div class="row">
+            <div class="col-md-8">
+              <p class="text-center">
+                <strong>Complexidade</strong>
+              </p>
+
+              <div class="chart">
+                <!-- Sales Chart Canvas -->
+                <canvas id="salesChart" style="background-color: #ccc;height: 180px; width: 703px;" height="180" width="703">
+
+                </canvas>
+              </div>
+              <!-- /.chart-responsive -->
+            </div>
+            <!-- /.col -->
+            <div id="box_project_metrics" class="col-md-4" style='opacity: 0.2;'>
+
+              <div id='box_complexidade' class="box_metric box box-default">
+                <div class="box-body">
+                  <div class="box_metric_hand">
+                    <span><i id='complexidade_icone'></i></span>
+                  </div>
+
+                  <div class="progress_metric" class="progress-group">
+                    <strong class="metric_title">Complexidade</strong>
+
+                    <strong class="pull-right">
+                      <a id='complexidade_projeto' data-toggle="tooltip" data-placement="bottom" title="Complexidade do Projeto"></a> /
+                      <a id='complexidade_global' data-toggle="tooltip" data-placement="bottom" title="Complexidade de Projetos Externos"></a>
+                    </strong>
+
+                    <a data-toggle="tooltip" data-placement="bottom" title="sa à partir de ">
+                      <div class="progress xs" style="margin-top: 10px;">
+                        <div id='progress_complexidade' class="progress-bar progress-bar-striped active"></div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div id='box_duplicacao' class="box_metric box box-default">
+                <div class="box-body">
+                  <div class="box_metric_hand">
+                    <span><i id='duplicacao_icone'></i></span>
+                  </div>
+
+                  <div class="progress_metric" class="progress-group">
+                    <strong class="metric_title">Duplicação</strong>
+
+                    <strong class="pull-right">
+                      <a id='duplicacao_projeto' data-toggle="tooltip" data-placement="bottom" title="Duplicação do Projeto"></a>% /
+                      <a id='duplicacao_global' data-toggle="tooltip" data-placement="bottom" title="Duplicação de Projetos Externos"></a>%
+                    </strong>
+
+                    <a data-toggle="tooltip" data-placement="bottom" title="sa à partir de ">
+                      <div class="progress xs" style="margin-top: 10px;">
+                        <div id='progress_duplicacao' class="progress-bar  progress-bar-striped active"></div>
+                      </div>
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+
+              <div id='box_divida_tecnica' class="box_metric box box-default">
+                <div class="box-body">
+                  <div class="box_metric_hand">
+                    <span><i id="divida_tecnica_icone"></i></span>
+                  </div>
+
+                  <div class="progress_metric" class="progress-group">
+                    <strong class="metric_title">Dívida Técnica</strong>
+
+                    <strong class="pull-right">
+                      <a id='divida_tecnica_projeto' data-toggle="tooltip" data-placement="bottom" title="Dívida Técnica do Projeto"></a>% /
+                      <a id='divida_tecnica_global' data-toggle="tooltip" data-placement="bottom" title="Dívida Técnica de Projetos Externos"></a>%
+                    </strong>
+
+                    <a data-toggle="tooltip" data-placement="bottom" title="sa à partir de ">
+                      <div class="progress xs" style="margin-top: 10px;">
+                        <div id='progress_divida_tecnica' class="progress-bar progress-bar-striped active"></div>
+                      </div>
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+
+              <div id='box_comentarios' class="box_metric box box-primary">
+                <div class="box-body">
+                  <div class="box_metric_hand">
+                    <span><i id="comentarios_icone"></i></span>
+                  </div>
+
+                  <div class="progress_metric" class="progress-group">
+                    <strong class="metric_title">Comentários</strong>
+
+                    <strong class="pull-right">
+                      <a id='comentarios_projeto' data-toggle="tooltip" data-placement="bottom" title="Comentários do Projeto"></a>% /
+                      <a id='comentarios_global' data-toggle="tooltip" data-placement="bottom" title="Comentários de Projetos Externos"></a>%
+                    </strong>
+
+                    <a data-toggle="tooltip" data-placement="bottom" title="sa à partir de ">
+                      <div class="progress xs" style="margin-top: 10px;">
+                        <div id='progress_comentarios' class="progress-bar progress-bar-striped active"></div>
+                      </div>
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+
+              <div id='box_codesmells' class="box_metric box box-primary">
+                <div class="box-body">
+                  <div class="box_metric_hand">
+                    <span><i id="codesmells_icone"></i></span>
+                  </div>
+
+                  <div class="progress_metric" class="progress-group">
+                    <strong class="metric_title">Code Smells</strong>
+
+                    <strong class="pull-right">
+                      <a id='codesmells_projeto' data-toggle="tooltip" data-placement="bottom" title="Codesmells do Projeto"></a>% /
+                      <a id='codesmells_global' data-toggle="tooltip" data-placement="bottom" title="Codesmells de Projetos Externos"></a>%
+                    </strong>
+
+                    <a data-toggle="tooltip" data-placement="bottom" title="sa à partir de ">
+                      <div class="progress xs" style="margin-top: 10px;">
+                        <div id='progress_codesmells' class="progress-bar progress-bar-striped active"></div>
+                      </div>
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+
+
+            </div>
+            <!-- /.col -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- ./box-body -->
+        <div class="box-footer">
+          <div class="row">
+            <div class="col-sm-3 col-xs-6">
+              <div class="description-block border-right">
+                <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 17%</span>
+                <h5 class="description-header">$35,210.43</h5>
+                <span class="description-text">TOTAL REVENUE</span>
+              </div>
+              <!-- /.description-block -->
+            </div>
+            <!-- /.col -->
+            <div class="col-sm-3 col-xs-6">
+              <div class="description-block border-right">
+                <span class="description-percentage text-yellow"><i class="fa fa-caret-left"></i> 0%</span>
+                <h5 class="description-header">$10,390.90</h5>
+                <span class="description-text">TOTAL COST</span>
+              </div>
+              <!-- /.description-block -->
+            </div>
+            <!-- /.col -->
+            <div class="col-sm-3 col-xs-6">
+              <div class="description-block border-right">
+                <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 20%</span>
+                <h5 class="description-header">$24,813.53</h5>
+                <span class="description-text">TOTAL PROFIT</span>
+              </div>
+              <!-- /.description-block -->
+            </div>
+            <!-- /.col -->
+            <div class="col-sm-3 col-xs-6">
+              <div class="description-block">
+                <span class="description-percentage text-red"><i class="fa fa-caret-down"></i> 18%</span>
+                <h5 class="description-header">1200</h5>
+                <span class="description-text">GOAL COMPLETIONS</span>
+              </div>
+              <!-- /.description-block -->
+            </div>
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.box-footer -->
+      </div>
+      <!-- /.box -->
+    </div>
+</div>
+
+<br>
+
+<div class="row">
 	<div class="col-lg-12 col-md-12 col-xs-12">
-		<div class="box box-default" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; ">
+		<div class="box box-default" style="margin-top: -25px; margin-left: 0px; margin-right: 0px; ">
 			<div class="box-heading">
 
                 <div class="box-header with-border">
-                    <h5 class="box-title">Análises</h5>
+                    <h5 class="box-title">Histórico de Análises</h5>
 
                     <div class="btn-group pull-right" role="group" style='margin-top: -2px;' aria-label="...">
 
-					    <a id='bt_adicionar' role="button" class="btn btn-primary">
-                            <i id="atualizando_icone"></i>Atualizar Referências
+					    <a id='bt_adicionar' role="button" class="btn btn-sm btn-primary">
+                            <i id="atualizando_icone"></i>Analisar Projetos
+                        </a>
+
+                        <a id='bt_config' href='/perfil' role="button" class="btn btn-sm btn-default" style="margin-left: 8px;">
+                            Configurações
                         </a>
 
                     </div>
                 </div>
-
-		
 
 			</div>
 			<!-- /.panel-heading -->
@@ -170,74 +412,288 @@ label {
 					<div class='row'>
 						
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<table class="table compact table-bordered table-hover" id="datatable">
+							<table class="table table-bordered table-hover" id="datatable">
+                <!--
+                referencia.linhas_codigo = formatar_inteiro(self.get_metrica(registro, metrica.linhas_codigo))
+                referencia.total_linhas = formatar_inteiro(self.get_metrica(registro, metrica.total_linhas))
+                referencia.arquivos = formatar_inteiro(self.get_metrica(registro, metrica.arquivos))
+                referencia.classes = formatar_inteiro(self.get_metrica(registro, metrica.classes))
+                referencia.metodos = formatar_inteiro(self.get_metrica(registro, metrica.metodos))
 
-<!--
-                                referencia.linhas_codigo = formatar_inteiro(self.get_metrica(registro, metrica.linhas_codigo))
-                                referencia.total_linhas = formatar_inteiro(self.get_metrica(registro, metrica.total_linhas))
-                                referencia.arquivos = formatar_inteiro(self.get_metrica(registro, metrica.arquivos))
-                                referencia.classes = formatar_inteiro(self.get_metrica(registro, metrica.classes))
-                                referencia.metodos = formatar_inteiro(self.get_metrica(registro, metrica.metodos))
+                referencia.complexidade_total = formatar_inteiro(self.get_metrica(registro, metrica.complexidade_total))
+                referencia.complexidade_metodo = self.get_metrica(registro, metrica.complexidade_metodo)
+                referencia.complexidade_classe = self.get_metrica(registro, metrica.complexidade_classe)
+                referencia.complexidade_arquivo = self.get_metrica(registro, metrica.complexidade_arquivo)
 
-                                referencia.complexidade_total = formatar_inteiro(self.get_metrica(registro, metrica.complexidade_total))
-                                referencia.complexidade_metodo = self.get_metrica(registro, metrica.complexidade_metodo)
-                                referencia.complexidade_classe = self.get_metrica(registro, metrica.complexidade_classe)
-                                referencia.complexidade_arquivo = self.get_metrica(registro, metrica.complexidade_arquivo)
+                referencia.taxa_duplicacao = formatar_float(self.get_metrica(registro, metrica.taxa_duplicacao))
+                referencia.taxa_divida_tecnica = formatar_float(self.get_metrica(registro, metrica.taxa_divida_tecnica))
+                referencia.total_problemas = formatar_inteiro(self.get_metrica(registro, metrica.total_problemas))
+                referencia.problemas_criticos = formatar_inteiro(self.get_metrica(registro, metrica.problemas_criticos))
+                referencia.problemas_importantes = formatar_inteiro(self.get_metrica(registro, metrica.problemas_importantes))
+                referencia.problemas_moderados = formatar_inteiro(self.get_metrica(registro, metrica.problemas_moderados))
+                referencia.problemas_normais = formatar_inteiro(self.get_metrica(registro, metrica.problemas_normais))
+                referencia.problemas_simples = formatar_inteiro(self.get_metrica(registro, metrica.problemas_simples))
 
-                                referencia.taxa_duplicacao = formatar_float(self.get_metrica(registro, metrica.taxa_duplicacao))
-                                referencia.taxa_divida_tecnica = formatar_float(self.get_metrica(registro, metrica.taxa_divida_tecnica))
-                                referencia.total_problemas = formatar_inteiro(self.get_metrica(registro, metrica.total_problemas))
-                                referencia.problemas_criticos = formatar_inteiro(self.get_metrica(registro, metrica.problemas_criticos))
-                                referencia.problemas_importantes = formatar_inteiro(self.get_metrica(registro, metrica.problemas_importantes))
-                                referencia.problemas_moderados = formatar_inteiro(self.get_metrica(registro, metrica.problemas_moderados))
-                                referencia.problemas_normais = formatar_inteiro(self.get_metrica(registro, metrica.problemas_normais))
-                                referencia.problemas_simples = formatar_inteiro(self.get_metrica(registro, metrica.problemas_simples))
+                referencia.taxa_comentarios
+                -->
 
-                                referencia.taxa_comentarios
--->
-
-                                <thead>
-                                    <tr class="linha_cabecalho">
-                                        <th style="vertical-align: middle;"></th>
-                                        <th style="vertical-align: middle;">Data</th>
-                                        <th style="text-align: center;vertical-align: middle;">Projetos</th>
-                                        <th style="text-align: center;vertical-align: middle;">Total de Linhas</th>
-                                        <th style="text-align: center;vertical-align: middle;">Comentários</th>
-                                        <th style="text-align: center;vertical-align: middle;">Complexidade</th>
-                                        <th style="text-align: center;vertical-align: middle;">Duplicação</th>
-                                        <th style="text-align: center;vertical-align: middle;">Dívida Técnica</th>
-                                    </tr>
-
+                <thead>
+                  <tr class="linha_cabecalho">
+                    <th class='compact center_align'>Data</th>
+                    <th class='compact center_align'>Linhas</th>
+                    <th class='compact center_align'>Comentários</th>
+                    <th class='compact center_align'>Complexidade</th>
+                    <th class='compact center_align'>Duplicação</th>
+                    <th class='compact center_align'>Dívida Técnica</th>
+                    <th class='compact center_align'>Code Smells</th>
+                  </tr>
 								</thead>
+
+                  <tbody>
+                  {% for estado in estados_projeto %}
+                    <tr class='compact_row'>
+                      {% load humanize %}
+                      <td class='compact center_align clickable'>{{ estado.data_revisao }}%</td>
+
+                      {% if estado.linhas_codigo != None %}
+                          <td class='compact center_align clickable'>{{ estado.linhas_codigo|intcomma }}</td>
+                      {% else %}
+                          <td class='compact center_align clickable'>-</td>
+                      {% endif %}
+
+                      {% if estado.taxa_comentarios != None %}
+                          <td class='compact center_align clickable'>{{ estado.taxa_comentarios }}%</td>
+                      {% else %}
+                          <td class='compact center_align clickable'>-</td>
+                      {% endif %}
+
+                      {% if estado.complexidade_metodo != None %}
+                          <td class='compact center_align clickable'>{{ estado.complexidade_metodo }}%</td>
+                      {% else %}
+                          <td class='compact center_align clickable'>-</td>
+                      {% endif %}
+
+                      {% if estado.taxa_duplicacao != None %}
+                          <td class='compact center_align clickable'>{{ estado.taxa_duplicacao }}%</td>
+                      {% else %}
+                          <td class='compact center_align clickable'>-</td>
+                      {% endif %}
+
+                      {% if estado.taxa_divida_tecnica != None %}
+                          <td class='compact center_align clickable'>{{ estado.taxa_divida_tecnica }}%</td>
+                      {% else %}
+                          <td class='compact center_align clickable'>-</td>
+                      {% endif %}
+
+                      {% if estado.total_codesmell != None %}
+                          <td class='compact center_align clickable'>{{ estado.total_codesmell|intcomma }}</td>
+                      {% else %}
+                          <td class='compact center_align clickable'>-</td>
+                      {% endif %}
+                    </tr>
+
+                  {% empty %}
+		    						<tr><td style="text-align: center;" colspan="7">Nenhuma Análise Realizada!</td></tr>
+								{% endfor %}
+                  </tbody>
 				
-								<tbody>		
-									{% for item in dados %}
+								<!--<tbody>
+									% for repositorio in meus_repositorios %}
+
+                                        veja { repositorio.nome_projeto }}
+
+                                        % for projeto in repositorio.projetos %}
 									
-									<tr class=''><!--  class="alinhado_meio clickable-row " data-href='/consultar_entidade/{{ item.id }}'> -->
-										<td style="text-align: center;cursor:pointer">{{ item.id }}</td>
-                                        <td style="text-align: center;cursor:pointer">{{ item.data_revisao|date:'d/m/Y' }}</td>
-                                        <td style="text-align: center;cursor:pointer">{{ item.total_projetos }}</td>
+                                            <tr class='compact_row'>
 
-                                        <td style="text-align: center;cursor:pointer">{{ item.linhas_codigo|intcomma }}</td>
-                                        <td style="text-align: center;cursor:pointer">{{ item.taxa_comentarios }}%</td>
-                                        {% if item.complexidade_metodo %}
-                                        <td style="text-align: center;cursor:pointer">{{ item.complexidade_metodo }}</td>
-                                        {% else %}
-                                        <td style="text-align: center;cursor:pointer">-</td>
-                                        {% endif %}
-                                        <td style="text-align: center;cursor:pointer">{{ item.taxa_duplicacao }}%</td>
-                                        <td style="text-align: center;cursor:pointer">{{ item.taxa_divida_tecnica }}%</td>
-                                     </tr>
+                                                % if projeto.estado_atual.linhas_codigo != None %}
+                                                    <td class='compact left_align clickable'>
 
-										
+                                                        { projeto.estado_atual.linhas_codigo }}
+                                                        % if projeto.estado_anterior %}
+                                                        <label class='pull-right label_metric'>
+                                                            % if projeto.variacao_estado.linhas_codigo > 0 %}
 
+                                                                <span class="label label-default">
+                                                                    +{ projeto.variacao_estado.linhas_codigo }}%
+                                                                </span>
+
+                                                            % else %}
+                                                                <span class="label label-default">
+                                                                    { projeto.variacao_estado.linhas_codigo }}%
+                                                                </span>
+                                                            % endif %}
+                                                        % endif %}
+
+                                                        </label>
+                                                    </td>
+                                                % else %}
+                                                    <td class='compact center_align clickable'>-</td>
+                                                % endif %}
+
+
+                                                % if projeto.estado_atual.taxa_comentarios != None %}
+                                                    <td class='compact center_align clickable'>
+                                                        { projeto.estado_atual.taxa_comentarios }}%
+
+                                                        % if projeto.estado_anterior %}
+                                                        % if projeto.estado_anterior %}
+                                                        <label class='pull-right label_metric'>
+                                                            % if projeto.variacao_estado.taxa_comentarios > 0 %}
+
+                                                                <span class="label label-danger">
+                                                                    +{ projeto.variacao_estado.taxa_comentarios }}%
+                                                                </span>
+
+                                                            % elif projeto.variacao_estado.taxa_comentarios == 0 %}
+                                                                <span class="label label-default">
+                                                                    { projeto.variacao_estado.taxa_comentarios }}%
+                                                                </span>
+
+                                                            % else %}
+                                                                <span class="label label-success">
+                                                                    { projeto.variacao_estado.taxa_comentarios }}%
+                                                                </span>
+                                                            % endif %}
+
+                                                        </label>
+                                                        % endif %}
+
+                                                    % endif %}
+                                                    </td>
+                                                % else %}
+                                                    <td class='compact center_align clickable'>-</td>
+                                                % endif %}
+
+
+
+                                                % if projeto.estado_atual.complexidade_metodo != None %}
+                                                <td class='compact center_align clickable'>
+                                                    { projeto.estado_atual.complexidade_metodo }}
+                                                    % if projeto.estado_anterior %}
+                                                        % if projeto.estado_anterior %}
+                                                        <label class='pull-right label_metric'>
+                                                            % if projeto.variacao_estado.complexidade_metodo > 0 %}
+
+                                                                <span class="label label-danger">
+                                                                    +{ projeto.variacao_estado.complexidade_metodo }}%
+                                                                </span>
+
+                                                            % elif projeto.variacao_estado.complexidade_metodo == 0 %}
+                                                                <span class="label label-default">
+                                                                    { projeto.variacao_estado.complexidade_metodo }}%
+                                                                </span>
+
+                                                            % else %}
+                                                                <span class="label label-success">
+                                                                    { projeto.variacao_estado.complexidade_metodo }}%
+                                                                </span>
+                                                            % endif %}
+
+                                                        </label>
+                                                        % endif %}
+                                                    % endif %}
+                                                </td>
+                                                % else %}
+                                                <td class='compact center_align clickable'>-</td>
+                                                % endif %}
+
+                                                % if projeto.estado_atual.taxa_duplicacao != None %}
+                                                    <td class='compact center_align clickable'>
+                                                        { projeto.estado_atual.taxa_duplicacao }}%
+                                                        % if projeto.estado_anterior %}
+                                                        <label class='pull-right label_metric'>
+                                                            % if projeto.variacao_estado.taxa_duplicacao > 0 %}
+
+                                                                <span class="label label-danger">
+                                                                    +{ projeto.variacao_estado.taxa_duplicacao }}%
+                                                                </span>
+
+                                                            % elif projeto.variacao_estado.taxa_duplicacao == 0 %}
+                                                                <span class="label label-default">
+                                                                    { projeto.variacao_estado.taxa_duplicacao }}%
+                                                                </span>
+
+                                                            % else %}
+                                                                <span class="label label-success">
+                                                                    { projeto.variacao_estado.taxa_duplicacao }}%
+                                                                </span>
+                                                            % endif %}
+
+                                                        </label>
+                                                        % endif %}
+                                                    </td>
+                                                % else %}
+                                                <td class='compact center_align clickable'>-</td>
+                                                % endif %}
+
+                                                % if projeto.estado_atual.taxa_divida_tecnica != None %}
+                                                    <td class='compact center_align clickable'>
+                                                        { projeto.estado_atual.taxa_divida_tecnica }}%
+
+                                                        % if projeto.estado_anterior %}
+                                                        <label class='pull-right label_metric'>
+                                                            % if projeto.variacao_estado.taxa_divida_tecnica > 0 %}
+
+                                                                <span class="label label-danger">
+                                                                    +{ projeto.variacao_estado.taxa_divida_tecnica }}%
+                                                                </span>
+
+                                                            % elif projeto.variacao_estado.taxa_divida_tecnica == 0 %}
+                                                                <span class="label label-default">
+                                                                    { projeto.variacao_estado.taxa_divida_tecnica }}%
+                                                                </span>
+
+                                                            % else %}
+                                                                <span class="label label-success">
+                                                                    { projeto.variacao_estado.taxa_divida_tecnica }}%
+                                                                </span>
+                                                            % endif %}
+
+                                                        </label>
+                                                        % endif %}
+                                                    </td>
+                                                % else %}
+                                                <td class='compact center_align clickable'>-</td>
+                                                % endif %}
+
+                                                % if projeto.estado_atual.taxa_divida_tecnica != None %}
+                                                    <td class='compact center_align clickable'>
+                                                        { projeto.estado_atual.total_codesmell }}
+
+                                                        % if projeto.estado_anterior %}
+                                                        <label class='pull-right label_metric'>
+                                                            % if projeto.variacao_estado.total_codesmell > 0 %}
+
+                                                                <span class="label label-danger">
+                                                                    +{ projeto.variacao_estado.total_codesmell }}%
+                                                                </span>
+
+                                                            % elif projeto.variacao_estado.total_codesmell == 0 %}
+                                                                <span class="label label-default">
+                                                                    { projeto.variacao_estado.total_codesmell }}%
+                                                                </span>
+
+                                                            % else %}
+                                                                <span class="label label-success">
+                                                                    { projeto.variacao_estado.total_codesmell }}%
+                                                                </span>
+                                                            % endif %}
+
+                                                        </label>
+                                                        % endif %}
+
+                                                    </td>
+                                                % else %}
+                                                <td class='compact center_align clickable'>-</td>
+                                                % endif %}
+                                             </tr>
+                                        % endfor %}
 										
-                                        
-										
-									{% empty %}
-		    							<tr><td style="text-align: center;" colspan="7">Nenhum Documento Cadastrado!</td></tr>
-									{% endfor %}
-								</tbody>
+									% empty %}
+		    							<tr><td style="text-align: center;" colspan="7">Nenhum Repositório Cadastrado!</td></tr>
+									% endfor %}
+								</tbody>-->
 							</table>
 						</div>
 					</div>
@@ -252,9 +708,7 @@ label {
 						"ordering": true,
 						"bAutoWidth": false,
 						"aoColumns": [
-					                  { "sWidth": "20px" },
-                                      { "sWidth": null },
-                                      { "sWidth": null },
+                                      { "sWidth": '70px' },
                                       { "sWidth": null },
                                       { "sWidth": null },
                                       { "sWidth": null },
@@ -358,11 +812,17 @@ label {
 					    var data = table.row( $(this).parents('tr') ).data();
 					    alert( data[0] +"'s salary is: "+ data[ 5 ] );
 					} );
+
+                    jQuery(document).ready(function($) {
+                        $(".clickable-row").click(function() {
+                            window.location = $(this).data("href");
+                        });
+                    });
 				</script>
 				
 				<div class='row'>
 
-                    {% if dados %}
+                    {% if meus_repositorios %}
 					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6" style='margin-top:-36px;'>
                     {% else %}
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6" style='margin-top:6px;'>
@@ -370,17 +830,17 @@ label {
 
 						<label class='left_align'><sub>Buscar por:</sub></label>
 						 <select id='buscar_por' class='form-control'>
-                             <option value="0">Código</option>
-                             <option value="1" selected>Data</option>
+                             <option value="0">Repositório</option>
+                             <option value="1" selected>Projeto</option>
+						 	<option value="2">Linguagem</option>
 						</select> 
 					</div>
 
-					{% if dados %}
+					{% if meus_repositorios %}
 					<div class="col-lg-4 col-md-4 col-sm-5 col-xs-6" style='margin-left:-20px;margin-top: -11px;'>
                     {% else %}
                     <div class="col-lg-4 col-md-4 col-sm-5 col-xs-6" style='margin-left:-20px;margin-top: 31px;'>
                     {% endif %}
-
 						<input type="text" id="search" class="form-control" autofocus placeholder="Consultar..">
 					</div>
 
@@ -406,7 +866,7 @@ label {
         $('#atualizando_icone').addClass("fa fa-spinner fa-pulse fa-1x fa-fw").show();
 
         $.ajax({
-            url: '/referencia/atualizar',
+            url: '/projeto/analisar',
             type: 'get', //this is the default though, you don't actually need to always mention it
             success: function(data) {
                 //alert(data);
@@ -456,27 +916,122 @@ label {
 </script>
 
 <script>
+function carregar_estado_atual(){
+  $("#atualizar_metricas_icone").attr("class",'fa fa-refresh fa-spin fa-3x fa-1x');
+  $("#box_project_metrics").css({"opacity": "0.2"});
+  $.ajax({
+    type: "POST",
+    url: "/api/projeto/consultar_metricas/{{ projeto.id }}/",
+    data: {
+      csrfmiddlewaretoken: '{{ csrf_token }}'
+    },
+
+    success: function (data) {
+      atualizar_metricas("complexidade",data.complexidade_projeto,data.complexidade_global,data.complexidade_percentual,data.complexidade_resultado);
+      atualizar_metricas("duplicacao",data.duplicacao_projeto,data.duplicacao_global,data.duplicacao_percentual,data.duplicacao_resultado);
+      atualizar_metricas("divida_tecnica",data.divida_tecnica_projeto,data.divida_tecnica_global,data.divida_tecnica_percentual,data.divida_tecnica_resultado);
+      atualizar_metricas("comentarios",data.comentarios_projeto,data.comentarios_global,data.comentarios_percentual,data.comentarios_resultado);
+      atualizar_metricas("codesmells",data.codesmell_projeto,data.codesmell_global,data.codesmell_percentual,data.codesmell_resultado);
+      setTimeout(function(){
+        $("#box_project_metrics").css({"opacity": "1"});
+        $("#atualizar_metricas_icone").attr("class",'fa fa-refresh');
+      }, 2000);
+
+      /*$("#complexidade_projeto").text(data.complexidade_projeto);
+      $("#complexidade_global").text(data.complexidade_global);
+      $("#progress_complexidade").attr("style", "width:"+data.complexidade_percentual+"%");
+      verifica_comparacao(data.complexidade_resultado,"complexidade")*/
+
+      /*$("#duplicacao_projeto").text(data.duplicacao_projeto);
+      $("#duplicacao_global").text(data.duplicacao_global);
+      $("#progress_duplicacao").attr("style", "width:"+data.duplicacao_percentual+"%");*/
+
+
+      //alert("FOI?"+data.complexidade_percentual)
+      //var resultado = data.complexidade_global;
+
+      /*if (resultado['success'] == true) {
+        var plano = resultado['message'];
+        $scope.planos.push(plano);
+        $scope.selecionar_plano(plano,$scope.planos.length-1);
+        $scope.resetar_formulario_plano();
+        $scope.$apply();
+      }
+
+      else {
+        alert(resultado["message"]);
+      }*/
+
+    },
+    failure: function (data) {
+      alert('Erro! Falha na execução do ajax');
+      setTimeout(function(){
+        $("#box_project_metrics").css({"opacity": "1"});
+        $("#atualizar_metricas_icone").attr("class",'fa fa-refresh');
+      }, 2000);
+    }
+  });
+
+
+}
+
+function verifica_comparacao(comparacao,metrica){
+
+  if (comparacao){
+    $("#box_"+metrica).attr("class","box_metric box box-primary");
+    $("#box_"+metrica).find(".box_metric_hand").css({"color": "#3366cc"});
+    $("#progress_"+metrica).addClass('progress-bar-aqua')
+    $("#"+metrica+"_icone").attr('class','fa fa-thumbs-o-up fa-lg');
+  }
+  else{
+    $("#box_"+metrica).attr("class","box_metric box box-danger");
+    $("#box_"+metrica).find(".box_metric_hand").css({"color": "#cc0000"});
+    $("#progress_"+metrica).addClass('progress-bar-danger')
+    $("#"+metrica+"_icone").attr('class','fa fa-thumbs-o-down fa-lg');
+  }
+}
+
+function atualizar_metricas(metrica,valor_projeto,valor_referencia,relacao_comparacao,resultado_comparacao){
+  $("#"+metrica+"_projeto").text(valor_projeto);
+  $("#"+metrica+"_global").text(valor_referencia);
+  $("#progress_"+metrica).attr("style", "width:"+relacao_comparacao+"%");
+
+  verifica_comparacao(resultado_comparacao,metrica);
+}
+
+function atualizar_metricas_projeto(){
+  $("#progress_complexidade").attr("style", "width:0%");
+  $("#progress_duplicacao").attr("style", "width:0%");
+  $("#progress_divida_tecnica").attr("style", "width:0%");
+  $("#progress_comentarios").attr("style", "width:0%");
+  $("#progress_codesmells").attr("style", "width:0%");
+  setTimeout(carregar_estado_atual(), 1000);}
+</script>
+
+<script>
 jQuery(document).ready(function(){
 	$("#data_entrega").mask("99/99/9999");
 	$("#filtrar_desde").mask("99/99/9999");
 	$("#filtrar_ate").mask("99/99/9999");
-   	$("#hora_entrega").mask("99:99");
+  $("#hora_entrega").mask("99:99");
+  carregar_estado_atual();
 });
 </script>
 
 <script>
- $('#search').on( 'keyup', function () {
-	var table = $('#datatable').DataTable();
-	table.search(this.value).search(this.value).draw();              // GERAL
-} );
+    $('#search').on( 'keyup', function () {
+        var table = $('#datatable').DataTable();
+        var campo = $('#buscar_por').val();
+        table.columns(campo).search(this.value).search(this.value).draw();              // GERAL
+    });
 </script>
 
 <script>
-$('#buscar_por').change(function() { 
-		var table = $('#datatable').DataTable();
-		var campo = $('#buscar_por').val();
-        table.search('').columns().search( '' ).draw(); // reseta a pesquisa
-		table.columns(campo).search($('#search').val()).draw();
+$('#buscar_por').change(function() {
+    var table = $('#datatable').DataTable();
+    var campo = $('#buscar_por').val();
+    table.search('').columns().search( '' ).draw(); // reseta a pesquisa
+    table.columns(campo).search($('#search').val()).draw();
 });
 </script>
 
@@ -656,5 +1211,9 @@ function selecionar_filtro_cliente(){
 
 }
 </script>
+
+<!-- jvectormap -->
+<script type="text/javascript" src="{% static 'plugins/jvectormap/jquery-jvectormap-world-mill-en.js' %}"></script>
+<script type="text/javascript" src="{% static 'plugins/jvectormap/jquery-jvectormap-1.2.2.min.js' %}"></script>
 
 {% endblock %}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       

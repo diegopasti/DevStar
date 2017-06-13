@@ -1,0 +1,1 @@
+web: gunicorn novo_devstar.wsgi

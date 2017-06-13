@@ -2,7 +2,7 @@
 
 {% block Titulo %}
 	<meta charset="utf-8">
-    <title>Referencias</title>
+    <title>Meus Projetos</title>
 {% endblock %}
 
 {% block recrusos_necessarios %}
@@ -79,6 +79,27 @@ label {
     font-weight: normal !important;
 }
 
+.label_metric{
+    font-size: 12px;
+    padding: 0px !important;
+    margin-top: -3px;
+}
+
+
+.compact_row td {
+    padding-bottom: 2px !important;
+    font-size: 11px;
+    margin-bottom: 0px;
+}
+
+.clickable {
+    cursor:pointer;
+}
+
+th.compact {
+    font-size: 11px;
+}
+
 .titulo{
     margin-left: 15px;
     margin-top: -5px;
@@ -87,73 +108,75 @@ label {
 </style>
 {% endblock %}
 
+{% block breadcrumb_title %}
+Meus Projetos
+{% endblock %}
+
 {% block breadcrumb_block %}
-    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-    <li class="active">Referências</li>
+    <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
+    <li class="active">Meus Projetos</li>
 {% endblock %}
 
 {% block conteudo %}
 
-    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
-        <div class="modal-dialog">
-            <!--  style="width: 90%"> -->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                    <h3 id="myModalLabel">Novo Documento</h3>
-                </div>
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+    <div class="modal-dialog">
+        <!--  style="width: 90%"> -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h3 id="myModalLabel">Novo Documento</h3>
+            </div>
 
 
-                <div class="modal-body" style="padding: 30px;">
-                    <form action="" method="post">
-                    {% csrf_token %}
-                        <div class="row" style="padding-left: 15px; padding-right: 15px">
-                            <div style='padding-left: 8px'>
-                                <sub>{{ formulario.documento.label }}</sub>
-                            </div>
-                            {{ formulario.documento }}
+            <div class="modal-body" style="padding: 30px;">
+                <form action="" method="post">
+                {% csrf_token %}
+                    <div class="row" style="padding-left: 15px; padding-right: 15px">
+                        <div style='padding-left: 8px'>
+                            <sub>{{ formulario.documento.label }}</sub>
                         </div>
+                        {{ formulario.documento }}
+                    </div>
 
-                        <div class="row" style="padding-left: 15px; padding-right: 15px">
-                            <div style='padding-left: 8px'>
-                                <sub>{{ formulario.descricao.label }}</sub>
-                            </div>
-                            {{ formulario.descricao }}
-
+                    <div class="row" style="padding-left: 15px; padding-right: 15px">
+                        <div style='padding-left: 8px'>
+                            <sub>{{ formulario.descricao.label }}</sub>
                         </div>
+                        {{ formulario.descricao }}
 
-                        <div class="row">
-                            <div class="col-lg-3 col-lg-push-9">
-                                <button type="submit" id="bt_submit_documento" class="btn btn-primary form-control" style="position: relative; margin-top: 20px"></button>
-                                <!-- <a href="#myModal" role="button" class="btn btn-primary form-control" data-toggle="modal" '  > Adicionar</a>  -->
-                            </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-3 col-lg-push-9">
+                            <button type="submit" id="bt_submit_documento" class="btn btn-primary form-control" style="position: relative; margin-top: 20px"></button>
+                            <!-- <a href="#myModal" role="button" class="btn btn-primary form-control" data-toggle="modal" '  > Adicionar</a>  -->
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
 <!--<h4 class="titulo">Projetos pelo Mundo</h4>-->
 
 <div class="row">
 	<div class="col-lg-12 col-md-12 col-xs-12">
-		<div class="box box-default" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; ">
+		<div class="box box-default" style="margin-top: -25px; margin-left: 0px; margin-right: 0px; ">
 			<div class="box-heading">
 
                 <div class="box-header with-border">
-                    <h5 class="box-title">Cadastro de Referência</h5>
+                    <h5 class="box-title">Visão Geral</h5>
 
                     <div class="btn-group pull-right" role="group" style='margin-top: -2px;' aria-label="...">
 
 					    <a id='bt_adicionar' role="button" class="btn btn-primary">
-                            <i id="atualizando_icone"></i>Atualizar Referências
+                            <i id="atualizando_icone"></i>Analisar Projetos
                         </a>
 
                     </div>
                 </div>
-
-		
 
 			</div>
 			<!-- /.panel-heading -->
@@ -164,8 +187,7 @@ label {
 					<div class='row'>
 						
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<table class="table compact table-bordered table-hover" id="datatable">
-
+							<table class="table table-bordered table-hover" id="datatable">
 <!--
                                 referencia.linhas_codigo = formatar_inteiro(self.get_metrica(registro, metrica.linhas_codigo))
                                 referencia.total_linhas = formatar_inteiro(self.get_metrica(registro, metrica.total_linhas))
@@ -192,46 +214,217 @@ label {
 
                                 <thead>
                                 <tr class="linha_cabecalho">
-                                    <th style="vertical-align: middle;"></th>
-                                    <th style="vertical-align: middle;">Data</th>
-                                    <th style="text-align: center;vertical-align: middle;">Linguagem</th>
-                                    <th style="text-align: center;vertical-align: middle;">Projetos</th>
-                                    <th style="text-align: center;vertical-align: middle;">Total de Linhas</th>
-                                    <th style="text-align: center;vertical-align: middle;">Comentários</th>
-                                    <th style="text-align: center;vertical-align: middle;">Complexidade</th>
-                                    <th style="text-align: center;vertical-align: middle;">Duplicação</th>
-                                    <th style="text-align: center;vertical-align: middle;">Dívida Técnica</th>
+                                    <th class='compact center_align'>Repositório</th>
+                                    <th class='compact center_align' s>Projeto</th>
+                                    <th class='compact center_align'>Linguagem</th>
+                                    <th class='compact center_align'>Linhas</th>
+                                    <th class='compact center_align'>Comentários</th>
+                                    <th class='compact center_align'>Complexidade</th>
+                                    <th class='compact center_align'>Duplicação</th>
+                                    <th class='compact center_align'>Dívida Técnica</th>
+                                    <th class='compact center_align'>Code Smells</th>
                                 </tr>
 
 								</thead>
 				
 								<tbody>		
-									{% for item in dados %}
+									{% for repositorio in meus_repositorios %}
+
+                                        {% for projeto in repositorio.projetos %}
 									
-									<tr class=''><!--  class="alinhado_meio clickable-row " data-href='/consultar_entidade/{{ item.id }}'> -->
-										<td style="text-align: center;cursor:pointer">{{ item.id }}</td>
-                                        <td style="text-align: center;cursor:pointer">{{ item.data_revisao|date:'d/m/Y' }}</td>
+                                            <tr class='compact_row clickable-row' data-href='{{ repositorio.nome_repositorio|lower }}/{{ projeto.nome_projeto|lower }}'>
 
-                                        <td style="text-align: left;cursor:pointer">{{ item.linguagem }}</td>
-                                        <td style="text-align: center;cursor:pointer">{{ item.total_projetos }}</td>
-                                        <td style="text-align: center;cursor:pointer">{{ item.linhas_codigo }}</td>
-                                        <td style="text-align: center;cursor:pointer">{{ item.taxa_comentarios }}%</td>
-                                        {% if item.complexidade_metodo %}
-                                        <td style="text-align: center;cursor:pointer">{{ item.complexidade_metodo }}</td>
-                                        {% else %}
-                                        <td style="text-align: center;cursor:pointer">-</td>
-                                        {% endif %}
-                                        <td style="text-align: center;cursor:pointer">{{ item.taxa_duplicacao }}%</td>
-                                        <td style="text-align: center;cursor:pointer">{{ item.taxa_divida_tecnica }}%</td>
-                                     </tr>
+                                                <td class='compact left_align clickable'>{{ repositorio.nome_repositorio }}</td>
+                                                <td class='compact left_align clickable'>{{ projeto.nome_projeto }}</td><!-- { item.data_revisao|date:'d/m/Y' }} -->
 
-										
+                                                <td class='compact left_align clickable'>{{ projeto.linguagem }}</td>
 
-										
-                                        
+                                                {% if projeto.estado_atual.linhas_codigo != None %}
+                                                    <td class='compact left_align clickable'>
+
+                                                        {{ projeto.estado_atual.linhas_codigo }}
+                                                        {% if projeto.estado_anterior %}
+                                                        <label class='pull-right label_metric'>
+                                                            {% if projeto.variacao_estado.linhas_codigo > 0 %}
+
+                                                                <span class="label label-default">
+                                                                    +{{ projeto.variacao_estado.linhas_codigo }}%
+                                                                </span>
+
+                                                            {% else %}
+                                                                <span class="label label-default">
+                                                                    {{ projeto.variacao_estado.linhas_codigo }}%
+                                                                </span>
+                                                            {% endif %}
+                                                        {% endif %}
+
+                                                        </label>
+                                                    </td>
+                                                {% else %}
+                                                    <td class='compact center_align clickable'>-</td>
+                                                {% endif %}
+
+
+                                                {% if projeto.estado_atual.taxa_comentarios != None %}
+                                                    <td class='compact center_align clickable'>
+                                                        {{ projeto.estado_atual.taxa_comentarios }}%
+
+                                                        {% if projeto.estado_anterior %}
+                                                        {% if projeto.estado_anterior %}
+                                                        <label class='pull-right label_metric'>
+                                                            {% if projeto.variacao_estado.taxa_comentarios > 0 %}
+
+                                                                <span class="label label-danger">
+                                                                    +{{ projeto.variacao_estado.taxa_comentarios }}%
+                                                                </span>
+
+                                                            {% elif projeto.variacao_estado.taxa_comentarios == 0 %}
+                                                                <span class="label label-default">
+                                                                    {{ projeto.variacao_estado.taxa_comentarios }}%
+                                                                </span>
+
+                                                            {% else %}
+                                                                <span class="label label-success">
+                                                                    {{ projeto.variacao_estado.taxa_comentarios }}%
+                                                                </span>
+                                                            {% endif %}
+
+                                                        </label>
+                                                        {% endif %}
+
+                                                    {% endif %}
+                                                    </td>
+                                                {% else %}
+                                                    <td class='compact center_align clickable'>-</td>
+                                                {% endif %}
+
+
+
+                                                {% if projeto.estado_atual.complexidade_metodo != None %}
+                                                <td class='compact center_align clickable'>
+                                                    {{ projeto.estado_atual.complexidade_metodo }}
+                                                    {% if projeto.estado_anterior %}
+                                                        {% if projeto.estado_anterior %}
+                                                        <label class='pull-right label_metric'>
+                                                            {% if projeto.variacao_estado.complexidade_metodo > 0 %}
+
+                                                                <span class="label label-danger">
+                                                                    +{{ projeto.variacao_estado.complexidade_metodo }}%
+                                                                </span>
+
+                                                            {% elif projeto.variacao_estado.complexidade_metodo == 0 %}
+                                                                <span class="label label-default">
+                                                                    {{ projeto.variacao_estado.complexidade_metodo }}%
+                                                                </span>
+
+                                                            {% else %}
+                                                                <span class="label label-success">
+                                                                    {{ projeto.variacao_estado.complexidade_metodo }}%
+                                                                </span>
+                                                            {% endif %}
+
+                                                        </label>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </td>
+                                                {% else %}
+                                                <td class='compact center_align clickable'>-</td>
+                                                {% endif %}
+
+                                                {% if projeto.estado_atual.taxa_duplicacao != None %}
+                                                    <td class='compact center_align clickable'>
+                                                        {{ projeto.estado_atual.taxa_duplicacao }}%
+                                                        {% if projeto.estado_anterior %}
+                                                        <label class='pull-right label_metric'>
+                                                            {% if projeto.variacao_estado.taxa_duplicacao > 0 %}
+
+                                                                <span class="label label-danger">
+                                                                    +{{ projeto.variacao_estado.taxa_duplicacao }}%
+                                                                </span>
+
+                                                            {% elif projeto.variacao_estado.taxa_duplicacao == 0 %}
+                                                                <span class="label label-default">
+                                                                    {{ projeto.variacao_estado.taxa_duplicacao }}%
+                                                                </span>
+
+                                                            {% else %}
+                                                                <span class="label label-success">
+                                                                    {{ projeto.variacao_estado.taxa_duplicacao }}%
+                                                                </span>
+                                                            {% endif %}
+
+                                                        </label>
+                                                        {% endif %}
+                                                    </td>
+                                                {% else %}
+                                                <td class='compact center_align clickable'>-</td>
+                                                {% endif %}
+
+                                                {% if projeto.estado_atual.taxa_divida_tecnica != None %}
+                                                    <td class='compact center_align clickable'>
+                                                        {{ projeto.estado_atual.taxa_divida_tecnica }}%
+
+                                                        {% if projeto.estado_anterior %}
+                                                        <label class='pull-right label_metric'>
+                                                            {% if projeto.variacao_estado.taxa_divida_tecnica > 0 %}
+
+                                                                <span class="label label-danger">
+                                                                    +{{ projeto.variacao_estado.taxa_divida_tecnica }}%
+                                                                </span>
+
+                                                            {% elif projeto.variacao_estado.taxa_divida_tecnica == 0 %}
+                                                                <span class="label label-default">
+                                                                    {{ projeto.variacao_estado.taxa_divida_tecnica }}%
+                                                                </span>
+
+                                                            {% else %}
+                                                                <span class="label label-success">
+                                                                    {{ projeto.variacao_estado.taxa_divida_tecnica }}%
+                                                                </span>
+                                                            {% endif %}
+
+                                                        </label>
+                                                        {% endif %}
+                                                    </td>
+                                                {% else %}
+                                                <td class='compact center_align clickable'>-</td>
+                                                {% endif %}
+
+                                                {% if projeto.estado_atual.taxa_divida_tecnica != None %}
+                                                    <td class='compact center_align clickable'>
+                                                        {{ projeto.estado_atual.total_codesmell }}
+
+                                                        {% if projeto.estado_anterior %}
+                                                        <label class='pull-right label_metric'>
+                                                            {% if projeto.variacao_estado.total_codesmell > 0 %}
+
+                                                                <span class="label label-danger">
+                                                                    +{{ projeto.variacao_estado.total_codesmell }}%
+                                                                </span>
+
+                                                            {% elif projeto.variacao_estado.total_codesmell == 0 %}
+                                                                <span class="label label-default">
+                                                                    {{ projeto.variacao_estado.total_codesmell }}%
+                                                                </span>
+
+                                                            {% else %}
+                                                                <span class="label label-success">
+                                                                    {{ projeto.variacao_estado.total_codesmell }}%
+                                                                </span>
+                                                            {% endif %}
+
+                                                        </label>
+                                                        {% endif %}
+
+                                                    </td>
+                                                {% else %}
+                                                <td class='compact center_align clickable'>-</td>
+                                                {% endif %}
+                                             </tr>
+                                        {% endfor %}
 										
 									{% empty %}
-		    							<tr><td style="text-align: center;" colspan="7">Nenhum Documento Cadastrado!</td></tr>
+		    							<tr><td style="text-align: center;" colspan="7">Nenhum Repositório Cadastrado!</td></tr>
 									{% endfor %}
 								</tbody>
 							</table>
@@ -248,10 +441,10 @@ label {
 						"ordering": true,
 						"bAutoWidth": false,
 						"aoColumns": [
-					                  { "sWidth": "20px" },
+                                      { "sWidth": null },
                                       { "sWidth": null },
 					                  { "sWidth": null },
-                                      { "sWidth": null },
+                                      { "sWidth": '70px' },
                                       { "sWidth": null },
                                       { "sWidth": null },
                                       { "sWidth": null },
@@ -355,11 +548,17 @@ label {
 					    var data = table.row( $(this).parents('tr') ).data();
 					    alert( data[0] +"'s salary is: "+ data[ 5 ] );
 					} );
+
+                    jQuery(document).ready(function($) {
+                        $(".clickable-row").click(function() {
+                            window.location = $(this).data("href");
+                        });
+                    });
 				</script>
 				
 				<div class='row'>
 
-                    {% if dados %}
+                    {% if meus_repositorios %}
 					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6" style='margin-top:-36px;'>
                     {% else %}
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6" style='margin-top:6px;'>
@@ -367,18 +566,17 @@ label {
 
 						<label class='left_align'><sub>Buscar por:</sub></label>
 						 <select id='buscar_por' class='form-control'>
-                             <option value="0">Código</option>
-                             <option value="1" selected>Documento</option>
-						 	<option value="2">Descrição</option>
+                             <option value="0">Repositório</option>
+                             <option value="1" selected>Projeto</option>
+						 	<option value="2">Linguagem</option>
 						</select> 
 					</div>
 
-					{% if dados %}
+					{% if meus_repositorios %}
 					<div class="col-lg-4 col-md-4 col-sm-5 col-xs-6" style='margin-left:-20px;margin-top: -11px;'>
                     {% else %}
                     <div class="col-lg-4 col-md-4 col-sm-5 col-xs-6" style='margin-left:-20px;margin-top: 31px;'>
                     {% endif %}
-
 						<input type="text" id="search" class="form-control" autofocus placeholder="Consultar..">
 					</div>
 
@@ -404,7 +602,7 @@ label {
         $('#atualizando_icone').addClass("fa fa-spinner fa-pulse fa-1x fa-fw").show();
 
         $.ajax({
-            url: '/referencia/atualizar',
+            url: '/projeto/analisar',
             type: 'get', //this is the default though, you don't actually need to always mention it
             success: function(data) {
                 //alert(data);
@@ -463,18 +661,19 @@ jQuery(document).ready(function(){
 </script>
 
 <script>
- $('#search').on( 'keyup', function () {
-	var table = $('#datatable').DataTable();
-	table.search(this.value).search(this.value).draw();              // GERAL
-} );
+    $('#search').on( 'keyup', function () {
+        var table = $('#datatable').DataTable();
+        var campo = $('#buscar_por').val();
+        table.columns(campo).search(this.value).search(this.value).draw();              // GERAL
+    });
 </script>
 
 <script>
-$('#buscar_por').change(function() { 
-		var table = $('#datatable').DataTable();
-		var campo = $('#buscar_por').val();
-        table.search('').columns().search( '' ).draw(); // reseta a pesquisa
-		table.columns(campo).search($('#search').val()).draw();
+$('#buscar_por').change(function() {
+    var table = $('#datatable').DataTable();
+    var campo = $('#buscar_por').val();
+    table.search('').columns().search( '' ).draw(); // reseta a pesquisa
+    table.columns(campo).search($('#search').val()).draw();
 });
 </script>
 

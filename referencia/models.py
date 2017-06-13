@@ -23,6 +23,8 @@ class metrica():
     problemas_normais = "m_minor_violations"
     problemas_simples = "m_info_violations"
 
+    code_smell = "m_code_smells"
+
     taxa_comentarios = "m_comment_lines_density"
 
 class Referencia(models.Model):
@@ -43,6 +45,7 @@ class Referencia(models.Model):
 
     taxa_duplicacao = models.DecimalField(max_digits=11, decimal_places=2,null=True)
     taxa_divida_tecnica = models.DecimalField(max_digits=11, decimal_places=2,null=True)
+    total_codesmell = models.IntegerField(null=True,default=0)
     total_problemas = models.IntegerField(null=True)
     problemas_criticos = models.IntegerField(null=True)
     problemas_importantes = models.IntegerField(null=True)

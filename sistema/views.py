@@ -1,4 +1,6 @@
 # -*- encoding: utf-8 -*-
+import json
+
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
@@ -9,11 +11,12 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.contrib.auth import logout
 from service import coletor_dados
+from django.http import Http404
 
 # Create your views here.
 #Members.objects.values('designation').annotate(dcount=Count('designation'))
 from sistema.formulario import formulario_login, formulario_register
-from sistema.models import Repositorio
+from sistema.models import Repositorio, Projeto
 
 
 def login_view(request):
@@ -65,22 +68,61 @@ def login_view(request):
         formulario = formulario_login()
         return render_to_response("usuario/login.html",{'formulario':formulario },context_instance=RequestContext(request))
 
-
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect('/')
 
+def profile_page(request):
+    user = User.objects.get(username__exact=str(request.user))
+    user_repositories = Repositorio.objects.filter(proprietario=user)
+    for item in user_repositories:
+        item.projetos = Projeto.objects.filter(repositorio=item)
+    return render_to_response("usuario/profile.html",{'meus_repositorios': user_repositories},
+                              context_instance=RequestContext(request))
+
+def update_project_monitored(request):
+    if request.is_ajax():
+        project_id = int(request.POST['id_project'])
+        if request.POST['monitorar'] == "true":
+            monitorar = True
+        else:
+            monitorar = False
+        projeto = Projeto.objects.get(pk=project_id)
+        projeto.monitorado = monitorar
+        projeto.save()
+        return HttpResponse(json.dumps({"message": "Registro Salvo com sucesso"}))
+
+    else:
+        raise Http404
+
+def get_monitored_projects(request):
+    user = User.objects.get(username__exact=str(request.user))
+    user_repositories = Repositorio.objects.filter(proprietario=user)
+    response_dict = []
+    for item in user_repositories:
+        item.projetos = Projeto.objects.filter(repositorio=item)
+        object = {'repositorio': item.nome_repositorio}
+        list_proj = []
+        for proj in item.projetos:
+            list_proj.append({'id':proj.id,'projeto':proj.nome_projeto,'monitorado':proj.monitorado})
+        object['projetos'] = list_proj
+        response_dict.append(object)
+    return HttpResponse(json.dumps(response_dict))
+
 def profile_view(request):
+    nome_usuario = str(request.user)
+    usuario = User.objects.get(username__exact=nome_usuario)
 
     if (request.method == "POST"):
         if 'adicionar_repositorio' in request.POST:
-            nome_usuario = str(request.user)
             nome_repositorio = request.POST['nome_repositorio']
             url_repositorio = request.POST['url_repositorio']
+            if url_repositorio[-1] != '/':
+                url_repositorio = url_repositorio + "/"
+
             projetos_disponiveis = coletor_dados().coletar_dados_repositorio(url_repositorio)
             total_projeto = len(projetos_disponiveis)
 
-            usuario = User.objects.get(username__exact=nome_usuario)
             if usuario != None:
                 novo_repositorio = Repositorio(
                     url= url_repositorio,
@@ -89,16 +131,28 @@ def profile_view(request):
                     proprietario = usuario
                 )
 
-                #novo_repositorio.save()
-                print "Sera que foi?"
+                novo_repositorio.save()
 
                 for item in projetos_disponiveis:
-                    print "Olha o que temos:",item
+                    novo_projeto = Projeto(
+                        nome_projeto= item[0].upper(),
+                        linguagem =item[1].upper(),
+                        url_projeto = item[2],
+                        repositorio = novo_repositorio
+                    )
 
-        meus_repositorios = Repositorio.objects.all()
+                    novo_projeto.save()
+
+        meus_repositorios = Repositorio.objects.filter(proprietario=usuario)
 
     else:
-        meus_repositorios = Repositorio.objects.all()
+        meus_repositorios = Repositorio.objects.filter(proprietario=usuario)
+
+        meus_repo = []
+        for item in meus_repositorios:
+            item.projetos = Projeto.objects.filter(repositorio=item)
+
+        #print "Veja: ",meus_repositorios[0].projetos
         projetos_disponiveis = None
     #    formulario = formulario_register(request.POST)
     #else:
@@ -165,6 +219,7 @@ def register_view(request):
         formulario = formulario_register(request.POST)
         return render_to_response("usuario/register.html", {'formulario': formulario},
                                   context_instance=RequestContext(request))
+
 
 
 def criar_usuario(email,senha):

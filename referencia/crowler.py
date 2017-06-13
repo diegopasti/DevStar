@@ -8,6 +8,8 @@ import urllib2
 from bs4 import BeautifulSoup
 
 from referencia.models import Referencia, metrica
+from sistema.models import Estado
+
 
 class coletor_dados():
     
@@ -26,12 +28,33 @@ class coletor_dados():
         self.leitor_html = BeautifulSoup(self.arquivo,"html5lib")
         self.arquivo = self.leitor_html.find('div',{'id':'body'})
 
-    def coletar_metricas_projetos(self):
-        resumo_page = "http://localhost:9000/measures/search/1?asc=true&cols%5B%5D=metric%3Aalert_status&cols%5B%5D=name&cols%5B%5D=metric%3Alines&cols%5B%5D=metric%3Ancloc&cols%5B%5D=metric%3Afunction_complexity&cols%5B%5D=metric%3Aclass_complexity&cols%5B%5D=metric%3Afile_complexity&cols%5B%5D=metric%3Acomment_lines_density&cols%5B%5D=metric%3Aduplicated_lines_density&cols%5B%5D=metric%3Aviolations&cols%5B%5D=metric%3Ablocker_violations&cols%5B%5D=metric%3Acritical_violations&cols%5B%5D=metric%3Amajor_violations&cols%5B%5D=metric%3Aminor_violations&cols%5B%5D=metric%3Ainfo_violations&cols%5B%5D=metric%3Asqale_index&cols%5B%5D=metric%3Asqale_debt_ratio&cols%5B%5D=metric%3Acode_smells&display=list&pageSize=100&qualifiers=TRK&sort=name&id=1&edit=true"
+    def coletar_metricas_projetos(self,repositorio):
+        dominio = repositorio.url
+
+        if "http://" not in dominio:
+            dominio = "http://"+dominio
+
+        if dominio[-1] != "/":
+            dominio = dominio + "/"
+
+        resumo_page = dominio+"measures/search/1?asc=true&cols[]=metric%3Aalert_status&cols[]=name&cols[]=metric%3Afiles&cols[]=metric%3Aclasses&cols[]=metric%3Afunctions&cols[]=metric%3Alines&cols[]=metric%3Ancloc&cols[]=metric%3Acomplexity&cols[]=metric%3Afunction_complexity&cols[]=metric%3Aclass_complexity&cols[]=metric%3Afile_complexity&cols[]=metric%3Acomment_lines_density&cols[]=metric%3Aduplicated_lines_density&cols[]=metric%3Aviolations&cols[]=metric%3Ablocker_violations&cols[]=metric%3Acritical_violations&cols[]=metric%3Amajor_violations&cols[]=metric%3Aminor_violations&cols[]=metric%3Ainfo_violations&cols[]=metric%3Asqale_index&cols[]=metric%3Asqale_debt_ratio&cols[]=metric%3Acode_smells&cols[]=date&display=list&pageSize=100&qualifiers=TRK&sort=name&id=1&edit=true"
         self.baixar_arquivo(resumo_page)
         registros = self.get_registros()
+
+        lista_estados = []
+
         for item in registros:
-            print item
+            nome = item.find("a")['title']
+
+            for projeto in repositorio.projetos:
+                if projeto.nome_projeto.lower() == nome:
+                    if projeto.monitorado:
+                        estado = self.get_estado(item)
+                        estado.projeto = projeto
+                        estado.save()
+                        lista_estados.append(estado)
+
+        return lista_estados
 
     def coletar_referencias(self):
         base_url = "https://sonarqube.com/measures/search/99?base=Languages"
@@ -52,6 +75,46 @@ class coletor_dados():
                 lista_referencias.append(referencia)
 
         return lista_referencias
+
+    def get_estado(self,registro):
+        estado = Estado()
+        estado.linhas_codigo = formatar_inteiro(self.get_metrica(registro, metrica.linhas_codigo))
+        estado.total_linhas = formatar_inteiro(self.get_metrica(registro, metrica.total_linhas))
+        estado.arquivos = formatar_inteiro(self.get_metrica(registro, metrica.arquivos))
+        estado.classes = formatar_inteiro(self.get_metrica(registro, metrica.classes))
+        estado.metodos = formatar_inteiro(self.get_metrica(registro, metrica.metodos))
+
+        estado.complexidade_total = formatar_inteiro(self.get_metrica(registro, metrica.complexidade_total))
+        estado.complexidade_metodo = self.get_metrica(registro, metrica.complexidade_metodo)
+
+        estado.complexidade_classe = self.get_metrica(registro, metrica.complexidade_classe)
+        estado.complexidade_arquivo = self.get_metrica(registro, metrica.complexidade_arquivo)
+
+        if estado.complexidade_metodo == None and estado.complexidade_total != None:
+            estado.complexidade_metodo = float(estado.complexidade_total) / estado.metodos
+
+        if estado.complexidade_classe == None and estado.complexidade_total != None:
+            estado.complexidade_classe = float(estado.complexidade_total) / estado.classes
+
+        if estado.complexidade_arquivo == None and estado.complexidade_total != None:
+            estado.complexidade_arquivo = float(estado.complexidade_total) / estado.arquivos
+
+        estado.taxa_duplicacao = formatar_float(self.get_metrica(registro, metrica.taxa_duplicacao))
+        estado.taxa_divida_tecnica = formatar_float(self.get_metrica(registro, metrica.taxa_divida_tecnica))
+        estado.total_problemas = formatar_inteiro(self.get_metrica(registro, metrica.total_problemas))
+        estado.problemas_criticos = formatar_inteiro(self.get_metrica(registro, metrica.problemas_criticos))
+        estado.problemas_importantes = formatar_inteiro(self.get_metrica(registro, metrica.problemas_importantes))
+        estado.problemas_moderados = formatar_inteiro(self.get_metrica(registro, metrica.problemas_moderados))
+        estado.problemas_normais = formatar_inteiro(self.get_metrica(registro, metrica.problemas_normais))
+        estado.problemas_simples = formatar_inteiro(self.get_metrica(registro, metrica.problemas_simples))
+
+
+        estado.total_codesmell = formatar_inteiro(self.get_metrica(registro, metrica.code_smell))
+        estado.taxa_comentarios = formatar_float(self.get_metrica(registro, metrica.taxa_comentarios))
+
+        self.get_data_ultima_analise(registro)
+        return estado
+
 
     def obter_referencia(self, registro):
         referencia = Referencia()
@@ -89,6 +152,15 @@ class coletor_dados():
         print "TAXA DIVIDA TECNICA:", self.taxa_divida_tecnica
         print "TAXA COMENTARIOS:", self.taxa_comentarios
 
+
+    def get_data_ultima_analise(self,registro):
+        try:
+            data = registro.findAll("td").text
+            print "Olha o ultimo campo: ",data[-1].text
+        except:
+            data = None
+        return data
+
     def get_metrica(self, linha, campo):
         try:
             metrica = linha.find("span", {"id": campo}).text
@@ -110,12 +182,13 @@ class coletor_dados():
             nome = ""
         return nome.upper()
 
+
 def formatar_inteiro(texto):
     try:
         valor = int(texto.replace(",", "").replace(" ",""))
 
     except:
-        print "campo vazio",texto
+        #print "campo vazio",texto
         valor = None
 
     return valor
@@ -126,7 +199,7 @@ def formatar_float(texto):
         valor = float(texto.replace("%", "").replace(" ", ""))
 
     except:
-        print "campo vazio flost", texto
+        #print "campo vazio flost", texto
         valor = None
 
     return valor

@@ -28,6 +28,11 @@
     <link rel="stylesheet" type="text/css" href="{% static 'jquery/jquery-editable-select/jquery.editable-select.min.css' %}"/>
     <script src="{% static 'jquery/jquery-editable-select/jquery.editable-select.min.js' %}"></script>
 
+    <!-- SWITCHER BOOTSTRAP -->
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+
     <!-- CUSTOM -->
     <!-- <link href="{% static 'styles/menu_simples_responsivo.css' %}" rel="stylesheet"/> -->
     <script src="{% static 'scripts/padrao/controle_botoes.js' %}"></script>
@@ -133,10 +138,6 @@
             /*border-style: solid;
             border-left: solid 1px #ccc;*/
         }
-
-
-
-
     </style>
 {% endblock %}
 
@@ -149,285 +150,345 @@
 -->
 {% block conteudo %}
 
-    <!-- Main content -->
+<!-- Main content -->
+<div id="angular_content" ng-cloak ng-app="aplicacao">
+  <div id='angular_controller' ng-controller="controle_repositorio" ng-init="carregar_projetos()">
     <section class="content" style='margin-top: -60px; margin-left:10px; margin-right:-8px;'>
+      <div class="row">
+          <div class="col-md-3">
+            <div class='row'>
+                <!-- Profile Image -->
+                <div class="box box-primary">
+                    <div class="box-body box-profile">
+                        <img class="profile-user-img img-responsive img-circle" src="{% static 'imagens/avatar5.png' %}" alt="user-image"/>
+                        <!--<img class="profile-user-img img-responsive img-circle" src="../../dist/img/user4-128x128.jpg" alt="User profile picture">-->
 
-        <div class="row">
-            <div class="col-md-3">
+                        <h3 class="profile-username text-center">Nome</h3>
 
-                <div class='row'>
-                    <!-- Profile Image -->
-                    <div class="box box-primary">
-                        <div class="box-body box-profile">
-                            <img class="profile-user-img img-responsive img-circle" src="{% static 'imagens/avatar5.png' %}" alt="user-image"/>
-                            <!--<img class="profile-user-img img-responsive img-circle" src="../../dist/img/user4-128x128.jpg" alt="User profile picture">-->
+                        <p class="text-muted text-center">{{ user.email }}</p>
 
-                            <h3 class="profile-username text-center">Nome</h3>
+                        <ul class="list-group list-group-unbordered">
+                            <li class="list-group-item">
+                                <b>Followers</b> <a class="pull-right">1,322</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>Following</b> <a class="pull-right">543</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>Friends</b> <a class="pull-right">13,287</a>
+                            </li>
+                        </ul>
 
-                            <p class="text-muted text-center">{{ user.email }}</p>
-
-                            <ul class="list-group list-group-unbordered">
-                                <li class="list-group-item">
-                                    <b>Followers</b> <a class="pull-right">1,322</a>
-                                </li>
-                                <li class="list-group-item">
-                                    <b>Following</b> <a class="pull-right">543</a>
-                                </li>
-                                <li class="list-group-item">
-                                    <b>Friends</b> <a class="pull-right">13,287</a>
-                                </li>
-                            </ul>
-
-                            <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
-                        </div>
-                        <!-- /.box-body -->
+                        <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
                     </div>
-                    <!-- /.box -->
-
+                    <!-- /.box-body -->
                 </div>
+                <!-- /.box -->
 
-
-                <div class='row'>
-                    <!-- About Me Box
-                    <div class="box box-primary">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">About Me</h3>
-                        </div>
-                        <!-- /.box-header
-                        <div class="box-body">
-                            <strong><i class="fa fa-book margin-r-5"></i> Education</strong>
-
-                            <p class="text-muted">
-                                B.S. in Computer Science from the University of Tennessee at Knoxville </p>
-
-                            <hr>
-
-                            <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
-
-                            <p class="text-muted">Malibu, California</p>
-
-                            <hr>
-
-                            <strong><i class="fa fa-pencil margin-r-5"></i> Skills</strong>
-
-                            <p>
-                                <span class="label label-danger">UI Design</span>
-                                <span class="label label-success">Coding</span>
-                                <span class="label label-info">Javascript</span>
-                                <span class="label label-warning">PHP</span>
-                                <span class="label label-primary">Node.js</span>
-                            </p>
-
-                            <hr>
-
-                            <strong><i class="fa fa-file-text-o margin-r-5"></i> Notes</strong>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
-                        </div>
-                        <!-- /.box-body
-                    </div>
-                    <!-- /.box
-                </div>-->
-                <!-- /.col -->
-                </div>
             </div>
-
-            <div class="col-md-9">
-                <div class="nav-tabs-custom">
-
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a href="#activity" data-toggle="tab">Repositórios</a></li>
-                        <li><a href="#settings" data-toggle="tab">Settings</a></li>
-                    </ul>
-
-                    <div class="tab-content">
-                        <div class="active tab-pane" id="activity" style="padding: 10px;">
-                            <!--<div ng-app="app" ng-controller="controller" ng-cloak>-->
-
-                            <div class="row">
-                                <div class="col-md-12 pull-right">
-                                    <!--<button type="button" class="btn btn-sm btn-primary pull-right">Novo Repositório</button>-->
-                                    <a href="#myModal" id='bt_novo_repositorio' role="button" class="btn btn-sm btn-default pull-right" data-toggle="modal">Novo Repositório</a>
-                                    <!--ng-click="addPerson($index)" ng-disabled="people.length >= 6"><i class="fa fa-plus-o" aria-hidden="true"></i> Novo Repositório</button>-->
-                                </div>
-                            </div>
-                            <br>
-
-                            <div class="row">
-                                <div class="col-md-12">
-
-                                    {% for item in meus_repositorios %}
-
-                                        <div class="list-group" data-toggle="tooltip" title="{{ item.url_repositorio }}">
-                                            <button type="button" class="list-group-item accordion" >{{ item.nome_repositorio }}<i class="fa fa-angle-down pull-right" style="margin-top: 4px;" aria-hidden="true"></i></button>
-
-                                            <div class="panel" style="border-left: 1px solid #d6d6d6; border-right: 1px solid #d6d6d6;border-bottom: 1px solid #d6d6d6;">
-                                                <div class="list-group">
-                                                    {% for projeto,url in projetos_disponiveis %}
-                                                        <button type="button" class="list-group-item" style="height: 35px;">{{ projeto }} - {{ url }}</button>
-
-                                                    {% empty %}
-                                                        <p style="text-align:center">Nenhum Projeto Encontrado!</p>
-                                                    {% endfor %}
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    {% empty %}
-		    							<p style="text-align:center">Nenhum Repositório Cadastrado!</p>
-									{% endfor %}
-
-
-                                    <!--<div class="list-group">
-                                        <button type="button" class="list-group-item accordion">Cras justo odio <i class="fa fa-angle-down pull-right" style="margin-top: 4px;" aria-hidden="true"></i>
-</button>
-                                        <div class="panel" style="border-left: 1px solid #d6d6d6; border-right: 1px solid #d6d6d6;">
-                                            <div class="list-group">
-                                              <button type="button" class="list-group-item" style="height: 35px;">Cras justo odio</button>
-                                              <button type="button" class="list-group-item sub-item" style="height: 35px;">Dapibus ac facilisis in</button>
-                                              <button type="button" class="list-group-item sub-item" style="height: 35px;">Morbi leo risus</button>
-                                              <button type="button" class="list-group-item sub-item" style="height: 35px;">Porta ac consectetur ac</button>
-                                              <button type="button" class="list-group-item sub-item" style="height: 35px;">Vestibulum at eros</button>
-                                            </div>
-                                        </div>
-
-
-
-                                    </div>-->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.tab-pane -->
-
-                        <div class="tab-pane" id="settings">
-                            <form class="form-horizontal">
-                                <div class="form-group">
-                                    <label for="inputName" class="col-sm-2 control-label">Name</label>
-
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="inputName" placeholder="Name">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
-
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputName" class="col-sm-2 control-label">Name</label>
-
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputName" placeholder="Name">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputExperience" class="col-sm-2 control-label">Experience</label>
-
-                                    <div class="col-sm-10">
-                                        <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputSkills" class="col-sm-2 control-label">Skills</label>
-
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                        <div class="checkbox">
-                                            <label> <input type="checkbox"> I agree to the
-                                                <a href="#">terms and conditions</a> </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" class="btn btn-danger">Submit</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <!-- /.tab-pane -->
+            <div class='row'>
+                <!-- About Me Box
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">About Me</h3>
                     </div>
-                    <!-- /.tab-content -->
+                    <!-- /.box-header
+                    <div class="box-body">
+                        <strong><i class="fa fa-book margin-r-5"></i> Education</strong>
+
+                        <p class="text-muted">
+                            B.S. in Computer Science from the University of Tennessee at Knoxville </p>
+
+                        <hr>
+
+                        <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
+
+                        <p class="text-muted">Malibu, California</p>
+
+                        <hr>
+
+                        <strong><i class="fa fa-pencil margin-r-5"></i> Skills</strong>
+
+                        <p>
+                            <span class="label label-danger">UI Design</span>
+                            <span class="label label-success">Coding</span>
+                            <span class="label label-info">Javascript</span>
+                            <span class="label label-warning">PHP</span>
+                            <span class="label label-primary">Node.js</span>
+                        </p>
+
+                        <hr>
+
+                        <strong><i class="fa fa-file-text-o margin-r-5"></i> Notes</strong>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+                    </div>
+                    <!-- /.box-body
                 </div>
-                <!-- /.nav-tabs-custom -->
-            </div>
+                <!-- /.box
+            </div>-->
             <!-- /.col -->
-        </div>
-        <!-- /.row -->
+            </div>
+          </div>
 
-    </section>
-    <!-- /.content -->
-    </div>
+          <div class="col-md-9">
+            <div class="nav-tabs-custom">
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#activity" data-toggle="tab">Repositórios</a></li>
+                <li><a href="#settings" data-toggle="tab">Settings</a></li>
+              </ul>
 
-    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
-        <div class="modal-dialog">
-            <!--  style="width: 90%"> -->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                    <h3 id="myModalLabel">Novo Repositório Sonar</h3>
+              <div class="tab-content">
+                <div class="active tab-pane" id="activity" style="padding: 10px;">
+                  <div class="row">
+                    <div class="col-md-12 pull-right">
+                      <!--<button type="button" class="btn btn-sm btn-primary pull-right">Novo Repositório</button>-->
+                      <a href="#myModal" id='bt_novo_repositorio' role="button" class="btn btn-sm btn-default pull-right" data-toggle="modal">Novo Repositório</a>
+                      <!--ng-click="addPerson($index)" ng-disabled="people.length >= 6"><i class="fa fa-plus-o" aria-hidden="true"></i> Novo Repositório</button>-->
+                    </div>
+                  </div>
+                  <br>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="box box-solid">
+                        <div class="row">
+                          <div class="col-md-12" style="margin-bottom: -19px;">
+                            <table class="table">
+                              <th class="center_align">Projeto</th>
+                              <th style="width: 100px; text-align: center;">Monitorar</th>
+
+                              {% verbatim %}
+                              <tr ng-repeat="item in projetos">
+                                <td style="font-size: 80%;padding-top: 11px;">{{ item.repositorio }} > {{ item.projeto }}</td>
+                                <td style="width: 100px; text-align: center;">
+                                  <input id="{{ item.id }}" type="checkbox" data-size="mini" data-on="Sim" data-off="Não" ng-checked="item.monitorado" onchange="angular.element(document.getElementById('angular_controller')).scope().alterar_monitoramento_projetos(this);">
+                                </td>
+                              </tr>
+                              {% endverbatim %}
+                           </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
+                <div class="tab-pane" id="settings">
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="inputName" class="col-sm-2 control-label">Name</label>
 
-                <div class="modal-body" style="padding: 30px;">
-                    <form action="" method="post">
-                    {% csrf_token %}
-                        <div class="row" style="padding-left: 15px; padding-right: 15px">
-                            <div style='padding-left: 8px'>
-                                <sub>Nome do Repositório:</sub>
-                            </div>
-                            <input type="text" id="nome_repositorio" name="nome_repositorio" class="form-control"/>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputName" placeholder="Name">
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-sm-2 control-label">Email</label>
 
-                        <div class="row" style="padding-left: 15px; padding-right: 15px">
-                            <div style='padding-left: 8px'>
-                                <sub>Url do Repositório:</sub>
-                            </div>
-                            <input type="text" id="url_repositorio" name="url_repositorio" class="form-control"/>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName" class="col-sm-2 control-label">Name</label>
 
-                        <div class="row">
-                            <div class="col-lg-3 col-lg-push-9">
-                                <button type="submit" id="bt_submit_documento" name='adicionar_repositorio' class="btn btn-primary form-control" style="position: relative; margin-top: 20px">Adicionar</button>
-                                <!-- <a href="#myModal" role="button" class="btn btn-primary form-control" data-toggle="modal" '  > Adicionar</a>  -->
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputName" placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputExperience" class="col-sm-2 control-label">Experience</label>
+
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputSkills" class="col-sm-2 control-label">Skills</label>
+
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <div class="checkbox">
+                                <label> <input type="checkbox"> I agree to the
+                                    <a href="#">terms and conditions</a> </label>
                             </div>
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-danger">Submit</button>
+                        </div>
+                    </div>
                     </form>
                 </div>
+                  <!-- /.tab-pane -->
+              </div>
+              <!-- /.tab-content -->
             </div>
+              <!-- /.nav-tabs-custom -->
+          </div>
+            <!-- /.col -->
         </div>
-    </div>
+    </section>
+  </div>
+</div>
 
-    {% include "componentes/mensagem.html" with messages=messages %}
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+    <div class="modal-dialog">
+      <!--  style="width: 90%"> -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+          <h3 id="myModalLabel">Novo Repositório Sonar</h3>
+        </div>
+
+
+        <div class="modal-body" style="padding: 30px;">
+          <form action="" method="post">
+          {% csrf_token %}
+            <div class="row" style="padding-left: 15px; padding-right: 15px">
+              <div style='padding-left: 8px'>
+                <sub>Nome do Repositório:</sub>
+              </div>
+              <input type="text" id="nome_repositorio" name="nome_repositorio" class="form-control"/>
+            </div>
+
+            <div class="row" style="padding-left: 15px; padding-right: 15px">
+              <div style='padding-left: 8px'>
+                <sub>Url do Repositório:</sub>
+              </div>
+              <input type="text" id="url_repositorio" name="url_repositorio" class="form-control"/>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-3 col-lg-push-9">
+                <button type="submit" id="bt_submit_documento" name='adicionar_repositorio' class="btn btn-primary form-control" style="position: relative; margin-top: 20px">Adicionar</button>
+                <!-- <a href="#myModal" role="button" class="btn btn-primary form-control" data-toggle="modal" '  > Adicionar</a>  -->
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% include "componentes/mensagem.html" with messages=messages %}
 {% endblock %}
 
 {% block recursos_complementares %}
-    {% load staticfiles %}
-    <script src="{% static 'angular-1.5.8/angular.min.js'%}"></script>
+  {% load staticfiles %}
+  <script src="{% static 'angular-1.5.8/angular.min.js'%}"></script>
+  <script src="{% static 'pnotify/dist/pnotify.js'%}"></script>
 
-    <script>
-        var acc = document.getElementsByClassName("accordion");
-        var i;
+  <script>
+  var application = angular.module('aplicacao', []);
+  application.controller('controle_repositorio', function($scope) {
+    $scope.projetos = [];
 
-        for (i = 0; i < acc.length; i++) {
-            acc[i].onclick = function(){
-                this.classList.toggle("active");
-                this.nextElementSibling.classList.toggle("show");
+    $scope.carregar_projetos = function () {
+
+      $.ajax({
+        type: 'get',
+        url: '/api/get_monitored_projects/',
+
+        success: function(data) {
+          var response = $.parseJSON(data);
+
+          for (var key in response){
+            //alert("Veja: "+response[key].repositorio+" -> "+response[key].projetos);
+            for (var project_key in response[key].projetos){
+              var object = {
+                'id':response[key].projetos[project_key].id,
+                'repositorio':response[key].repositorio,
+                'projeto': response[key].projetos[project_key].projeto,
+                'monitorado':response[key].projetos[project_key].monitorado
+              }
+              $scope.projetos.push(object);
+            $scope.$apply();
+            }
           }
-        }
-    </script>
 
-    <script>
-        $('.accordion').click(function() {
-            $(this).find('i').toggleClass('fa fa-angle-down fa fa-angle-up')
-        });
-    </script>
+          $scope.projetos.forEach(function(projeto) {
+            $('#'+projeto.id).bootstrapToggle();
+          });
+
+        },
+        failure: function(data){
+          alert("Erro: "+data)
+        }
+      });
+    }
+
+    $scope.alterar_monitoramento_projetos = function (objeto){
+      $.ajax({
+        type: 'POST',
+        url: '/api/update_project_monitored/',
+        data: {
+          id_project: objeto.id,
+          monitorar: objeto.checked,
+          csrfmiddlewaretoken: '{{ csrf_token }}'
+        },
+
+        success: function(data) {
+          var response = $.parseJSON(data);
+          alert(response['message'])
+          /*new PNotify({
+            title: "Operação realizada com Sucesso!",
+            text: "",
+            //auto_display: false,
+            hide: true,
+            delay: 2,//type=='error' ? 5000 : 2000,
+            mouse_reset: false,
+            type: type,
+            styling: 'bootstrap3' // bootstrap3 , fontawesome
+          });
+          */
+        },
+        failure: function(data){
+          alert("Erro: "+data)
+        }
+      });
+    }
+
+    $scope.marcar_projetos_monitorados = function(){
+      $scope.projetos.forEach(function(projeto) {
+        if(projeto.monitorado){
+          $scope.monitorar_projeto(projeto.repositorio+"_"+projeto.projeto)
+        }
+        else{
+          $scope.nao_monitorar_projeto(projeto.repositorio+"_"+projeto.projeto)
+        }
+      });
+    }
+
+    $scope.monitorar_projeto = function (id) {
+      $('#'+id).bootstrapToggle('on')
+    }
+
+    $scope.nao_monitorar_projeto = function (id) {
+      $('#'+id).bootstrapToggle('off')
+    }
+
+    $scope.save_password = function () {
+      var data_paramters = {
+        old_password: $scope.old_password,
+        password:  $scope.password,
+        confirm_password:  $scope.confirm_password
+      }
+    }
+  });
+  </script>
+
+  <script>
+    //$(":input").bootstrapToggle();
+    $(document).ready(function () {
+      //angular.element(document.getElementById('angular_controller')).scope().carregar_projetos();
+    });
+  </script>
 
 {% endblock %}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       

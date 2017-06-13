@@ -7,7 +7,7 @@
 
 {% block recrusos_necessarios %}
 {% load staticfiles %}
-
+{% load humanize %}
 <!-- BOOTSTRAP -->
 <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"/>
 
@@ -87,8 +87,12 @@ label {
 </style>
 {% endblock %}
 
+{% block breadcrumb_title %}
+Referências
+{% endblock %}
+
 {% block breadcrumb_block %}
-    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+    <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
     <li class="active">Referências</li>
 {% endblock %}
 
@@ -136,17 +140,17 @@ label {
 
 <!--<h4 class="titulo">Projetos pelo Mundo</h4>-->
 
-<div class="row">
+<div class="row" style='margin-top: -20px;'>
 	<div class="col-lg-12 col-md-12 col-xs-12">
 		<div class="box box-default" style="margin-top: 0px; margin-left: 0px; margin-right: 0px; ">
 			<div class="box-heading">
 
                 <div class="box-header with-border">
-                    <h5 class="box-title">Cadastro de Referência</h5>
+                    <h5 class="box-title">Situação Atual</h5>
 
                     <div class="btn-group pull-right" role="group" style='margin-top: -2px;' aria-label="...">
 
-					    <a id='bt_adicionar' role="button" class="btn btn-primary">
+					    <a id='bt_adicionar' role="button" class="btn btn-sm btn-primary">
                             <i id="atualizando_icone"></i>Atualizar Referências
                         </a>
 
@@ -208,13 +212,13 @@ label {
 								<tbody>		
 									{% for item in dados %}
 									
-									<tr class=''><!--  class="alinhado_meio clickable-row " data-href='/consultar_entidade/{{ item.id }}'> -->
+									<tr class="alinhado_meio clickable-row " data-href='referencia/linguagem/{{ item.linguagem|lower }}'>
 										<td style="text-align: center;cursor:pointer">{{ item.id }}</td>
                                         <td style="text-align: center;cursor:pointer">{{ item.data_revisao|date:'d/m/Y' }}</td>
 
                                         <td style="text-align: left;cursor:pointer">{{ item.linguagem }}</td>
                                         <td style="text-align: center;cursor:pointer">{{ item.total_projetos }}</td>
-                                        <td style="text-align: center;cursor:pointer">{{ item.linhas_codigo }}</td>
+                                        <td style="text-align: center;cursor:pointer">{{ item.linhas_codigo|intcomma }}</td>
                                         <td style="text-align: center;cursor:pointer">{{ item.taxa_comentarios }}%</td>
                                         {% if item.complexidade_metodo %}
                                         <td style="text-align: center;cursor:pointer">{{ item.complexidade_metodo }}</td>
@@ -267,94 +271,13 @@ label {
 						      //"className": 'details-control',
 						      //"defaultContent": '<button><i class="fa fa-plus" aria-hidden="true"></i> oi</button>'
 						    //} ]
-
-						
-					});	
-					
-					var table = $('#datatable').DataTable();
-					$('#datatable'+' tbody').on('click', 'tr', function () {
-						 
-					     if ($(this).hasClass('selected') ) {
-					    	 $(this).removeClass('selected');
-							 //alert("desmarquei");
-					    	 desabilitar_botao('#bt_excluir');
-							 desabilitar_botao('#bt_alterar');
-					    	 $('#bt_excluir').addClass('link_desabilitado');
-							 $('#bt_alterar').addClass('link_desabilitado');
-					     }
-					     else {
-							 //alert("marquei");
-					    	 table.$('tr.selected').removeClass('selected');
-					    	 $(this).addClass('selected');
-					    	 habilitar_botao('#bt_excluir');
-							 habilitar_botao('#bt_alterar');
-							 $('#bt_excluir').removeClass('link_desabilitado');
-							 $('#bt_alterar').removeClass('link_desabilitado');
-					    	 
-					    	//alert("Quero procurar os detalhes de: "+table.cell('.selected', 0).data());
-					    	/*
-					    	$.ajax({
-								url: 'get_detalhes_protocolo/'+table.cell('.selected', 0).data(),
-								type: 'get', //this is the default though, you don't actually need to always mention it
-								success: function(data) {
-									///alert(data['data']);
-									
-									$('#lb_emitido_por').text(data['emitido_por']);
-									var table_detalhes = $('#datatable_detalhes').DataTable();
-									table_detalhes.rows().remove();
-									table_detalhes.rows.add(data['data']).draw();
-									
-									
-									$("#datatable_detalhes tbody tr td").addClass("center_align");
-									$("#datatable_detalhes tbody tr td:first-child").removeClass("centralizado").addClass("left_align");
-									
-									
-									//alert("consegui?");
-								  
-								},
-								failure: function(data) { 
-									alert('Got an error dude');
-								}
-							}); 
-							*/
-					    	 
-					     }
-					     
-					     $('#bt_excluir').click( function () {
-							$.ajax({
-								url: '/protocolo/documento/excluir/'+table.cell('.selected', 0).data(),
-								type: 'get', //this is the default though, you don't actually need to always mention it
-								success: function(data) {
-									
-									/*if (data=="SUCESS"){
-										alert("Deu Certo Carai",data);
-									}
-									
-									else{
-										alert("Erro na exclusão! ",data);
-									}
-									*/
-									table.row('.selected').remove().draw( false );
-									$('#bt_excluir').addClass('link_desabilitado');
-									$('#bt_alterar').addClass('link_desabilitado');
-								},
-								failure: function(data) { 
-									alert('Erro! Falha na exclusão do registro');
-								}
-							}); 
-							
-					        
-					        //alert("Vamos confirmar.. "+table.cell('.selected', 0).data());
-					        //$("#protocolo_id").val(table.cell('.selected', 0).data());
-					        //alert("Vamos confirmar.. "+table.cell('.selected', 0).data());
-					     } );
-							
 					});
-					
-					$('#datatable tbody').on( 'click', 'button', function () {
-					    var data = table.row( $(this).parents('tr') ).data();
-					    alert( data[0] +"'s salary is: "+ data[ 5 ] );
-					} );
+
+                    jQuery(document).ready(function($) {
+                        $(".clickable-row").click(function() {
+                            window.location = $(this).data("href");
+                        });
+                    });
 				</script>
 				
 				<div class='row'>
@@ -368,8 +291,7 @@ label {
 						<label class='left_align'><sub>Buscar por:</sub></label>
 						 <select id='buscar_por' class='form-control'>
                              <option value="0">Código</option>
-                             <option value="1" selected>Documento</option>
-						 	<option value="2">Descrição</option>
+                             <option value="1" selected>Linguagem</option>
 						</select> 
 					</div>
 

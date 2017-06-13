@@ -1,0 +1,58 @@
+.box_metric{
+
+}
+
+.box_metric .box-body {
+  padding-bottom: 0px;
+}
+
+.box_metric .box-body .box_metric_hand{
+  float: left;
+  margin-left: -22px;
+  margin-top:6px;
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  border: 1px solid #DDD;
+  padding:5px;
+  padding-top: 3px;
+  border-right: hidden;
+  border-top: hidden;
+  border-bottom: hidden;
+}
+
+.box_metric .box-body .title_mectric{
+  float: left;
+  text-align: left;
+  font-weight: bold;
+}
+
+.progress_metric a {
+  color: #444;
+  text-decoration: none;
+}
+
+ /* unvisited link */
+.progress_metric a:link {
+  color: #444;
+  text-decoration: none;
+}
+
+/* visited link */
+.progress_metric a:visited {
+  color: #444;
+  text-decoration: none;
+}
+
+/* mouse over link */
+.progress_metric a:hover {
+  color: #444;
+  text-decoration: none;
+}
+
+/* selected link */
+.progress_metric  a:active {
+  color: #444;
+  text-decoration: none;
+}

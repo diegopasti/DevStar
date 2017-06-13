@@ -36,6 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.humanize',
+    'mathfilters',
     'django.contrib.staticfiles', 'novo_devstar', 'referencia', 'sistema',
 ]
 
@@ -123,6 +125,13 @@ USE_TZ = True
 
 #STATIC_URL = '/static/'
 STATIC_URL = '/arquivos_estaticos/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "arquivos_estaticos"),
@@ -131,3 +140,6 @@ STATICFILES_DIRS = (
 )
 
 
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)

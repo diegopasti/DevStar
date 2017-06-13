@@ -26,6 +26,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- ICONES -->
   <link href="{% static 'icones/css/font-awesome.min.css' %}" rel="stylesheet"/>
+  <link href="{% static 'icones/font-awesome-extension-v.0.0.3/font-awesome-extension.min.css' %}" rel="stylesheet"/>
 
   <!-- THEME -->
   <link href="{% static 'adminlte/css/AdminLTE.min.css' %}" rel="stylesheet"/>
@@ -96,7 +97,7 @@ desired effect
     <!-- Logo -->
     <a href="/" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><img src="{% static 'imagens/logo.png' %}" alt="logo" height="35px" width="30px" /></span>
+      <span class="logo-mini"><i class="fa fa-home"></i></span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>DevStar</b></span>
     </a>
@@ -111,6 +112,14 @@ desired effect
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
+
+
+
+
+
+
+
+
           <li class="dropdown messages-menu">
             <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -207,6 +216,15 @@ desired effect
               </li>
             </ul>
           </li>
+
+            <li class="dropdown messages-menu">
+            <!-- Menu toggle button -->
+            <a href="/perfil" >
+              <i class="fa fa-inbox" aria-hidden="true"></i>
+            </a>
+
+          </li>
+
           <!-- User Account Menu -->
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
@@ -311,6 +329,33 @@ desired effect
         <!-- Optionally, you can add icons to the links -->
 
         <li class="treeview">
+
+          <ul class="treeview-menu">
+
+            <li>
+              <a href="#"><i class="fa fa-circle-o"></i> Por Linguagens
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                  {%  for item in linguagens_projetos %}
+                    <li>
+                        <a href="/referencia/linguagem/{{ item.linguagem|lower }}" data-toggle="tooltip" title="{{ item.projetos }} projetos" data-placement="right"><i class="fa fa-circle-o"></i>{{ item.linguagem }}</a>
+                    </li>
+                  {% endfor %}
+
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+
+
+
+
+        <li class="treeview">
+
           <a href="#">
             <i class="fa fa-file-code-o" aria-hidden="true"></i> <span>Meus Projetos</span>
             <span class="pull-right-container">
@@ -318,7 +363,30 @@ desired effect
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/referencia"><i class="fa fa-circle-o"></i> Geral</a></li>
+            <!--<li class="header" style="color: #FFF; margin-left: -8px;"><a href="/projeto"><i class="fa fa-circle-o"></i>  Visão Geral</a></li>-->
+
+
+              {%  for repositorio in meus_repositorios %}
+                  <!--<li class="header" style="color: #FFF; margin-left: -8px;">{ repositorio.nome_repositorio }}</li>-->
+                  <li>
+                      <a href="#"><i class="fa fa-circle-o"></i> {{ repositorio.nome_repositorio|title }}
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+
+                          {%  for projeto in repositorio.projetos %}
+                            <li>
+                                <a href="/projeto/{{ repositorio.nome_repositorio|lower }}/{{ projeto.nome_projeto|lower }}" data-toggle="tooltip" title="{{ projeto.linguagem }}" data-placement="right">
+                                    <i class="fa fa-circle-o"></i>{{ projeto.nome_projeto|lower }}
+                                </a>
+                            </li>
+                          {% endfor %}
+                      </ul>
+                    </li>
+              {% endfor %}
+
           </ul>
         </li>
 
@@ -383,7 +451,7 @@ desired effect
     <!-- Content Header (Page header) -->
     <section class="content-header">
 
-      <h1 style="padding-bottom: 10px;">
+      <h1 style="margin-left: 10px; margin-top: 10px;">
       {% block breadcrumb_title %}
 
       {% endblock %}
