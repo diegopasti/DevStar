@@ -8,6 +8,7 @@ import urllib2
 from bs4 import BeautifulSoup
 
 from referencia.models import Referencia, metrica
+
 from sistema.models import Estado
 
 
@@ -48,8 +49,11 @@ class coletor_dados():
                     if projeto.monitorado:
                         estado = self.get_estado(item)
                         estado.projeto = projeto
-                        estado.save()
-                        lista_estados.append(estado)
+
+                        versao_diferente = verificar_alteracao(projeto,estado)
+                        if versao_diferente:
+                            estado.save()
+                            lista_estados.append(estado)
 
         return lista_estados
 
@@ -108,6 +112,7 @@ class coletor_dados():
 
         estado.total_codesmell = formatar_inteiro(self.get_metrica(registro, metrica.code_smell))
         estado.taxa_comentarios = formatar_float(self.get_metrica(registro, metrica.taxa_comentarios))
+        print("VEJA A TAXA DE COMETARIO: ",estado.taxa_comentarios)
 
         self.get_data_ultima_analise(registro)
         return estado
@@ -142,6 +147,7 @@ class coletor_dados():
         return referencia
         #referencia.data_revisao = ""
 
+
     def exibir_referencia(self):
         print self.linguagem, " - ", self.total_projetos, "Projetos."
         print "COMPLEX. MET: ", self.complexidade_metodo
@@ -158,12 +164,14 @@ class coletor_dados():
             data = None
         return data
 
+
     def get_metrica(self, linha, campo):
         try:
             metrica = linha.find("span", {"id": campo}).text
         except:
             metrica = None
         return metrica
+
 
     def get_registros(self):
         tabela_metricas = self.arquivo.find('table', {'id': 'measures-table'})
@@ -172,12 +180,21 @@ class coletor_dados():
         linhas = linhas + tabela_metricas.findAll("tr", {'class': 'even'})
         return linhas
 
+
     def get_nome_projeto(self, linha):
         try:
             nome = linha.find("a").text
         except:
             nome = ""
         return nome.upper()
+
+
+def verificar_alteracao(projeto, novo_estado):
+    from referencia.views import VariacaoEstado
+    ultimo_estado = Estado.objects.filter(projeto=projeto).last()
+    variacao = VariacaoEstado(novo_estado,ultimo_estado)
+    versao_diferente = variacao.comparar_versoes()
+    return versao_diferente
 
 
 def formatar_inteiro(texto):
@@ -189,6 +206,7 @@ def formatar_inteiro(texto):
         valor = None
 
     return valor
+
 
 def formatar_float(texto):
     valor = float(texto.replace("%", "").replace(" ", ""))

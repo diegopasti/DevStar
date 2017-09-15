@@ -55,7 +55,7 @@ class Estado(models.Model):
     problemas_normais = models.IntegerField(null=True)
     problemas_simples = models.IntegerField(null=True)
 
-    taxa_comentarios = models.IntegerField(null=True)
+    taxa_comentarios = models.DecimalField(max_digits=11, decimal_places=2, null=True)
 
     ultima_analise = models.DateField(null=True, blank=True)
     data_revisao = models.DateTimeField(auto_now_add=True)

@@ -157,9 +157,7 @@ def consultar_metricas_projeto(request,id_projeto):
     response_dict.update(serializar_resumo_metricas('duplicacao', estado.taxa_duplicacao, referencia.taxa_duplicacao).items())
     response_dict.update(serializar_resumo_metricas('divida_tecnica', estado.taxa_divida_tecnica, referencia.taxa_divida_tecnica).items())
     response_dict.update(serializar_resumo_metricas('comentarios', estado.taxa_comentarios,referencia.taxa_comentarios).items())
-    response_dict.update(serializar_resumo_metricas('codesmell', estado.total_codesmell, 100).items())
-
-    print "Veja o que eu tenho de code smell: ",estado.total_codesmell
+    response_dict.update(serializar_resumo_metricas('codesmell', estado.total_codesmell, 0).items())
 
     """response_dict['complexidade_projeto'] = float(estado.complexidade_metodo)
     response_dict['complexidade_global'] =  float(referencia.complexidade_metodo)
@@ -217,6 +215,22 @@ class VariacaoEstado:
         self.estado_anterior = estado_anterior
         self.variacao = self.criar_variacao()
 
+    def comparar_versoes(self):
+        versao_diferente = False
+        for item in self.estado_atual.__dict__:
+            if item[0] != '_' and item != 'id' and item != 'data_revisao' and item != 'ultima_analise':
+                primeiro_valor = self.estado_atual.__dict__[item]
+                segundo_valor = self.estado_anterior.__dict__[item]
+                if 'Decimal' in str(type(self.estado_anterior.__dict__[item])):
+                    segundo_valor = round(float(self.estado_anterior.__dict__[item]),2)
+                    primeiro_valor = round(float(self.estado_atual.__dict__[item]),2)
+
+                if(primeiro_valor != segundo_valor):
+                    #print("ATRIBUTOS NAO SAO IGUAIS: ",self.estado_anterior.__dict__['projeto_id'], item, primeiro_valor, segundo_valor)
+                    versao_diferente = True
+                    break
+        return versao_diferente
+
     def criar_variacao(self):
         variacao = Estado()
         if self.estado_anterior is not None:
@@ -237,16 +251,13 @@ class VariacaoEstado:
         return variacao
 
     def calcular_variacao(self,metrica_atual, metrica_anterior):
-        #print("VEJA O CALCULO: ",metrica_atual,metrica_anterior)
         metrica_anterior = float(metrica_anterior)
         metrica_atual = float(metrica_atual)
 
         if metrica_anterior != 0 and metrica_anterior is not None:
             valor = (metrica_anterior-metrica_atual)#/metrica_anterior
             if(valor < 0):
-                print("VALOR NEGATIVO")
                 valor = valor *(-1)
-            print("VEJA O CALCULADO: ",valor)
             return round(((valor)/metrica_anterior)*100,2)
         else:
             return None
@@ -259,24 +270,22 @@ def visualizar_projeto(request,nome_repositorio,nome_projeto):
     repositorio = meus_repositorios.get(nome_repositorio__exact=nome_repositorio.upper())
     projeto = Projeto.objects.filter(repositorio=repositorio).get(nome_projeto__exact=nome_projeto.upper())
     referencia = Referencia.objects.filter(linguagem=projeto.linguagem.upper()).last()
-    revisoes = Estado.objects.filter(projeto=projeto)
+    revisoes = Estado.objects.filter(projeto=projeto).order_by('-data_revisao')
     linguagens_projetos = Referencia.objects.values('linguagem').annotate(projetos=Max('total_projetos'))
     meus_respositorios = get_repositorios_usuario(str(request.user))
 
     referencia.complexidade_metodo = round(float(referencia.complexidade_total)/referencia.metodos,2) #comentario_over_referencia
     referencia.save()
 
-    print "olha a complexidade do estado: ",revisoes.last().complexidade_metodo
     complexidade_over_referencia = str(round((float(revisoes.last().complexidade_metodo) / referencia.complexidade_metodo) * 100,2))  # float((revisoes.last().taxa_comentarios)/referencia.taxa_comentarios)*100, 2)
     comentario_over_referencia = str(round((float(revisoes.last().taxa_comentarios) / referencia.taxa_comentarios) * 100,2))  # float((revisoes.last().taxa_comentarios)/referencia.taxa_comentarios)*100, 2)
     #print "Olha o rate:",referencia.complexidade_metodo
 
     revisoes = list(revisoes)
     if len(revisoes) > 1:
-        variacao_estado = VariacaoEstado(revisoes[-1],revisoes[-2])
+        variacao_estado = VariacaoEstado(revisoes[-2],revisoes[-1])
     else:
         variacao_estado = VariacaoEstado(revisoes[-1], None)
-
 
     return render_to_response("projeto/projeto.html",
                               {'dados': [],
@@ -302,8 +311,6 @@ def coletar_metricas_projetos_manual(usuario):
     for item in meus_respositorios:
         estados = coletor_dados().coletar_metricas_projetos(item)
         lista_revisoes.append(estados)
-
-    print "Coletamos:",lista_revisoes
     return lista_revisoes
 
 def coletar_metricas_projetos(request):
