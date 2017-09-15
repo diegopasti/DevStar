@@ -110,6 +110,10 @@ th.compact {
 }
 
 
+#box_problemas .tooltip-inner {
+  min-width: 110px;
+  max-width: 100%;
+}
 
 
 </style>
@@ -171,9 +175,9 @@ th.compact {
 
 <div class="row">
     <div class="col-md-12">
-      <div class="box" style="margin-top: -25px; margin-left: 0px; margin-right: 0px; ">
+      <div class="box" style="margin-top: -25px; margin-left: 0px; margin-right: 0px;">
         <div class="box-header with-border">
-              <h3 class="box-title">Visão Geral</h3>
+          <h3 class="box-title">Visão Geral</h3>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -182,7 +186,6 @@ th.compact {
               <button type="button" class="btn btn-box-tool" onclick="atualizar_metricas_projeto();">
                 <i id='atualizar_metricas_icone' class="fa fa-refresh" style="font-size:15px" aria-hidden="true"></i>
                 <!--<i class="fa fa-refresh fa-spin fa-3x fa-1x" ></i>-->
-
               </button>
 
             </div>
@@ -190,23 +193,227 @@ th.compact {
           </div>
         </div>
         <!-- /.box-header -->
-        <div class="box-body">
+        <div class="box-body" style="padding-left: 15px;padding-right: 15px;margin-top:0px;padding-top:0px;height: 476px; border-bottom-left-radius: 3px; border-top: none; border-bottom-right-radius: 3px;">
           <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-8" style='padding-top: 30px;'>
               <p class="text-center">
                 <strong>Complexidade</strong>
               </p>
 
               <div class="chart">
                 <!-- Sales Chart Canvas -->
-                <canvas id="salesChart" style="background-color: #ccc;height: 180px; width: 703px;" height="180" width="703">
+                <canvas id="salesChart" style="background-color: #EEE;height: 280px; width: 703px;" width="703">
 
                 </canvas>
               </div>
               <!-- /.chart-responsive -->
+
+
+              <div class="row" style="margin-top: 10px; background-color: #fff; margin-left: 0px;margin-right: 0px;margin-bottom: 0px;">
+                <div id='box_problemas' class="box-default">
+
+                  <style>
+                    .label_problema{
+                      color: #8c8c8c;
+                    }
+                  </style>
+
+                  <div class="box-header with-border">
+                    <h5 class="box-title label_problema">Problemas</h5>
+                  </div>
+
+                  <div class="box-header with-border" style="padding-left: 0px;padding-right: 0px;">
+                    <div class="col-md-3 border-right" style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Análise anterior: {{ estado_atual.estado_anterior.problemas_criticos }} Problemas">
+                      <span class="center_align label_problema">Críticos</span>
+                      <br>
+                      <b>{{ estado_atual.estado_atual.problemas_criticos }}</b>
+                        {% if estado_atual.variacao.problemas_criticos == None %}
+                        {% else %}
+                          {% if estado_atual.variacao.problemas_criticos == 0 %}
+                            <span class="description-percentage text-yellow">{{ estado_atual.variacao.problemas_criticos }}%
+                          {% else %}
+                            {% if estado_atual.estado_atual.problemas_criticos < estado_atual.estado_anterior.problemas_criticos %}
+                              <span class="description-percentage text-green">{{ estado_atual.variacao.problemas_criticos }}%
+                            {% else %}
+                              <span class="description-percentage text-red">{{ estado_atual.variacao.problemas_criticos }}%
+                            {% endif %}
+                          {% endif %}
+                        {% endif %}
+                        </span>
+                    </div>
+
+                    <div class="col-md-3 border-right" style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Análise anterior: {{ estado_atual.estado_anterior.problemas_importantes }} Problemas">
+                      <span class="description-text center_align label_problema">Importantes</span>
+                      <br>
+                      <b>{{ estado_atual.estado_atual.problemas_importantes }}</b>
+                        {% if estado_atual.variacao.problemas_importantes == None %}
+                        {% else %}
+                          {% if estado_atual.variacao.problemas_importantes == 0 %}
+                            <span class="description-percentage text-yellow">{{ estado_atual.variacao.problemas_importantes }}%
+                          {% else %}
+                            {% if estado_atual.estado_atual.problemas_importantes < estado_atual.estado_anterior.problemas_importantes %}
+                              <span class="description-percentage text-green">{{ estado_atual.variacao.problemas_importantes }}%
+                            {% else %}
+                              <span class="description-percentage text-red">{{ estado_atual.variacao.problemas_importantes }}%
+                            {% endif %}
+                          {% endif %}
+                        {% endif %}
+                        </span>
+                    </div>
+
+                    <div class="col-md-3 border-right" style="text-align: center;"  data-toggle="tooltip" data-placement="top" title="Análise anterior: {{ estado_atual.estado_anterior.problemas_moderados }} Problemas">
+                      <span class="description-text center_align label_problema">Moderados</span>
+                      <br>
+                      <b>{{ estado_atual.estado_atual.problemas_moderados }}</b>
+                        {% if estado_atual.variacao.problemas_moderados == None %}
+                        {% else %}
+                          {% if estado_atual.variacao.problemas_moderados == 0 %}
+                            <span class="description-percentage text-yellow">{{ estado_atual.variacao.problemas_moderados }}%
+                          {% else %}
+                            {% if estado_atual.estado_atual.problemas_moderados < estado_atual.estado_anterior.problemas_moderados %}
+                              <span class="description-percentage text-green">{{ estado_atual.variacao.problemas_moderados }}%
+                            {% else %}
+                              <span class="description-percentage text-red">{{ estado_atual.variacao.problemas_moderados }}%
+                            {% endif %}
+                          {% endif %}
+                        {% endif %}
+                        </span>
+                    </div>
+
+                    <div class="col-md-3" style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Análise anterior: {{ estado_atual.estado_anterior.problemas_normais }} Problemas">
+                      <span class="description-text center_align label_problema">Simples</span>
+                      <br>
+                      <b>{{ estado_atual.estado_atual.problemas_normais }}</b>
+                        {% if estado_atual.variacao.problemas_normais == None %}
+                        {% else %}
+                          {% if estado_atual.variacao.problemas_normais == 0 %}
+                            <span class="description-percentage text-yellow">{{ estado_atual.variacao.problemas_normais }}%
+                          {% else %}
+                            {% if estado_atual.estado_atual.problemas_normais < estado_atual.estado_anterior.problemas_normais %}
+                              <span class="description-percentage text-green">{{ estado_atual.variacao.problemas_normais }}%
+                            {% else %}
+                              <span class="description-percentage text-red">{{ estado_atual.variacao.problemas_normais }}%
+                            {% endif %}
+                          {% endif %}
+                        {% endif %}
+                        </span>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+
+
+                <!--<div id='box_problemas' class="box_metric box box-default">
+                <div class="box-body">
+                  <div class="progress_metric" class="progress-group">
+                    <strong class="metric_title">Problemas</strong>
+
+                    <strong class="pull-right">
+                      {{ estado_atual.estado_atual.total_problemas }} ({{ estado_atual.variacao.total_problemas }}%)
+                    </strong>
+
+                  </div>
+
+                  <div class="col-sm-3 col-xs-6">
+                    <div class="description-block border-right">
+                      <span class="description-text center_align">Críticos</span>
+                      <h5 class="description-header"></h5>
+                        <b>{{ estado_atual.estado_atual.problemas_criticos }}</b>
+                        {% if estado_atual.variacao.problemas_criticos == None %}
+                        {% else %}
+                          {% if estado_atual.variacao.problemas_criticos == 0 %}
+                            <span class="description-percentage text-yellow">{{ estado_atual.variacao.problemas_criticos }}%
+                          {% else %}
+                            {% if estado_atual.variacao.problemas_criticos > 0 %}
+                              <span class="description-percentage text-green">{{ estado_atual.variacao.problemas_criticos }}%
+                            {% else %}
+                              <span class="description-percentage text-red">{{ estado_atual.variacao.problemas_criticos }}%
+                            {% endif %}
+                          {% endif %}
+                        {% endif %}
+                        </span>
+                    </div>
+                  </div>
+                  <!-- /.col --
+                  <div class="col-sm-3 col-xs-6">
+                    <div class="description-block border-right">
+                      <span class="description-text center_align">Importantes</span>
+                      <h5 class="description-header"></h5>
+                        <b>{{ estado_atual.estado_atual.problemas_importantes }}</b>
+                        {% if estado_atual.variacao.problemas_importantes == None %}
+                        {% else %}
+                          {% if estado_atual.variacao.problemas_importantes == 0 %}
+                            <span class="description-percentage text-yellow">{{ estado_atual.variacao.problemas_importantes }}%
+                          {% else %}
+                            {% if estado_atual.variacao.problemas_importantes > 0 %}
+                              <span class="description-percentage text-green">{{ estado_atual.variacao.problemas_importantes }}%
+                            {% else %}
+                              <span class="description-percentage text-red">{{ estado_atual.variacao.problemas_importantes }}%
+                            {% endif %}
+                          {% endif %}
+                        {% endif %}
+                        </span>
+                    </div>
+                  </div>
+                  <!-- /.col --
+                  <div class="col-sm-3 col-xs-6">
+                    <div class="description-block border-right">
+                      <span class="description-text">Moderados</span>
+                      <h5 class="description-header"></h5>
+                        <b>{{ estado_atual.estado_atual.problemas_moderados }}</b>
+                        {% if estado_atual.variacao.problemas_moderados == None %}
+                        {% else %}
+                          {% if estado_atual.variacao.problemas_moderados == 0 %}
+                            <sub><span class="description-percentage text-yellow">({{ estado_atual.variacao.problemas_moderados }}%)</sub>
+                          {% else %}
+                            {% if estado_atual.variacao.problemas_moderados > 0 %}
+                              <sub><span class="description-percentage text-green">(+{{ estado_atual.variacao.problemas_moderados}}%)</sub>
+                            {% else %}
+                              <sub><span class="description-percentage text-red">({{ estado_atual.variacao.problemas_moderados }}%)</sub>
+                            {% endif %}
+                          {% endif %}
+                        {% endif %}
+                        </span>
+                    </div>
+                  </div>
+                  <!-- /.col --
+                  <div class="col-sm-3 col-xs-6">
+                    <div class="description-block border-right">
+                      <span class="description-text">Moderados</span>
+                      <h5 class="description-header"></h5>
+                        <b>{{ estado_atual.estado_atual.problemas_moderados }}</b>
+                        {% if estado_atual.variacao.problemas_moderados == None %}
+                        {% else %}
+                          {% if estado_atual.variacao.problemas_moderados == 0 %}
+                            <sub><span class="description-percentage text-yellow">({{ estado_atual.variacao.problemas_moderados }}%)</sub>
+                          {% else %}
+                            {% if estado_atual.variacao.problemas_moderados > 0 %}
+                              <sub><span class="description-percentage text-green">(+{{ estado_atual.variacao.problemas_moderados}}%)</sub>
+                            {% else %}
+                              <sub><span class="description-percentage text-red">({{ estado_atual.variacao.problemas_moderados }}%)</sub>
+                            {% endif %}
+                          {% endif %}
+                        {% endif %}
+                        </span>
+                    </div>
+                  </div>
+                </div>
+              </div>-->
+
+
+
+
+
+
+
+              </div>
             </div>
             <!-- /.col -->
-            <div id="box_project_metrics" class="col-md-4" style='opacity: 0.2;'>
+            <div id="box_project_metrics" class="col-md-4"  style="padding-top: 26px;opacity: 0.2;">
 
               <div id='box_complexidade' class="box_metric box box-default">
                 <div class="box-body">
@@ -313,8 +520,8 @@ th.compact {
                     <strong class="metric_title">Code Smells</strong>
 
                     <strong class="pull-right">
-                      <a id='codesmells_projeto' data-toggle="tooltip" data-placement="bottom" title="Codesmells do Projeto"></a>% /
-                      <a id='codesmells_global' data-toggle="tooltip" data-placement="bottom" title="Codesmells de Projetos Externos"></a>%
+                      <a id='codesmells_projeto' data-toggle="tooltip" data-placement="bottom" title="Codesmells do Projeto"></a> /
+                      <a id='codesmells_global' data-toggle="tooltip" data-placement="bottom" title="Codesmells de Projetos Externos"></a>
                     </strong>
 
                     <a data-toggle="tooltip" data-placement="bottom" title="sa à partir de ">
@@ -334,47 +541,6 @@ th.compact {
           <!-- /.row -->
         </div>
         <!-- ./box-body -->
-        <div class="box-footer">
-          <div class="row">
-            <div class="col-sm-3 col-xs-6">
-              <div class="description-block border-right">
-                <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 17%</span>
-                <h5 class="description-header">$35,210.43</h5>
-                <span class="description-text">TOTAL REVENUE</span>
-              </div>
-              <!-- /.description-block -->
-            </div>
-            <!-- /.col -->
-            <div class="col-sm-3 col-xs-6">
-              <div class="description-block border-right">
-                <span class="description-percentage text-yellow"><i class="fa fa-caret-left"></i> 0%</span>
-                <h5 class="description-header">$10,390.90</h5>
-                <span class="description-text">TOTAL COST</span>
-              </div>
-              <!-- /.description-block -->
-            </div>
-            <!-- /.col -->
-            <div class="col-sm-3 col-xs-6">
-              <div class="description-block border-right">
-                <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 20%</span>
-                <h5 class="description-header">$24,813.53</h5>
-                <span class="description-text">TOTAL PROFIT</span>
-              </div>
-              <!-- /.description-block -->
-            </div>
-            <!-- /.col -->
-            <div class="col-sm-3 col-xs-6">
-              <div class="description-block">
-                <span class="description-percentage text-red"><i class="fa fa-caret-down"></i> 18%</span>
-                <h5 class="description-header">1200</h5>
-                <span class="description-text">GOAL COMPLETIONS</span>
-              </div>
-              <!-- /.description-block -->
-            </div>
-          </div>
-          <!-- /.row -->
-        </div>
-        <!-- /.box-footer -->
       </div>
       <!-- /.box -->
     </div>
@@ -386,23 +552,19 @@ th.compact {
 	<div class="col-lg-12 col-md-12 col-xs-12">
 		<div class="box box-default" style="margin-top: -25px; margin-left: 0px; margin-right: 0px; ">
 			<div class="box-heading">
+        <div class="box-header with-border">
+          <h5 class="box-title">Histórico de Análises</h5>
 
-                <div class="box-header with-border">
-                    <h5 class="box-title">Histórico de Análises</h5>
+          <div class="btn-group pull-right" role="group" style='margin-top: -2px;' aria-label="...">
+            <a id='bt_adicionar' role="button" class="btn btn-sm btn-primary">
+              <i id="atualizando_icone"></i>Analisar Projeto
+            </a>
 
-                    <div class="btn-group pull-right" role="group" style='margin-top: -2px;' aria-label="...">
-
-					    <a id='bt_adicionar' role="button" class="btn btn-sm btn-primary">
-                            <i id="atualizando_icone"></i>Analisar Projetos
-                        </a>
-
-                        <a id='bt_config' href='/perfil' role="button" class="btn btn-sm btn-default" style="margin-left: 8px;">
-                            Configurações
-                        </a>
-
-                    </div>
-                </div>
-
+            <a id='bt_config' href='/perfil' role="button" class="btn btn-sm btn-default" style="margin-left: 8px;">
+                Configurações
+            </a>
+          </div>
+        </div>
 			</div>
 			<!-- /.panel-heading -->
 		
@@ -453,7 +615,7 @@ th.compact {
                   {% for estado in estados_projeto %}
                     <tr class='compact_row'>
                       {% load humanize %}
-                      <td class='compact center_align clickable'>{{ estado.data_revisao }}%</td>
+                      <td class='compact center_align clickable'>{{ estado.data_revisao|date:"d/m/Y" }}</td>
 
                       {% if estado.linhas_codigo != None %}
                           <td class='compact center_align clickable'>{{ estado.linhas_codigo|intcomma }}</td>
@@ -494,206 +656,8 @@ th.compact {
 
                   {% empty %}
 		    						<tr><td style="text-align: center;" colspan="7">Nenhuma Análise Realizada!</td></tr>
-								{% endfor %}
+								  {% endfor %}
                   </tbody>
-				
-								<!--<tbody>
-									% for repositorio in meus_repositorios %}
-
-                                        veja { repositorio.nome_projeto }}
-
-                                        % for projeto in repositorio.projetos %}
-									
-                                            <tr class='compact_row'>
-
-                                                % if projeto.estado_atual.linhas_codigo != None %}
-                                                    <td class='compact left_align clickable'>
-
-                                                        { projeto.estado_atual.linhas_codigo }}
-                                                        % if projeto.estado_anterior %}
-                                                        <label class='pull-right label_metric'>
-                                                            % if projeto.variacao_estado.linhas_codigo > 0 %}
-
-                                                                <span class="label label-default">
-                                                                    +{ projeto.variacao_estado.linhas_codigo }}%
-                                                                </span>
-
-                                                            % else %}
-                                                                <span class="label label-default">
-                                                                    { projeto.variacao_estado.linhas_codigo }}%
-                                                                </span>
-                                                            % endif %}
-                                                        % endif %}
-
-                                                        </label>
-                                                    </td>
-                                                % else %}
-                                                    <td class='compact center_align clickable'>-</td>
-                                                % endif %}
-
-
-                                                % if projeto.estado_atual.taxa_comentarios != None %}
-                                                    <td class='compact center_align clickable'>
-                                                        { projeto.estado_atual.taxa_comentarios }}%
-
-                                                        % if projeto.estado_anterior %}
-                                                        % if projeto.estado_anterior %}
-                                                        <label class='pull-right label_metric'>
-                                                            % if projeto.variacao_estado.taxa_comentarios > 0 %}
-
-                                                                <span class="label label-danger">
-                                                                    +{ projeto.variacao_estado.taxa_comentarios }}%
-                                                                </span>
-
-                                                            % elif projeto.variacao_estado.taxa_comentarios == 0 %}
-                                                                <span class="label label-default">
-                                                                    { projeto.variacao_estado.taxa_comentarios }}%
-                                                                </span>
-
-                                                            % else %}
-                                                                <span class="label label-success">
-                                                                    { projeto.variacao_estado.taxa_comentarios }}%
-                                                                </span>
-                                                            % endif %}
-
-                                                        </label>
-                                                        % endif %}
-
-                                                    % endif %}
-                                                    </td>
-                                                % else %}
-                                                    <td class='compact center_align clickable'>-</td>
-                                                % endif %}
-
-
-
-                                                % if projeto.estado_atual.complexidade_metodo != None %}
-                                                <td class='compact center_align clickable'>
-                                                    { projeto.estado_atual.complexidade_metodo }}
-                                                    % if projeto.estado_anterior %}
-                                                        % if projeto.estado_anterior %}
-                                                        <label class='pull-right label_metric'>
-                                                            % if projeto.variacao_estado.complexidade_metodo > 0 %}
-
-                                                                <span class="label label-danger">
-                                                                    +{ projeto.variacao_estado.complexidade_metodo }}%
-                                                                </span>
-
-                                                            % elif projeto.variacao_estado.complexidade_metodo == 0 %}
-                                                                <span class="label label-default">
-                                                                    { projeto.variacao_estado.complexidade_metodo }}%
-                                                                </span>
-
-                                                            % else %}
-                                                                <span class="label label-success">
-                                                                    { projeto.variacao_estado.complexidade_metodo }}%
-                                                                </span>
-                                                            % endif %}
-
-                                                        </label>
-                                                        % endif %}
-                                                    % endif %}
-                                                </td>
-                                                % else %}
-                                                <td class='compact center_align clickable'>-</td>
-                                                % endif %}
-
-                                                % if projeto.estado_atual.taxa_duplicacao != None %}
-                                                    <td class='compact center_align clickable'>
-                                                        { projeto.estado_atual.taxa_duplicacao }}%
-                                                        % if projeto.estado_anterior %}
-                                                        <label class='pull-right label_metric'>
-                                                            % if projeto.variacao_estado.taxa_duplicacao > 0 %}
-
-                                                                <span class="label label-danger">
-                                                                    +{ projeto.variacao_estado.taxa_duplicacao }}%
-                                                                </span>
-
-                                                            % elif projeto.variacao_estado.taxa_duplicacao == 0 %}
-                                                                <span class="label label-default">
-                                                                    { projeto.variacao_estado.taxa_duplicacao }}%
-                                                                </span>
-
-                                                            % else %}
-                                                                <span class="label label-success">
-                                                                    { projeto.variacao_estado.taxa_duplicacao }}%
-                                                                </span>
-                                                            % endif %}
-
-                                                        </label>
-                                                        % endif %}
-                                                    </td>
-                                                % else %}
-                                                <td class='compact center_align clickable'>-</td>
-                                                % endif %}
-
-                                                % if projeto.estado_atual.taxa_divida_tecnica != None %}
-                                                    <td class='compact center_align clickable'>
-                                                        { projeto.estado_atual.taxa_divida_tecnica }}%
-
-                                                        % if projeto.estado_anterior %}
-                                                        <label class='pull-right label_metric'>
-                                                            % if projeto.variacao_estado.taxa_divida_tecnica > 0 %}
-
-                                                                <span class="label label-danger">
-                                                                    +{ projeto.variacao_estado.taxa_divida_tecnica }}%
-                                                                </span>
-
-                                                            % elif projeto.variacao_estado.taxa_divida_tecnica == 0 %}
-                                                                <span class="label label-default">
-                                                                    { projeto.variacao_estado.taxa_divida_tecnica }}%
-                                                                </span>
-
-                                                            % else %}
-                                                                <span class="label label-success">
-                                                                    { projeto.variacao_estado.taxa_divida_tecnica }}%
-                                                                </span>
-                                                            % endif %}
-
-                                                        </label>
-                                                        % endif %}
-                                                    </td>
-                                                % else %}
-                                                <td class='compact center_align clickable'>-</td>
-                                                % endif %}
-
-                                                % if projeto.estado_atual.taxa_divida_tecnica != None %}
-                                                    <td class='compact center_align clickable'>
-                                                        { projeto.estado_atual.total_codesmell }}
-
-                                                        % if projeto.estado_anterior %}
-                                                        <label class='pull-right label_metric'>
-                                                            % if projeto.variacao_estado.total_codesmell > 0 %}
-
-                                                                <span class="label label-danger">
-                                                                    +{ projeto.variacao_estado.total_codesmell }}%
-                                                                </span>
-
-                                                            % elif projeto.variacao_estado.total_codesmell == 0 %}
-                                                                <span class="label label-default">
-                                                                    { projeto.variacao_estado.total_codesmell }}%
-                                                                </span>
-
-                                                            % else %}
-                                                                <span class="label label-success">
-                                                                    { projeto.variacao_estado.total_codesmell }}%
-                                                                </span>
-                                                            % endif %}
-
-                                                        </label>
-                                                        % endif %}
-
-                                                    </td>
-                                                % else %}
-                                                <td class='compact center_align clickable'>-</td>
-                                                % endif %}
-                                             </tr>
-                                        % endfor %}
-										
-									% empty %}
-		    							<tr><td style="text-align: center;" colspan="7">Nenhum Repositório Cadastrado!</td></tr>
-									% endfor %}
-								</tbody>-->
 							</table>
 						</div>
 					</div>
@@ -708,24 +672,21 @@ th.compact {
 						"ordering": true,
 						"bAutoWidth": false,
 						"aoColumns": [
-                                      { "sWidth": '70px' },
-                                      { "sWidth": null },
-                                      { "sWidth": null },
-                                      { "sWidth": null },
-                                      { "sWidth": null },
-                                      { "sWidth": null }
+              { "sWidth": '70px' },
+              { "sWidth": null },
+              { "sWidth": null },
+              { "sWidth": null },
+              { "sWidth": null },
+              { "sWidth": null }
+            ],
 
-					    		    ],
-
-                        //"columnDefs": [ {
-						      //"targets": 0,
-						      ///"data": null,
-						      //"orderable": false,
-						      //"className": 'details-control',
-						      //"defaultContent": '<button><i class="fa fa-plus" aria-hidden="true"></i> oi</button>'
-						    //} ]
-
-						
+            //"columnDefs": [ {
+            //"targets": 0,
+            ///"data": null,
+            //"orderable": false,
+            //"className": 'details-control',
+            //"defaultContent": '<button><i class="fa fa-plus" aria-hidden="true"></i> oi</button>'
+            //} ]
 					});	
 					
 					var table = $('#datatable').DataTable();
@@ -821,26 +782,24 @@ th.compact {
 				</script>
 				
 				<div class='row'>
-
-                    {% if meus_repositorios %}
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6" style='margin-top:-36px;'>
-                    {% else %}
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6" style='margin-top:6px;'>
-                    {% endif %}
-
-						<label class='left_align'><sub>Buscar por:</sub></label>
-						 <select id='buscar_por' class='form-control'>
-                             <option value="0">Repositório</option>
-                             <option value="1" selected>Projeto</option>
-						 	<option value="2">Linguagem</option>
-						</select> 
+          {% if meus_repositorios %}
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6" style='margin-top:0px;'>
+          {% else %}
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6" style='margin-top:6px;'>
+          {% endif %}
+          <label class='left_align'><sub>Buscar por:</sub></label>
+          <select id='buscar_por' class='form-control'>
+            <option value="0">Repositório</option>
+            <option value="1" selected>Projeto</option>
+            <option value="2">Linguagem</option>
+          </select>
 					</div>
 
 					{% if meus_repositorios %}
-					<div class="col-lg-4 col-md-4 col-sm-5 col-xs-6" style='margin-left:-20px;margin-top: -11px;'>
-                    {% else %}
-                    <div class="col-lg-4 col-md-4 col-sm-5 col-xs-6" style='margin-left:-20px;margin-top: 31px;'>
-                    {% endif %}
+					<div class="col-lg-4 col-md-4 col-sm-5 col-xs-6" style='margin-left:-20px;margin-top: 25px;'>
+          {% else %}
+          <div class="col-lg-4 col-md-4 col-sm-5 col-xs-6" style='margin-left:-20px;margin-top: 31px;'>
+          {% endif %}
 						<input type="text" id="search" class="form-control" autofocus placeholder="Consultar..">
 					</div>
 
@@ -869,7 +828,7 @@ th.compact {
             url: '/projeto/analisar',
             type: 'get', //this is the default though, you don't actually need to always mention it
             success: function(data) {
-                //alert(data);
+                alert(data);
                 $('#atualizando_icone').removeClass("fa fa-spinner fa-pulse fa-1x fa-fw").hide();
                 window.location.reload();
                 //table.row('.selected').remove().draw( false );

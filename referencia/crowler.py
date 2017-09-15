@@ -40,14 +40,11 @@ class coletor_dados():
         resumo_page = dominio+"measures/search/1?asc=true&cols[]=metric%3Aalert_status&cols[]=name&cols[]=metric%3Afiles&cols[]=metric%3Aclasses&cols[]=metric%3Afunctions&cols[]=metric%3Alines&cols[]=metric%3Ancloc&cols[]=metric%3Acomplexity&cols[]=metric%3Afunction_complexity&cols[]=metric%3Aclass_complexity&cols[]=metric%3Afile_complexity&cols[]=metric%3Acomment_lines_density&cols[]=metric%3Aduplicated_lines_density&cols[]=metric%3Aviolations&cols[]=metric%3Ablocker_violations&cols[]=metric%3Acritical_violations&cols[]=metric%3Amajor_violations&cols[]=metric%3Aminor_violations&cols[]=metric%3Ainfo_violations&cols[]=metric%3Asqale_index&cols[]=metric%3Asqale_debt_ratio&cols[]=metric%3Acode_smells&cols[]=date&display=list&pageSize=100&qualifiers=TRK&sort=name&id=1&edit=true"
         self.baixar_arquivo(resumo_page)
         registros = self.get_registros()
-
         lista_estados = []
-
         for item in registros:
             nome = item.find("a")['title']
-
             for projeto in repositorio.projetos:
-                if projeto.nome_projeto.lower() == nome:
+                if projeto.nome_projeto.lower() == nome or ':'+projeto.nome_projeto.lower() in nome:
                     if projeto.monitorado:
                         estado = self.get_estado(item)
                         estado.projeto = projeto

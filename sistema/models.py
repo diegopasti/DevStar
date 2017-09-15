@@ -12,6 +12,9 @@ class Repositorio(models.Model):
     proprietario   = models.ForeignKey(User, on_delete=models.CASCADE)
     projetos       = []
 
+    def __str__(self):
+        return self.nome_repositorio
+
 class Projeto(models.Model):
     url_projeto    = models.CharField("Url do Projeto:",max_length=100,null=False,default="")
     nome_projeto   = models.CharField("Projeto:",max_length=100,null=False,default="")
@@ -23,6 +26,9 @@ class Projeto(models.Model):
     estado_anterior = None
     variacao_estado = None
     estados         = []
+
+    def __str__(self):
+        return self.nome_projeto
 
 class Estado(models.Model):
     projeto = models.ForeignKey(Projeto, on_delete=models.CASCADE,default=0)
