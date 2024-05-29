@@ -1,0 +1,1 @@
+Infraestrutura de apoio e suporte ao desenvolvimento de software utilizando integração continua com Jenkins, análise estática de código com Sonar Qube, controle e aprovação de builds por regras de qualidade e avaliação do desempenho individual usando gamification.
